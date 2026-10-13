@@ -1,0 +1,716 @@
+                                               Astronomy & Astrophysics manuscript no. main                                                                                       ©ESO 2025
+                                               September 24, 2025
+
+
+
+
+                                                         Lunar Time Ephemeris LTE440: deﬁnitions, algorithm and
+                                                                             performance
+                                                                                              Xu Lu1 , Tian-Ning Yang1, 2 , and Yi Xie1
+
+                                                     1
+                                                       Purple Mountain Observatory, Chinese Academy of Sciences, Nanjing 210023, China
+                                                       e-mail: yixie@pmo.ac.cn
+                                                     2
+                                                       School of Astronomy and Space Science, University of Science and Technology of China, Hefei 230026, China
+
+
+
+
+arXiv:2509.18511v1 [astro-ph.IM] 23 Sep 2025
+                                                    Received September 30, 20XX
+
+                                                                                                                ABSTRACT
+
+                                                    Context. Robotic and human activities in the cislunar space are expected to rapidly increase in the future. Modeling, jointly analysis
+                                                    and sharing of time measurements made in the vicinity of the Moon might indispensably demand calculating a lunar time scale and
+                                                    transforming it into other time scales.
+                                                    Aims. For users, we present a ready-to-use software package of Lunar Time Ephemeris LTE440 that can calculate the Lunar Coordinate
+                                                    Time (TCL) and its relations with the Barycentric Coordinate Time (TCB) and the Barycentric Dynamical Time (TDB).
+                                                    Methods. According to the International Astronomical Union Resolutions on relativistic time scales, we numerically calculate the
+                                                    relativistic time-dilation integral in the transformation between TCL and TCB/TDB with the JPL ephemeris DE440 including the
+                                                    gravitational contributions from the Sun, all planets, the main belt asteroids and the Kuiper belt objects, and export data ﬁles in the
+                                                    SPICE format.
+                                                    Results. At a conservative estimate, LTE440 has an accuracy better than 0.15 ns before 2050 and a numerical precision at the
+                                                    level of 1 ps over its entire time span. The secular drifts between the coordinate times in LTE440 are respectively estimated as
+                                                    hd TCL/d TCBi = 1 − 1.482 536 216 7 × 10−8 and hd TCL/d TDBi = 1 + 6.798 355 24 × 10−10 . Its most signiﬁcant periodic variations
+                                                    are an annual term with amplitude of 1.65 ms and a monthly term with amplitude of 126 µs.
+                                                    Conclusions. LTE440 might satisfy most of current needs and is publicly available.
+                                                    Key words. time – ephemerides
+
+
+
+                                               1. Introduction                                                              The relativistic time-dilation integral is an indispensable in-
+                                                                                                                         gredient in the transformation between time scales those are de-
+                                                                                                                         ﬁned in two distinct reference systems in the Solar System.
+                                               Robotic and human activities in the cislunar space are ex-                    One perfect example is the time ephemeris of the Earth,
+                                               pected to rapidly increase in the future. Modeling, jointly anal-         traditionally called “time ephemeris” for short, that is a rep-
+                                               ysis and sharing of time measurements made in the vicinity                resentation of the integral in the transformation between the
+                                               of the Moon might indispensably demand calculating a lunar                Geocentric Coordinate Time (TCG)/Terrestrial Time (TT) and
+                                               time scale and transforming it into other time scales. For users,         the Barycentric Coordinate Time (TCB)/Barycentric Dynam-
+                                               we present a ready-to-use software package of Lunar Time                  ical Time (TDB), according to the International Astronom-
+                                               Ephemeris LTE440 that can calculate the Lunar Coordinate Time             ical Union (IAU) Resolutions of relativistic reference sys-
+                                               (TCL) and its relations with the Barycentric Coordinate Time              tems and time scales (Soﬀel et al. 2003; IAU 2006). The
+                                               (TCB) and the Barycentric Dynamical Time (TDB). Accord-                   time ephemeris has been an essential part of the current
+                                               ing to the International Astronomical Union Resolutions on rel-           framework for the reference systems of the relativistic space-
+                                               ativistic time scales, we numerically calculate the relativistic          time (e.g. Fukushima 1996; Brumberg et al. 1996; Fukushima
+                                               time-dilation integral in the transformation between TCL and              2001; Seidelmann & Kovalevsky 2002; Bretagnon & Brumberg
+                                               TCB/TDB with the JPL ephemeris DE440 including the grav-                  2003; Soﬀel et al. 2003; Kopeikin 2007, 2010; Turyshev et al.
+                                               itational contributions from the Sun, all planets, the main belt          2025; Kaplan 2005; Klioner 2008; McCarthy 2011) and
+                                               asteroids and the Kuiper belt objects, and export data ﬁles in            has been widely used in Earth-based time-related measure-
+                                               the SPICE format. At a conservative estimate, LTE440 has an               ments, such as precise modeling of astrometry (e.g. Klioner
+                                               accuracy better than 0.15 ns before 2050 and a numerical pre-             2003; Lindegren & Dravins 2003; Fukushima 2005), space-
+                                               cision at the level of 1 ps over its entire time span. The secular        craft tracking (e.g. Turyshev et al. 1996; Sekido & Fukushima
+                                               drifts between the coordinate times in LTE440 are respectively            2006; Dirkx et al. 2016), pulsar timing (e.g. Kopeikin 1997,
+                                               estimated as hd TCL/d TCBi = 1 − 1.482 536 216 7 × 10−8 and               1999; Hobbs et al. 2006; Edwards et al. 2006) and geodesy
+                                               hd TCL/d TDBi = 1 + 6.798 355 24 × 10−10 . Its most signiﬁcant            (Müller et al. 2008; Sánchez et al. 2016). The time ephemerides
+                                               periodic variations are an annual term with amplitude of 1.65             can be divided into two kinds: analytical and numerical. The an-
+                                               ms and a monthly term with amplitude of 126 µs. LTE440 might              alytical ones might trace back to those in 1960s (Aoki 1964;
+                                               satisfy most of current needs and is publicly available.                  Clemence & Szebehely 1967), develop to those more accurate
+                                                                                                                                                                          Article number, page 1
+                                                    A&A proofs: manuscript no. main
+
+and complex (Moyer 1981a,b; Hirayama et al. 1987) and cli-                  Very recently, Ashby & Patla (2024), Kopeikin & Kaplan
+max with Fairhead & Bretagnon (1990), all of which are based           (2024) and Turyshev et al. (2025) estimated the rate of an
+on analytical planetary and lunar ephemerides. The numeri-             ideal clock on the Moon’s selenoid with respect to the one on
+cal time ephemeris evaluates the relativistic time-dilation inte-      the Earth’s geoid. Furthermore, Kopeikin & Kaplan (2024) and
+gral numerically with the quantities provided by a numerical           Turyshev et al. (2025) also constructed analytical formulae to
+planetary and lunar ephemeris. It starts with Backer & Hellings        handle the relativistic time-dilation integral associated with TCL
+(1986) and evolves to the works of Fukushima (1995) and                by adopting diﬀerent approximations and cut-oﬀ for the lunar
+Irwin & Fukushima (1999) with more sophisticated method and            motion, which could be somehow regarded as ﬂedgling analytic
+higher accuracy. Nowadays, all of the most widely-used plane-          lunar time ephemerides. Motivated by the potential needs and
+tary and lunar ephemerides, such as DE440 (Park et al. 2021),          inspired by these pioneer works, we will extend these analytical
+INPOP21a (Fienga et al. 2021) and EPM2021 (Pitjeva et al.              results by making a numerical lunar time ephemeris following
+2022), provide evaluated TT−TDB in their products which can            the methodology of foundational works by Fukushima (1995)
+be directly taken by a user without any further calculation and        and Irwin & Fukushima (1999).
+INPOP21a also gives TCG−TCB.                                                In this work, we present the lunar time ephemeris package
+    However, with the expected increase of robotic and human           LTE440 1 that contains numerically evaluation of the relativis-
+activities in the cislunar space in the future, new demands might      tic time-dilation integral between TCL and TCB/TDB and also
+emerge. A lunar time ephemeris, that represents the evaluation         provides functions to calculate TCL−TCB, TCL−TDB and TCL
+of the relativistic time-dilation in the transformation between        for a given TDB moment. We deﬁne the relativistic time-dilation
+the Lunar Coordinate Time (TCL) (IAU 2024a) and TCB/TDB,               integral of the lunar time ephemeris in Sec. 2. We explain the al-
+would be required for those who would like to conveniently             gorithms for calculating the integral based on DE440 and mak-
+model, jointly analyse and share their time measurements made          ing the product of LTE440 in Sec. 3. By comparing LTE440
+in the vicinity of the Moon. A user might take advantage of the        with LTE430 and LTE441, two auxiliary lunar time ephemerides
+lunar time ephemeris’ high accuracy and ease of use in cer-            packages based on DE430 and DE441, we analyse their char-
+tain scenarios, including (but not limited to) tracing back the        acteristics and diﬀerences, assess their performance, and correct
+proper time of a Moon-based clock to the Coordinated Universal         the linear drift of hdTCL/dTCBi of LTE440 through LTE441 in
+Time (UTC) and conducting the very long baseline interferom-           Sec. 4. We conclude the paper in Sec. 5.
+etry (VLBI) with telescopes separated in the neighbours of the
+Earth and Moon.
+    Missions on and around the Moon in the future might re-            2. Deﬁnitions
+quire a practical lunar reference time (LRT) (IAU 2024b), since
+TCL, deﬁned as the time coordinate for the Lunar Celestial Ref-        According to the IAU 2024 Resolution II (IAU 2024a), LCRS
+erence System (LCRS) (IAU 2024a), is not given by any real             and TCL can be constructed with the same techniques used to
+clock. Although international organizations and countries have         construct the Geocentric Celestial Reference System (GCRS)
+not achieved any agreement on the deﬁnition of such a reference        and TCG. The transformation between TCL and TCB is analo-
+time scale for now, all agree that the relationship between LRT        gous to the transformation between TCG and TCB given by IAU
+and UTC must be clear. This traceability demands to be bridged         2000 Resolution B1.5 (Soﬀel et al. 2003), with the Earth-related
+by a lunar time ephemeris. If the uncertainty of LRT−UTC is            quantities replaced by the Moon-related quantities. Therefore,
+supposed to be within 10 ns in a day, it translates to a relative      the relation between TCL and TCB can be expressed as
+error and corresponding lunar time ephemeris derivative error of
+                                                                                  TCL − TCB
+10−13 . The systematic errors of the lunar time ephemeris and its                     Z t 2                       
+derivative should be ideally kept at the level of 0.1 ns and 10−15 ,      TCB       1      vM                        1
+                                                                         =====    − 2              + w0M + wlM  dt − 2 vM · (x − xM )
+at least 2 orders of magnitude smaller than proposed demands,                      c t0 2                                c
+according to the consideration of Irwin & Fukushima (1999).                           Z t 4
+                                                                                                  v
+                                                                                    1         M 3 2                            1
+                                                                                                       − vM w0M + 4vM · wM + w20M
+                                                                                             
+    By taking advantage of low gravity, absence of atmosphere,                    + 4          −
+deep natural cooling, low magnetic ﬁeld and interference-free                      c t0            8    2                         2
+radio environment of the Moon (Burns 1985; Gurvits 1998),
+                                                                                                              2 
+                                                                                                  1         v 
+Earth-Moon VLBI with Earth- and Moon-based radio telescopes                       +∆M ) dt − 4 3w0M + M  vM · (x − xM ),             (1)
+                                                                                                  c            2
+might signiﬁcantly improve our understanding of the Moon’s
+orbital and rotational motion and the precision of astrome-                      TCB
+try with its longer baselines and more suﬃcient uv-coverage            where “=====” means that all quantities on the its right-hand side
+(Kurdubov et al. 2019). With the expectation that Earth-Moon           are TCB-compatible, t is TCB, t0 =1977 January 1, 0h 0m 32.184s
+VLBI would reach its best performance at least as good as              is the common value of TT, TCG, TCB and TCL set on 1977
+ground-based VLBI, it needs time tags of the recorded signals on       January 1, 0h 0m 0s TAI (IAU 2024a), x is the barycentric posi-
+the Moon with uncertainty less than 1 µs and Moon-based clocks         tion vectors of the point where the transformation between TCL
+with stability better than 10−14 at 50 min based on the knowl-         and TCB is done, xM and vM are the barycentric position and ve-
+edge of ground-based VLBI (Nothnagel et al. 2018). Therefore,          locity vectors of the Moon. The potential w0M describes the grav-
+the systematic errors of the lunar time ephemeris and its deriva-      itational potential of external bodies at the center of the Moon in
+tive need be controlled at the level of 10 ns and 10−16 , 2 or-        the point-mass approximation and it is deﬁned as
+ders of magnitude better than these requirements. Targeted at                   X GMA
+direct imaging supermassive black holes and their photon rings         w0M =                 ,                                             (2)
+(Fish et al. 2020; Roelofs et al. 2021), future space-borne sub-                A,M
+                                                                                       rMA
+millimeter VLBI in the cislunar space might raise even more
+challenges to the technological and theoretical aspects of time-       1
+                                                                          LTE440 including its data ﬁles and codes for usage is publicly avail-
+related measurement (Gurvits et al. 2022; Hudson et al. 2023).         able at https://github.com/xlucn/LTE440.
+
+Article number, page 2
+                            Xu Lu et al.: Lunar Time Ephemeris LTE440: deﬁnitions, algorithm and performance
+
+where rMA = |rMA |, rMA = xM − xA , and the summation runs            compatible quantities as
+over all of the Solar System bodies A except the Moon (M). The            LTE(TDB)
+potential wlM represents the non-spherical gravitational potential                " Z TDB  2                      
+of external bodies. The vector potential wM can be expressed as                1    1            vM             
+                                                                        = −          2
+                                                                                                      + w0M + wlM   dTDB
+                                                                            1 − LB c TDB0 +t0 2
+                                                                                                  
+                                                                             Z TDB  4
+       X   MA vA rMA × SA                                             1           vM 3 2
+wM =     G       −    3
+                                ,                             (3)       − 4            −   − vM w0M + 4vM · wM
+     A,M
+              rMA     2rMA                                                  c TDB0 +t0       8     2
+                                                                                           !      #
+                                                                             1 2
+                                                                          + w0M + ∆M dTDB ,                                          (7)
+where SA is the total angular momentum of body A. The ∆M term                2
+contains nonlinear couplings of w0M and wM and other higher-
+order contributions at O(c−4 ) and it is deﬁned as                    which is nothing but the integrals in Eq. (6). With its help, we
+                                                                      might rewrite the transform of TCL−TCB as
+                                                                    TCL − TCB = LTE(TDB) + LPB(TCB, x)                             (8)
+           X   GMA  X GMB                  (rMA · vA )2
+                                        − 2v2A +
+               
+∆M     =                                           2               where LPB(TCB, x) depends on TCB and the user’s TCB-
+                rMA          |x − xA |
+               
+           A,M
+               
+                           B,A B
+                                                    2rMA
+                                                                     compatible position as
+             rMA · aA  2GvA · (rMA × SA )                                          TCB      1
+           +                +                    ,              (4)
+                                               
+                                    3                                 LPB(TCB, x) ===== − 2 vM · (x − xM )
+                 2
+                                               
+                                  rMA          
+                                                                                             c
+                                                                                                          v2M 
+                                                                                                               
+                                                                                               1 
+where aA is the barycentric acceleration vector of the body A.                               − 4 3w0M +        vM · (x − xM ), (9)
+                                                                                              c            2
+    In order to evaluate the relation of TCL−TCB (1), one in-
+                                                                      and we might also change the form of TCL−TDB into
+evitably needs an ephemeris to know the positions and velocities
+of the Solar System bodies up to a suﬃcient accuracy. Given the       TCL − TDB = LDTE(TDB) + LPD(TDB, x)                           (10)
+fact that all the modern numerical ephemerides adopt TDB as           where
+their main time scale, it would be more convenient for calcula-                                LB                    1
+tion and utility to rewrite TCL−TCB as TCL−TDB by consider-           LDTE(TDB)          =          (TDB − t0 ) −        TDB0
+ing the linear relation between TCB and TDB (IAU 2006)                                       1 − LB               1 − LB
+                                                                                             +LTE(TDB),                             (11)
+TDB = TCB − LB (TCB − t0 ) + TDB0                               (5)   and LPD(TDB, x) depends on TDB and the user’s TDB-
+                                                                      compatible position as
+                                                                                                     "
+so that we ﬁnd                                                                         TDB      1       1
+                                                                      LPD(TDB, x) =====               − 2 vM · (x − xM )
+                                                                                             1 − LB c
+        TCL − TDB                                                                              1 
+                                                                                                   
+                                                                                                           v2 
+                                                                                                                                
+                                                                                             − 4 3w0M + M  vM · (x − xM ) . (12)
+                                                                                                                                 
+     TDB  LB                           1
+  =====         (TDB − t0 ) −               TDB0                                               c            2
+        1 − LB                    1 − LB
+                                                                      We can see that, for the transformation between TCL−TCB, the
+                                   v2M
+                 " Z TDB                               
+             1     1                                    
+                                                                      introduction of TDB might bring convenience into the compu-
+        −           2
+                                        + w0M + wlM  dTDB
+          1 − LB c TDB0 +t0 2                                         tation of its integral in Eq. (1) and into making a ready-to-use
+          1                      1
+                                       Z TDB  4
+                                                vM 3 2             product of lunar time ephemeris, whereas it might cause an in-
+        + 2 vM · (x − xM ) − 4                   −   − vM w0M       convenience that the user have to handle three time coordinates
+          c                      c TDB0 +t0          8     2          emerged in Eq. (8). The transformation between TCL−TDB
+                                          !
+                      1                                               bridged by LDTE(TDB) in Eq. (10) is free of such a dilemma so
+        + 4vM · wM + w20M + ∆M dTDB
+                      2                                               that, with an available product of LDTE(TDB), a user can eas-
+                                                                      ily and clearly calculate TCL for a given TDB moment and vice
+                      v2M 
+                                             #
+          1                                                        versa. Therefore, in the following parts of this work, we would
+        + 4 3w0M +         vM · (x − xM ) ,                 (6)
+          c            2                                              adopt the chain of transformations as
+                                                                              Eq. (10)
+           TDB                                                        TCL ←−−−−→ TDB ←
+                                                                                     → TCB.                                         (13)
+where “=====” means that all quantities on the its right-hand                 LDTE
+side are TDB-compatible, and LB = 1.550519768 × 10−8 and                  Using JPL ephemeris DE440 (Park et al. 2021), we numeri-
+TDB0 = −6.55 × 10−5 s are deﬁning constants. If a user can            cally compute the right-hand side of Eq. (7) and export data ﬁles
+directly combine TCL−TDB and TT−TDB, the one can easily               in the SPICE format. For a user, we also provide software func-
+ﬁnd the TCL−TT. Since TT−TDB has been very precisely pro-             tions to calculate LTE(TDB) in TCL−TDB and LDTE(TDB)
+vided by the ephemerides DE440, INPOP21a and EPM2021, we              in TCL−TCB at a given TDB epoch, respectively. We call the
+believe a ready-to-use product of TCL−TDB may help to build           package of these data ﬁles and functions as LTE440. In order to
+an easy way for tracing back the Moon-based time scales to the        provide more understanding about it, we also make two auxil-
+Earth-based ones.                                                     iary lunar time ephemeris packages LTE430 and LTE441 based
+    Following Fukushima (1995), we denotes the time-dilation          on JPL ephemerides DE430 (Folkner et al. 2014) and DE441
+integral in Eq. (1) as the lunar time ephemeris (LTE). Con-           (Park et al. 2021) for making comparison and assessing uncer-
+sidering TDB as the time scale used by modern planetary               tainties. For later convenience, we would denote the mathemat-
+ephemerides and following the note on computation of IAU 2000         ical function LTE(TDB) (7) in LTE430, LTE440 and LTE441 as
+Resolution B1.5 (Soﬀel et al. 2003), we write it in terms of TDB-     LTE430 , LTE440 and LTE441 for short, respectively.
+                                                                                                                   Article number, page 3
+                                                     A&A proofs: manuscript no. main
+
+3. Algorithm                                                                                           ×10−21
+                                                                                                 1.0
+                                                                                                                                                     (a)
+
+
+
+
+                                                                         δ [d(TT-TDB) / dTDB]
+We evaluate the integral in Eq. (7) using a 10th-order Romberg
+scheme (Press et al. 1992) with half-day integration intervals.                                  0.5
+The integrand is computed by usage of position and veloc-
+ity data of the Sun, planets and small objects provided by                                       0.0
+JPL ephemerides. Since the integrand consists of a constant
+value plus periodic terms, we would expect that the result-                                     −0.5
+ing lunar time ephemeris would have a more signiﬁcant secu-
+lar drift along with indistinct periodic terms over a long time                                                                                      (b)
+span. Since no mature analytic series of lunar time ephemeris
+
+
+                                                                         δ (TT-TDB) [ps]
+                                                                                                 0.5
+is currently available, we are unable to use the hybrid method
+of Irwin & Fukushima (1999) to separate the secular drift and
+                                                                                                 0.0
+periodic variations for keeping the accuracy of the numeri-
+cal evaluation of Eq. (7). In order to reveal these periodic
+terms in the lunar time ephemeris more clearly, we adopt                                        −0.5
+
+a method mixed the approaches of Fukushima (1995) and                                                     1600   1800   2000          2200   2400   2600
+Irwin & Fukushima (1999). First, we subtract a roughly esti-                                                                   Year
+mated constant, which is an approximated secular drift rate of
+the lunar time ephemeris, from the integrand of Eq. (7) in the ini-    Fig. 1. Diﬀerences between our reproduced version of
+tial evaluation (Irwin & Fukushima 1999). Then, we iteratively         TT−TDB at the geocenter with the planetary data of
+ﬁnd the secular drift rate of the resulting curve by ﬁtting it with    DE440 and the inherent version of DE440. Top panel: dif-
+a linear function and re-evaluate the integration after removal of     ference between the derivatives δ[d(TT − TDB)/dTDB]   =
+this rate from the integrand until this rate converges (Fukushima      [d(TT − TDB)/dTDB]this − [d(TT − TDB)/dTDB]DE440 .  Bot-
+1995). Finally, we subtracted this converged rate from the inte-       tom panel: diﬀerence between the Earth time ephemerides
+grand, redo the integration numerically and combine the evalu-         δ(TT − TDB) = (TT − TDB)this − (TT − TDB)DE440 .
+ation with the secular drift as our product. We suppose that this
+procedure might be able to more clearly separate the secular drift
+and the periodic terms in the lunar time ephemeris based solely        4. Performance
+on the numerical computation. We also discuss a possible way           In this section, we present some detailed characteristics of
+to calibrate such a drift rate by using on a longer time-span nu-      LTE440, including its secular drift and periodic variations, make
+merical ephemeris in Sect. 5.                                          a comparison between LTE430 and LTE440, and try to correct
+     We would use three versions of JPL ephemerides DE430,             the secular drift of LTE440 by using LTE441 with a longer time-
+DE440 and DE441 to produce the lunar time ephemerides and              span.
+the characteristics of these planetary ephemerides are sum-
+marized in Table A.1 for a brief comparison. As pointed
+by Park et al. (2021), several updates have been made in               4.1. Characteristics
+DE440/DE441 comparing to DE430, including 30 Kuiper belt               It is well known that there are secular drifts of TCG with re-
+objects and a ring, solar radiation pressure on the Earth and          spect to TCB and to TDB (Seidelmann & Fukushima 1992). It is
+Moon, and the Lense–Thirring eﬀect from the Sun’s angular              also true for TCL. Following IAU Resolution 2000 (Soﬀel et al.
+momentum. For the resulting lunar time ephemerides, gravita-           2003), we introduce LCM and LMD to describe the secular drifts of
+tional contribution of these Kuiper belt objects and the motion        TCL with respect to TCB and TDB, respectively, as
+of the Moon could be the main factors for making LTE430 and            *        +
+LTE440/441 diﬀerent from each other.                                     d TCL
+                                                                                  = 1 − LCM ,                                      (14)
+     We estimate the error of our integration scheme by compar-          d TCB
+ing the resulting lunar time ephemeris with integration intervals
+of half-day and one-day, respectively. We ﬁnd that their diﬀer-        and
+ence is at the order of 10 fs, which is negligible for the purpose     *       +
+                                                                         d TCL
+of this work. We further assess the accuracy of our numerical                    = 1 + LM
+                                                                                        D,                                                                 (15)
+method by reproducing TT−TDB at the geocenter with planetary             d TDB
+data of DE440 and comparing our result with the one inherently
+provided by DE440. As shown in Fig. 1, we ﬁnd that the diﬀer-          where h i refers to a suﬃcient long time average to remove its
+ence between our reproduction and the one of DE440 is less than        periodic changes. LCM and LM
+                                                                                                  D satisfy the following relation
+1 ps over their entire time span, demonstrating that our numeri-
+cal scheme is adequate to produce a precise lunar time ephemeris       (1 − LCM ) = (1 − LB )(1 + LM
+                                                                                                   D ).                                                    (16)
+comparable with the time ephemeris provided by DE440.
+                                                                       In fact, according to Eqs. (5) and (8), we can have that, at the
+     The values of the integral (7) with its secular drift removed     selenocenter x = xM ,
+are ﬁtted with 13th-degree Chebyshev polynomials on 4-day
+granules using the method described by Newhall (1989). The
+                                                                                        *       +
+                                                                                          d LTE
+coeﬃcients of these Chebyshev polynomials are exported into            LCM = −(1 − LB )           .                                (17)
+                                                                                          d TDB
+a binary SPK ﬁle conforming to the SPICE format. The coeﬃ-
+cients of the secular drift are stored in a text PCK ﬁle. These ﬁles   Based on LTE440, we ﬁnd that
+for LTE440 are publicly available online and see Lu et al. (2025)
+for more details of usage.                                              M
+                                                                       LC,440 = 1.482 536 216 7 × 10−8 ± 1.0 × 10−17 ,                                     (18)
+Article number, page 4
+                            Xu Lu et al.: Lunar Time Ephemeris LTE440: deﬁnitions, algorithm and performance
+
+Table 1. A summary of estimated LCM .                                    ephemeris for the long time span. According to Eq. (7), this
+                                                                         drift rate is inversely proportional to the distances between the
+ LCM (10−8 )         Ref.                                                Moon and other gravitational bodies. Taking the post-ﬁt residu-
+ 1.482 536 214 9     This work, LTE430                                   als of the ranging data adopted in DE440/441 (see Section 5.1
+ 1.482 536 216 7     This work, LTE440                                   in Park et al. 2021) as order-of-magnitude estimation of the dis-
+ 1.482 536 221 7     This work, LTE440 calibrated with LTE441            tances error, we might preliminarily estimate that the error of the
+ 1.482 4a            Kopeikin & Kaplan (2024)                            drift rate is about 7 × 10−20 , and we might ﬁnd that the accuracy
+ 1.482 536 24b       Turyshev et al. (2025)                              of LTE440 is better than 0.15 ns within the year of 2050. We
+                                                                         think that a more robust estimate of accuracy might have to wait
+Notes. (a) Derived from the value of 1.280 8 ms d−1 given by             for next version of JPL ephemeris.
+Kopeikin & Kaplan (2024) . (b) Denoted as LH in Turyshev et al. (2025)
+.
+                                                                         4.3. Comparison of LTE430 and LTE440
+and                                                                      For better understandings of our products of lunar time
+                                                                         ephemerides, we make a comparison of LTE430 and LTE440.
+                           −10
+LM
+ D,440 = 6.798 355 24 × 10     ± 1.0 × 10−17 .                   (19)    We assume that diﬀerences between them might be mainly
+                                                                         caused by the planetary and lunar data we used, instead of our
+Our numerical estimation of LCM is consistent with the analytic          numerical integration scheme, since this scheme has been tested
+ones given by Kopeikin & Kaplan (2024) and Turyshev et al.               to be accurate enough (see Sect. 3 for details). We ﬁnd that, like
+(2025) (see Table 1 for a comparison).                                   LTE440, LTE430 also has a more signiﬁcant secular drift with
+    We also estimate the contributions to LCM from diﬀerent              indistinct periodic variations. For LTE430, its LCM indicating sec-
+sources in LTE440, as shown in Table 2. We ﬁnd that the square           ular drift rate between TCL and TCB is estimated as
+of lunar velocity and the gravitational potential of the Sun at the
+Moon play most signiﬁcant roles in LCM , with the contribution            M
+                                                                         LC,430 = 1.482 536 214 9 × 10−8 ± 1.0 × 10−17 ,               (20)
+reaching about 5 × 10−9 and 1 × 10−8 respectively. These con-
+tributions are at least two and three orders of magnitude bigger         and it also has 13 periodic terms with amplitudes larger than 1
+than those of Earth and Jupiter system, which are the third and          µs listed in Table 3.
+forth contributors in LCM . Despite remoteness, the objects and the          The diﬀerence between the integrands of LTE430 and LTE440
+ring in the Kuiper belt, which are new gravitational ingredients         is at the level of 2 × 10−17 around the year 2000 and increases
+for DE440, contribute about 2 × 10−17 in LCM , more than 3 times         to about 2 × 10−15 over next 600 years, as shown in Fig. 2(a).
+bigger than the overall of closer main belt asteroids, due to the        After integration, the resulting LTE430 deviates from LTE440 up
+much larger total mass of the Kuiper belt objects and the ring.          to 13 ns around the year 2000 and their diﬀerence climbs up to
+While we take the dynamical form factors J2 of the Earth and             about 350 ns around the year 2600, see Fig. 2(b), because these
+the Sun into account for completeness, the former climbs barely          two lunar time ephemerides have slightly diﬀerent LCM that (see
+to about 1 × 10−18 and the latter is even smaller by two orders of       Table 1 for a summary)
+magnitude. Total contribution of all of the gravitational bodies          M
+                                                                         LC,430    M
+                                                                                − LC,440 = −1.8 × 10−17 .                              (21)
+at the post-Newtonian order O(c−4 ) is about 1 × 10−16 , mainly
+coming from the Moon’s velocity and the Sun’s potential.                 To pin down the cause of such a tiny but nonzero diﬀerence, we
+    Using Fourier transform on LTE440 after its linear trend re-         decompose LCM of LTE430 and LTE440 into its each contributing
+moved, we ﬁnd that there are 13 periodic terms with amplitudes           sources (see Table 2 for details). We think that this diﬀerence
+larger than 1 µs. The amplitudes Ai , periods T i , and phases φi of     is a natural consequence of 30 Kuiper belt objects and a ring in
+these terms Ai sin(2πT i−1 (t − J2000.0) + φi ) are listed in Table      LTE440, which are absent in LTE430, due to the fact that their
+3. The arguments of each term are derived from their periods,            contribution matches the ﬁgure very well. In fact, these remote
+which indicate the contributing sources of each term. The ﬁrst           Kuiper belt objects have almost 4 times more overall impact on
+periodic variation with the largest amplitude of 1.6 ms and the          LCM than 343 closer main belt asteroids. For the periodic varia-
+period of about 365.26 day is caused by the orbital motion of            tions in LTE430 and LTE440, the diﬀerences between their am-
+the Earth-Moon barycenter around Sun. The second one with                plitudes with identical periods are no more than 12 ps, while
+the amplitude of 126 µs and the period of 29.53 day comes from           the diﬀerences between their phases are less than 10−5 rad (see
+the orbital motion of the Moon around the Earth. The sources             Table 3). After the removal of the linear trend in Fig. 2(b), we
+of the third and forth term are the motion of the Moon relative          reveal that the detrended diﬀerence between LTE430 and LTE440
+to the Jupiter and around Sun, respectively. All the others varia-       ranging from -7.5 ns to 2.5 ns over the year span from 1550 to
+tion with amplitudes below 10 µs are associated with the motion          2650 and it seems to have a bimodal feature and no distinct long
+of the Moon, Venus, Earth, Jupiter, Saturn and Uranus. We no-            periodic variations, as Fig. 2(c) demonstrated.
+tice that the accuracy of these periodic terms is very limited by            In order to decipher the possible causes of such a detrended
+the Fourier transform and the ﬁgures in Table 3 should be taken          diﬀerence, we calculate the detrended contributions of each
+as very preliminary results. In our following works, we might            sources in the diﬀerence between LTE430 and LTE440. We ﬁnd
+use more sophisticated approaches to harmonically decompose              that it might trace back to three main sources: the Moon’s ve-
+LTE440, such as by the method of Harada & Fukushima (2003).              locity, the Sun’s gravitational potential at the Moon and the
+                                                                         gravitational potentials of the Kuiper belt objects at the Moon,
+4.2. Estimated accuracy                                                  whose contributions to the detrended LTE430 −LTE440 are shown
+                                                                         in Fig. 3(a), (b) and (c) and range from -4 ns to 1.5 ns, from -3
+Since a lunar time ephemeris has a much more signiﬁcant sec-             ns to 1 ns and from -1.5 ns to 1 ns, respectively. The contribu-
+ular drift plus tiny variations, we suppose that the error of the        tion of the Kuiper belt objects and ring in the LTE440 shows an
+secular drift rate might dominate the accuracy of the lunar time         oscillation with a period about 600 years, which could explain
+                                                                                                                      Article number, page 5
+                                                                                                                                           A&A proofs: manuscript no. main
+
+Table 2. Contributing sources in LCM of LTE430 and LTE440440 .
+
+                                                                                 Term                                Gravitational Body                                             Contribution to LCM
+                                                                                                                                                                       LTE430        LTE440         LTE430 −LTE440
+                                                                                 v2M /2                              -                                                 4.9 × 10−9    4.9 × 10−9         1.2 × 10−19
+                                                                                                                                                                                −9            −9
+                                                                                 w0M                                 Sun                                               9.9 × 10      9.9 × 10           1.6 × 10−19
+                                                                                                                                                                                −15           −15
+                                                                                                                     Mercury                                           1.7 × 10      1.7 × 10          −6.9 × 10−21
+                                                                                                                                                                                −14           −14
+                                                                                                                     Venus                                             2.9 × 10      2.9 × 10           3.1 × 10−25
+                                                                                                                                                                                −11           −11
+                                                                                                                     Earth                                             1.2 × 10      1.2 × 10          −1.5 × 10−21
+                                                                                                                                                                                −15           −15
+                                                                                                                     Mars System                                       2.4 × 10      2.4 × 10          −3.4 × 10−23
+                                                                                                                                                                                −12           −12
+                                                                                                                     Jupiter System                                    1.8 × 10      1.8 × 10           1.1 × 10−20
+                                                                                                                                                                                −13           −13
+                                                                                                                     Saturn System                                     3.0 × 10      3.0 × 10           2.8 × 10−21
+                                                                                                                     Uranus System                                     2.2 × 10−14 2.2 × 10−14         −2.9 × 10−20
+                                                                                                                     Neptune System                                    1.7 × 10−14 1.7 × 10−14          3.2 × 10−21
+                                                                                                                                                                                −18           −18
+                                                                                                                     Pluto System                                      1.8 × 10      1.8 × 10           2.8 × 10−21
+                                                                                                                                                                                −18           −18
+                                                                                                                     343 main belt asteroids                           4.6 × 10      4.7 × 10          −5.8 × 10−20
+                                                                                                                                                                                              −17
+                                                                                                                     30 Kuiper belt objects and a ring                 0             1.8 × 10          −1.8 × 10−17
+                                                                                                                                                                                −20           −20
+                                                                                 wlM                                 J2 of the Sun                                     2.2 × 10      2.3 × 10          −8.9 × 10−22
+                                                                                                                                                                                −18           −18
+                                                                                                                     J2 of the Earth                                   1.3 × 10      1.3 × 10           6.7 × 10−26
+                                                                                                                                                                                −16           −16
+                                                                                 post-Newtonian                      all                                               1.1 × 10      1.1 × 10          −8.4 × 10−26
+
+
+
+
+                                                                       í  
+                                                             î  
+                                                               D                                                                                                                                 D 
+                                                       
+
+
+
+                       į  G / 7 (  G 7 ' % 
+                                                                                                                                                                į LTE  Y M   > Q V @
+                                                                                                                                                                                                
+                                                       
+                                                                                                                                                                                              í 
+                                                    í 
+                                                                                                                                                                                              í 
+                                                  E                                                                                                                                              E 
+                                                                                                                                                                                                
+
+
+
+                                                                                                                                                                   į LTE  ⊙   > Q V @
+                                                                                                                                                                                             
+
+    į  / 7 (   > Q V @                           
+                                                                                                                                                                                              í 
+
+                                                                                                                                                                                              í 
+                                  í   
+                                                                                                                                                                                              í 
+                                                         F                                                                                                                                 
+                                                                                                                                                                                                      F 
+
+                                                      
+
+
+         į LTE   > Q V @                                                                                                                                     į LTE KBO   > Q V @
+                                                                                                                                                                                                
+                                       í   
+
+                                       í   
+                                                                                                                                                                                              í 
+                                       í   
+                                                                                                                                                                                                                                       
+                                                                                                           < H D U                                                                                                                             < H D U
+
+
+
+Fig. 2. Comparison of LTE430 and LTE440 . (a) Diﬀerence between their                                                                                      Fig. 3. Detrended diﬀerences between mainly contributing sources of
+derivatives: δ(dLTE/dTDB) = dLTE430 /dTDB − dLTE440 /dTDB. (b)                                                                                             LTE430 and LTE440 : (a) the square of Moon’s velocity δ(LTE)v2 , (b)
+                                                                                                                                                                                                                                                                                          M
+Diﬀerence between LTE430 and LTE440 : δLTE = LTE430 − LTE440 . (c)
+                                                                                                                                                           the gravitational potential of the Sun at the Moon δ(LTE)⊙ , and (c) the
+Detrended diﬀerence between LTE430 and LTE440 : δ(LTE) = δ(LTE) −
+                                                                                                                                                           gravitational potentials of the Kuiper belt objects and ring at the Moon
+linear drift.
+                                                                                                                                                           δ(LTE)KBO .
+
+
+the bimodal shape in Fig. 2(c). After adding them up, we could                                                                                             current planetary and lunar ephemerides have been considerably
+reproduce the result of detrended LTE430 −LTE440 .                                                                                                         improved with much more accurate and precise masses for the
+    In the works of Fukushima (1995) and Irwin & Fukushima                                                                                                 gravitational bodies than those adopted in Fukushima (1995) and
+(1999), it was found that the mass-dependent errors from the                                                                                               Irwin & Fukushima (1999), we suppose that this situation may
+planetary and lunar ephemerides are among the main reasons                                                                                                 no longer be true for our lunar time ephemerides. We estimate
+to make diﬀerent versions of Earth time ephemerides deviate                                                                                                the eﬀects of the mass-dependent errors between LTE430 and
+from each other, such as TE200 and TE405. However, since                                                                                                   LTE440 on LCM and the amplitudes of the periodic variation with
+Article number, page 6
+                           Xu Lu et al.: Lunar Time Ephemeris LTE440: deﬁnitions, algorithm and performance
+
+the analytic method used in Fukushima (1995) (see Table 4). We        JPL ephemeris DE440 and produce the data ﬁles by 13th-
+ﬁnd that the diﬀerences caused by these mass-dependent errors         degree Chebyshev polynomials for interpolation. The accuracy
+are much less than the deviations we revealed (see Fig. 2) and        of LTE440 is estimated to be better than 0.15 ns in the lunar time
+could not be the main causes of them.                                 ephemeris and 7 × 10−20 in its secular drift rate within the year
+    Therefore, we think that the existence of the Kuiper belt ob-     of 2050. We believe that these levels of accuracy might satisfy
+jects and ring in DE440 might cause the long-term deviation be-       most of current needs.
+tween LTE430 and LTE440, while the improvement of Moon’s                  We also make two auxiliary lunar time ephemeris packages
+position and velocity as well as the Kuiper belt objects in DE440     LTE430 and LTE441 based on DE430 and DE441 for perfor-
+could explain the remainder of detrended LTE430 −LTE440 . Ex-         mance assessment. After a detailed comparison of LTE430 and
+cept these factors, the rest parts of LTE430 and LTE440 have          LTE440, we ﬁnd that the most parts of them have very good con-
+very good consistency overall.                                        sistency overall, while the existence of the Kuiper belt objects
+                                                                      and the improvement of Moon’s motion in DE440 might cause
+                                                                      diﬀerences between them. In order to separate secular drift from
+4.4. Correction to LCM                                                periodic variations with a better unambiguity, we calibrate the
+In the works of Irwin & Fukushima (1999) on the numerical             long-term change rate of TCL and TCB in LTE440 with the help
+Earth time ephemerides, these authors did not recommend to de-        of LTE441.
+termine the secular drift rate of TCG with respect to TCB by              We believe that an external comparison of LTE440 with
+numerical approaches alone, because this procedure strongly de-       other lunar time ephemerides based on INPOP21a and EMP2021
+pends on the epoch range chosen for the integration. Instead,         would be helpful to know their performances and characteristics
+they thought a much better approach to determine such a rate          and provide more insights into them, and we will leave it as our
+was to use an analytic series approximation for the Earth time        next moves.
+ephemeris and then ﬁnd the coeﬃcient of the linear term as            Acknowledgements. This work is funded by the Strategic Priority Research Pro-
+the drift rate. This series approach takes the advantage of the       gram on Space Science of the Chinese Academy of Sciences (XDA300103000,
+fact that an analytic series usually has a much longer time in-       XDA30040000, XDA30030000 and XDA0350300) and the National Natural
+terval than the numerical ephemerides and one might recognize         Science Foundation of China (Grants No. 62394350, No. 62394351 and No.
+                                                                      12273116).
+the periodic and secular terms without any ambiguity. Neverthe-
+less, considering the less accuracy of the series than the one of
+the numerical ephemeris, these authors proposed a hybrid ap-
+proach that applies a linear least-squares ﬁt to the residuals be-    References
+tween a series with the linear drift removed and a numerical time
+                                                                      Aoki, S. 1964, AJ, 69, 221
+ephemeris with a preliminary value of the drift rate removed as       Ashby, N. & Patla, B. R. 2024, AJ, 168, 112
+well, which can give a correction to the rate obtained by the nu-     Backer, D. C. & Hellings, R. W. 1986, ARA&A, 24, 537
+merical time ephemeris.                                               Bretagnon, P. & Brumberg, V. A. 2003, A&A, 408, 387
+    We think that this statement is also true for the determina-      Brumberg, V. A., Bretagnon, P., & Guinot, B. 1996, Celest. Mech., 64, 231
+tion of LCM in the lunar time ephemeris. However, we are fac-         Burns, J. O. 1985, in Lunar Bases and Space Activities of the 21st Century, ed.
+                                                                         W. W. Mendell, 293–300
+ing a frustrating fact that any analytic series for the lunar time    Clemence, G. M. & Szebehely, V. 1967, AJ, 72, 1324
+ephemeris as sophisticated as those of Earth time ephemerides         Dirkx, D., Noomen, R., Visser, P. N. A. M., Gurvits, L. I., & Vermeersen, L. L. A.
+(Hirayama et al. 1987; Fairhead & Bretagnon 1990) is currently           2016, A&A, 587, A156
+unavailable, and we expect that it might take a quite long time       Edwards, R. T., Hobbs, G. B., & Manchester, R. N. 2006, MNRAS, 372, 1549
+to achieve such an ambitious goal for making one. Therefore,          Fairhead, L. & Bretagnon, P. 1990, A&A, 229, 240
+                                                                      Fienga, A., Deram, P., Di Ruscio, A., et al. 2021, Notes Scientiﬁques et Tech-
+in order to bypass this situation and ﬁnd a timely way, we pro-          niques de l’Institut de Mecanique Celeste, 110
+pose a mixed numerical approach to calibrate LCM of a short lunar     Fish, V. L., Shea, M., & Akiyama, K. 2020, Advances in Space Research, 65,
+time ephemeris by a much longer lunar time ephemeris. Since              821
+LTE441 has a much longer time span than LTE440, it is used            Folkner, W. M., Williams, J. G., Boggs, D. H., Park, R. S., & Kuchynka, P. 2014,
+                             M                                           Interplanetary Network Progress Report, 42-196, 1
+to do the calibration of LC,440 . We apply a linear least-squares
+                                                                      Fukushima, T. 1995, A&A, 294, 895
+ﬁt of the residuals between LTE441 and LTE440 , both of which         Fukushima, T. 1996, in IAU Symposium, Vol. 172, Dynamics, Ephemerides, and
+are linearly detrended. This ﬁt gives a correction to the numeri-        Astrometry of the Solar System, ed. S. Ferraz-Mello, B. Morando, & J.-E.
+               M
+cal value to LC,440 that is independent of the numerical value to        Arlot, 461
+  M                                        M
+LC,441 . Therefore, we ﬁnd the calibrated LC,440 as                   Fukushima, T. 2001, in 32nd Symposium on Celestial Mechanics, ed. E. Kokubo,
+                                                                         T. Ito, & H. Arakida, 230–256
+                                                                      Fukushima, T. 2005, in Astronomical Society of the Paciﬁc Conference Series,
+ M                                 −8
+LC,440 | 441 = 1.482 536 221 7 × 10 ,                         (22)       Vol. 338, Astrometry in the Age of the Next Generation of Large Telescopes,
+                                                                         ed. P. K. Seidelmann & A. K. B. Monet, 343
+                              M
+which is tinily bigger than LC,440 . It can slow down the drift be-   Gurvits, L. I. 1998, Highlights of Astronomy, 11B, 985
+                                                                      Gurvits, L. I., Paragi, Z., Amils, R. I., et al. 2022, Acta Astronautica, 196, 314
+tween TCL and TCB by removing the long-term periodic contri-          Harada, W. & Fukushima, T. 2003, AJ, 126, 2557
+bution from the secular drift rate, see Eq. (14).                     Hirayama, T., Kinoshita, H., Fujimoto, M. K., & Fukushima, T. 1987, in Twen-
+                                                                         tieth Symposium on Celestial Mechanics, ed. H. Kinoshita, H. Nakai, &
+                                                                         M. Yoshikawa, 75–78
+5. Conclusions                                                        Hobbs, G. B., Edwards, R. T., & Manchester, R. N. 2006, MNRAS, 369, 655
+                                                                      Hudson, B., Gurvits, L. I., Wielgus, M., et al. 2023, Acta Astronautica, 213, 681
+We present a numerical lunar time ephemeris package LTE440,           IAU.             2006,           Resolution             B3:           “Re-deﬁnition
+which contains the data ﬁles of the evaluated relativistic time-         of            Barycentric            Dynamical            Time,           TDB”,
+                                                                         https://www.iau.org/Iau/Publications/List-of-Resolutions
+dilation integral and software functions to calculate transfor-       IAU. 2024a, Resolution II: “to establish a standard Lunar Celestial
+mations among TCL, TCB and TDB. We compute the inte-                     Reference System (LCRS) and Lunar Coordinate Time (TCL)”,
+gral by using 10th-order Romberg scheme with quantities from             https://www.iau.org/Iau/Publications/List-of-Resolutions
+
+                                                                                                                              Article number, page 7
+                                                            A&A proofs: manuscript no. main
+
+Table 3. Results of Fourier transformation analysis for the periodic terms in LTE430 and LTE440 in the form of Ai sin[2πT i −1 (t − J2000.0) + φi ] with
+the amplitude Ai > 1 µs, period T i , and phase φi .
+
+                                                        LTE430                                         LTE440
+       Index i       Period T i [day]                                                                                                     Argumentsa
+                                           Amplitude Ai [µs] Phase φi [rad]               Amplitude Ai [µs] Phase φi [rad]
+              1      365.26590909           1651.36355204      3.10895171                  1651.36355077      3.10895165                        E
+              2       29.53053800            126.30811930      5.18472342                   126.30813184      5.18472464                       D
+              3      398.99950348             19.37467866      1.33855840                    19.37467715      1.33855843                      E−J
+              4      182.63295455             13.70088726      3.07602307                    13.70088760      3.07602294                       2E
+              5      411.67264344               7.47520620     3.32446376                      7.47520418     3.32446352                      D−L
+              6     4320.34946237               4.24396687     3.43186307                      4.24397312     3.43186281                        J
+              7      377.97977422               3.76051419     0.92358653                      3.76051430     0.92358639                      E−S
+              8       14.25402654               2.93367408     1.09317021                      2.93368121     1.09317212                      D+L
+              9      369.63431463               2.67753135     1.51225313                      2.67752983     1.51225314                      E−U
+             10       32.12797857               2.36687830     5.21748673                      2.36687890     5.21748801                      E−D
+             11    10859.25675676               1.85819562     2.56842880                      1.85820098     2.56843762                        S
+             12      584.00072674               1.09742581     4.67635088                      1.09742615     4.67635157                      V−E
+             13      292.00036337               1.08850649     2.99249018                      1.08850698     2.99248981                     2V−2E
+
+Notes. (a) The argument of each term is a combination of the mean longitudes of the solar system planets and the Delaunay elements of the Moon.
+Here “V, E, J, S, U” represent the mean longitudes of Venus, Earth-Moon barycenter, Jupiter, Saturn and Uranus respectively, “D” is the mean
+longitudes diﬀerence between the Sun and the Moon, and “L” is Moon’s mean anomaly.
+
+Table 4. Diﬀerences of LCM and amplitudes of the periodic variations caused by the mass-dependent errors between LTE430 and LTE440 .
+
+                                                        M                           M
+                           Contributing body i         LC,i             ∆Mi /Mi × LC,i        Ai [s]            |∆Mi /Mi | × Ai [s]
+                           Sun                         1.5 × 10−8         7.4 × 10 −20
+                                                                                              1.6 × 10−3             7.9 × 10−15
+                           Mercury                     1.7 × 10−15       −6.8 × 10−21         1.9 × 10−9             7.6 × 10−15
+                           Venus                       2.9 × 10−14        4.1 × 10−30         2.0 × 10−7             2.8 × 10−23
+                           Earth                       1.2 × 10−11        1.5 × 10−21         2.9 × 10−7             3.7 × 10−17
+                           Mars System                 2.4 × 10−15       −3.3 × 10−23         5.0 × 10−8             7.0 × 10−16
+                           Jupiter System              1.8 × 10−12        9.9 × 10−21         7.5 × 10−6             4.1 × 10−14
+                           Saturn System               3.0 × 10−13        2.8 × 10−21         2.5 × 10−6             2.4 × 10−14
+                           Uranus System               2.2 × 10−14       −3.0 × 10−20         4.5 × 10−7             6.0 × 10−13
+                           Neptune System              1.7 × 10−14       −9.3 × 10−28         1.2 × 10−7             6.6 × 10−21
+                           Pluto System                1.8 × 10−18        2.8 × 10−21         5.8 × 10−10            8.9 × 10−13
+                           Total                       1.5 × 10−8         5.4 × 10−20         –                                   –
+          M                                                                                                                 M
+Notes. LC,i  is derived from Table 2 and Ai is estimated from the periodic variation of each contributing body in LTE440 . LC,i and Ai of the Sun are
+assumed to be the sum of the contribution by the square of lunar velocity and the gravitational potential of the Sun at the Moon. ∆Mi /Mi means
+the relative mass diﬀerence of body i between DE430 and DE440.
+
+
+IAU. 2024b, Resolution III: “on the establishment of a co-                       Nothnagel, A., Nilsson, T., & Schuh, H. 2018, Space Sci. Rev., 214, 66
+   ordinated    lunar time standard           by international     agreement”,   Park, R. S., Folkner, W. M., Williams, J. G., & Boggs, D. H. 2021, AJ, 161, 105
+   https://www.iau.org/Iau/Publications/List-of-Resolutions                      Pitjeva, E., Pavlov, D., Aksim, D., & Kan, M. 2022, in IAU Symposium, Vol.
+Irwin, A. W. & Fukushima, T. 1999, A&A, 348, 642                                     364, Multi-Scale (Time and Mass) Dynamics of Space Objects, ed. A. Cel-
+Kaplan, G. H. 2005, U.S. Naval Observatory Circulars, 179                            letti, C. Galeş, C. Beaugé, & A. Lemaître, 220–225
+   [arXiv:astro-ph/0602086]                                                      Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. 1992, Nu-
+Klioner, S. A. 2003, AJ, 125, 1580                                                   merical recipes in FORTRAN. The art of scientiﬁc computing (Cambridge
+Klioner, S. A. 2008, A&A, 478, 951                                                   University Press)
+Kopeikin, S. 2010, in IAU Symposium, Vol. 261, Relativity in Fundamental As-     Roelofs, F., Fromm, C. M., Mizuno, Y., et al. 2021, A&A, 650, A56
+   tronomy: Dynamics, Reference Frames, and Data Analysis, ed. S. A. Klioner,    Sánchez, L., Čunderlík, R., Dayoub, N., et al. 2016, Journal of Geodesy, 90, 815
+   P. K. Seidelmann, & M. H. Soﬀel, 7–15                                         Seidelmann, P. K. & Fukushima, T. 1992, A&A, 265, 833
+Kopeikin, S. M. 1997, Phys. Rev. D, 56, 4455                                     Seidelmann, P. K. & Kovalevsky, J. 2002, A&A, 392, 341
+Kopeikin, S. M. 1999, MNRAS, 305, 563                                            Sekido, M. & Fukushima, T. 2006, Journal of Geodesy, 80, 137
+Kopeikin, S. M. 2007, in American Institute of Physics Conference Series, Vol.   Soﬀel, M., Klioner, S. A., Petit, G., et al. 2003, AJ, 126, 2687
+   886, New Trends in Astrodynamics and Applications III, ed. E. Belbruno        Turyshev, S. G., Anderson, J. D., & Hellings, R. W. 1996, arXiv e-prints, gr
+   (AIP), 268–283                                                                Turyshev, S. G., Williams, J. G., Boggs, D. H., & Park, R. S. 2025, ApJ, 985,
+Kopeikin, S. M. & Kaplan, G. H. 2024, Phys. Rev. D, 110, 084047                      140
+Kurdubov, S. L., Pavlov, D. A., Mironova, S. M., & Kaplev, S. A. 2019, MN-
+   RAS, 486, 815
+Lindegren, L. & Dravins, D. 2003, A&A, 401, 1185
+Lu, X., Yang, T.-N., & Xie, Y. 2025, arXiv e-prints, arXiv:2506.19213
+McCarthy, D. D. 2011, Metrologia, 48, S132
+Moyer, T. D. 1981a, Celest. Mech., 23, 33
+Moyer, T. D. 1981b, Celest. Mech., 23, 57
+Müller, J., Soﬀel, M., & Klioner, S. A. 2008, Journal of Geodesy, 82, 133
+Newhall, X. X. 1989, Celest. Mech., 45, 305
+
+Article number, page 8
+                         Xu Lu et al.: Lunar Time Ephemeris LTE440: deﬁnitions, algorithm and performance
+
+Appendix A: Key information of DE430, DE440 and DE441
+Table A.1. Comparison of DE430, DE440 and DE441
+
+
+                            DE430                               DE440                              DE441
+ Time Spans                 1550 to 2650                        1550 to 2650                       −13 200 to +17 191
+ Gravitational Bodies       Sun, 8 planets, Moon                Sun, 8 planets, Moon               same as DE440
+                            Pluto                               Pluto
+                            343 main belt asteroids             343 main belt asteroids
+                                                                30 Kuiper belt objects and a
+                                                                ring
+ Point-mass Interaction     all gravitational bodies            all gravitational bodies           same as DE440
+ Nonspherical Interaction   up to the second-degree zonal       up to the second-degree zonal      same as DE440
+                            harmonic of the Sun                 harmonic of the Sun
+                            up to the fourth-degree zonal       up to the ﬁfth-degree zonal har-
+                            harmonic of the Earth               monic of the Earth
+                            up to the sixth-degree zonal and    up to the sixth-degree zonal and
+                            tesseral harmonic of the Moon       tesseral harmonic of the Moon
+ Other Eﬀects               eﬀects on the Moon’s motion         eﬀects on the Moon’s motion        same as DE440, but without
+                            by Earth tides                      by Earth tides                     damping between the lunar
+                                                                Lense-Thirring eﬀect from the      liquid core and solid mantle
+                                                                Sun’s angular momentum
+                                                                solar radiation pressure force
+                                                                on the Earth and Moon
+
+
+
+
+                                                                                                             Article number, page 9
+

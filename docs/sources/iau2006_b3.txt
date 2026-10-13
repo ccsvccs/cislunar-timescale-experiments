@@ -1,0 +1,88 @@
+                                 IAU 2006 Resolution B3
+                                       English version
+
+
+
+
+                    Re-definition of Barycentric Dynamical Time, TDB
+
+
+
+The XXVIth International Astronomical Union General Assembly,
+
+Noting
+
+   1. that IAU Recommendation 5 of Commissions 4, 8 and 31 (1976) introduced, as a
+      replacement for Ephemeris Time (ET), a family of dynamical time scales for barycentric
+      ephemerides and a unique time scale for apparent geocentric ephemerides,
+
+   2. that IAU Resolution 5 of Commissions 4, 19 and 31 (1979) designated these time scales
+      as Barycentric Dynamical Time (TDB) and Terrestrial Dynamical Time (TDT)
+      respectively, the latter subsequently renamed Terrestrial Time (TT), in IAU Resolution
+      A4, 1991,
+
+   3. that the difference between TDB and TDT was stipulated to comprise only periodic
+      terms, and
+
+   4. that Recommendations III and V of IAU Resolution A4 (1991) (i) introduced the
+      coordinate time scale Barycentric Coordinate Time (TCB) to supersede TDB,
+      (ii) recognized that TDB was a linear transformation of TCB, and (iii) acknowledged
+      that, where discontinuity with previous work was deemed to be undesirable, TDB could
+      be used, and
+
+Recognizing
+
+   1. that TCB is the coordinate time scale for use in the Barycentric Celestial Reference
+      System,
+
+   2. the possibility of multiple realizations of TDB as defined currently,
+
+   3. the practical utility of an unambiguously defined coordinate time scale that has a linear
+      relationship with TCB chosen so that at the geocenter the difference between this
+      coordinate time scale and Terrestrial Time (TT) remains small for an extended time
+      span,
+
+   4. the desirability for consistency with the Teph time scales used in the Jet Propulsion
+      Laboratory (JPL) solar-system ephemerides and existing TDB implementations such as
+      that of Fairhead & Bretagnon (A&A 229, 240, 1990), and
+
+   5. the 2006 recommendations of the IAU Working Group on "Nomenclature for
+      Fundamental Astronomy" (IAU Transactions XXVIB, 2006),
+Recommends
+   that, in situations calling for the use of a coordinate time scale that is linearly related to
+   Barycentric Coordinate Time (TCB) and, at the geocenter, remains close to Terrestrial Time
+   (TT) for an extended time span, TDB be defined as the following linear transformation of
+   TCB:
+
+   TDB = TCB − LB x ( JDTCB − T0 ) x 86400 + TDB0,
+   where T0 = 2443144.5003725,
+   and LB = 1.550519768x10−8 and TDB0 = − 6.55 x 10−5 s are defining constants.
+
+Notes
+
+   1. JDTCB is the TCB Julian date. Its value is T0 = 2443144.5003725 for the event 1977
+        January 1 00h 00m 00s TAI at the geocenter, and it increases by one for each 86400s of
+        TCB.
+
+   2. The fixed value that this definition assigns to LB is a current estimate of LC + LG − LC x
+        LG, where LG is given in IAU Resolution B1.9 (2000) and LC has been determined
+        (Irwin & Fukushima, 1999, A&A 348, 642) using the JPL ephemeris DE405. When
+        using the JPL Planetary Ephemeris DE405, the defining LB value effectively eliminates
+        a linear drift between TDB and TT, evaluated at the geocenter. When realizing TCB
+        using other ephemerides, the difference between TDB and TT, evaluated at the
+        geocenter, may include some linear drift, not expected to exceed 1 ns per year.
+
+   3. The difference between TDB and TT, evaluated at the surface of the Earth, remains
+        under 2 ms for several millennia around the present epoch.
+
+   4. The independent time argument of the JPL ephemeris DE405, which is called Teph
+        (Standish, A&A, 336, 381, 1998), is for practical purposes the same as TDB defined in
+        this Resolution.
+
+   5. The constant term TDB0 is chosen to provide reasonable consistency with the widely
+        used TDB − TT formula of Fairhead & Bretagnon (1990).
+        n.b. The presence of TDB0 means that TDB is not synchronized with TT, TCG and TCB
+        at 1977 Jan 1.0 TAI at the geocenter.
+
+   6. For solar system ephemerides development the use of TCB is encouraged.
+

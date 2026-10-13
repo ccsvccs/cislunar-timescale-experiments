@@ -1,0 +1,200 @@
+{
+  "command": "scripts/run_experiment.py --skip-short-validation",
+  "versions": {
+    "python": "3.14.4",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "jplephem": "2.24",
+      "spiceypy": "8.3.0",
+      "pyerfa": "2.0.1.5",
+      "mpmath": "1.4.1",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1"
+    }
+  },
+  "model_signature": {
+    "integrator_source_sha256": "08656a9c2ba7adb02bf6ebfe2517fd291e0a743c938de49b3a56cc8d034f0ce6",
+    "model": {
+      "A": 1.0000000148082688,
+      "C_exact": 1.4808268676920312e-08,
+      "T0": "2443144.5003725",
+      "TDB0": -6.55e-05,
+      "bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+      "gm": {
+        "jupiter": 1.2671276409999998e+17,
+        "mars": 42828375815756.1,
+        "mercury": 22031868551400.004,
+        "moon": 4902800118457.55,
+        "neptune": 6836527100580399.0,
+        "pluto": 975500000000.0,
+        "saturn": 3.79405848418e+16,
+        "sun": 1.3271244004127942e+20,
+        "uranus": 5794556399999999.0,
+        "venus": 324858592000000.0
+      },
+      "gm_sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+      "missing": [
+        "343 individual asteroids",
+        "30 KBOs",
+        "Kuiper-belt ring",
+        "resolved planetary satellite multipoles"
+      ],
+      "model": "Turyshev2507.22145v2_eq21_geocenter",
+      "scale": "TDB-compatible SI ICRF geometric",
+      "sources": {
+        "constants.py": "71f1197afdc125c9f8fc3fddaa8e64051f60cea5f5c134e0a1785f2539f3dea5",
+        "ephemeris.py": "be1e3ae0d57a2a62d0300cf7bafa087505435af903784c78f8c99b02ba481479",
+        "pn_rate.py": "9896da55114c7151b3eab380ac23d8162c82e8cbd4933da60621f322e04648c6",
+        "potential.py": "d0219bcd2caa40d817c2a1bf0f46da96098f7a7078d25d5dbf2ae28ab02a43a5",
+        "timebase.py": "a1ef2210f5ab3295ab467c3cba4ef0f3c9d00329c5d73dc4ed68ec42e0b16bda"
+      }
+    },
+    "versions": {
+      "packages": {
+        "jplephem": "2.24",
+        "matplotlib": "3.11.2",
+        "mpmath": "1.4.1",
+        "numpy": "2.5.4",
+        "pyerfa": "2.0.1.5",
+        "pytest": "9.1.1",
+        "scipy": "1.18.1",
+        "spiceypy": "8.3.0"
+      },
+      "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    }
+  },
+  "anchor_jd_parts": [
+    2443144.500372499,
+    1.4374344437219612e-11
+  ],
+  "anchor_j2000_seconds": -725803167.8160655,
+  "anchor_delta_seconds": -6.55e-05,
+  "output_start_jd": "2460310.5",
+  "output_end_jd": "2461041.5",
+  "sample_count": 732,
+  "j2000_delta_seconds": -9.930633650976397e-05,
+  "j2000_c4_seconds": 7.959081240992432e-08,
+  "delta_min_seconds": -0.001640458087279172,
+  "delta_max_seconds": 0.001640590985716712,
+  "half_peak_to_peak_seconds": 0.001640524536497942,
+  "sofa_comparison": {
+    "count": 732,
+    "max_abs_seconds": 1.2068122114692117e-08,
+    "rms_seconds": 8.680067582265922e-09,
+    "mean_seconds": -8.535349721505237e-09,
+    "min_seconds": -1.2068122114692117e-08,
+    "max_seconds": -5.912778352004655e-09,
+    "p50_abs_seconds": 8.008190950539555e-09,
+    "p95_abs_seconds": 1.1248017547395553e-08,
+    "linear_slope_seconds_per_day": 8.417101716072421e-13,
+    "rms_after_diagnostic_linear_fit_seconds": 1.5683569594999743e-09
+  },
+  "long_romberg_vs_gauss": {
+    "count": 732,
+    "max_abs_seconds": 6.071532165918825e-18,
+    "rms_seconds": 5.3849615050562415e-18,
+    "mean_seconds": 5.377816810712893e-18,
+    "min_seconds": 4.553649124439119e-18,
+    "max_seconds": 6.071532165918825e-18,
+    "p50_abs_seconds": 5.421010862427522e-18,
+    "p95_abs_seconds": 5.854691731421724e-18,
+    "linear_slope_seconds_per_day": -7.816720305558477e-22,
+    "rms_after_diagnostic_linear_fit_seconds": 2.2274187258557795e-19
+  },
+  "long_channel_max_difference_seconds": [
+    6.071532165918825e-18,
+    2.6469779601696886e-23
+  ],
+  "F2_range": [
+    1.4485636642510324e-08,
+    1.514432763886294e-08
+  ],
+  "F4_range": [
+    1.033274225353122e-16,
+    1.1638007593436242e-16
+  ],
+  "F4_over_F2_range": [
+    7.133019564749526e-09,
+    7.68478576707183e-09
+  ],
+  "c4_accumulated_range_seconds": [
+    1.6264022058472011e-07,
+    1.6956719118691236e-07
+  ],
+  "potential_at_j2000": {
+    "sun": 902169120.9639343,
+    "mercury": 104.04192665435414,
+    "venus": 1908.7337709377043,
+    "mars": 154.78449485595175,
+    "jupiter": 183293.50451630185,
+    "saturn": 29310.589154055815,
+    "uranus": 1868.7659337262428,
+    "neptune": 1473.009692721262,
+    "pluto": 0.20991257616236042,
+    "moon": 12182.424370548877
+  },
+  "romberg_stats": {
+    "batches": 635,
+    "elapsed_seconds": 57.091291763746995,
+    "evaluations": 19509903,
+    "query_intervals": 2238,
+    "rate_calls": 6350,
+    "segments": 35793
+  },
+  "gauss_stats": {
+    "batches": 596,
+    "elapsed_seconds": 2.053973030328052,
+    "evaluations": 911808,
+    "query_intervals": 2199,
+    "rate_calls": 1192,
+    "segments": 35793
+  },
+  "sum_segment_error_indicators_seconds": [
+    2.084326663486465e-16,
+    4.37016319717957e-23
+  ],
+  "max_partial_error_indicators_seconds": [
+    2.541098841762901e-20,
+    4.8467614016778965e-27
+  ],
+  "jpl_reference": {
+    "available": true,
+    "path": "data/de440t.bsp",
+    "segment": [
+      1000000000,
+      1000000001
+    ],
+    "anchor_delta_seconds": -6.550000000001775e-05,
+    "anchor_model_minus_jpl_seconds": 1.7740258047294066e-17,
+    "j2000_delta_seconds": -9.9290115710493e-05,
+    "j2000_rate": 3.348740732862016e-10
+  },
+  "elapsed_wall_seconds": 2.714616173005197,
+  "jpl_comparison": {
+    "count": 732,
+    "max_abs_seconds": 3.458502153409857e-08,
+    "rms_seconds": 3.3879534773798915e-08,
+    "mean_seconds": -3.387708543079736e-08,
+    "min_seconds": -3.458502153409857e-08,
+    "max_seconds": -3.317299926166282e-08,
+    "p50_abs_seconds": 3.387840724948331e-08,
+    "p95_abs_seconds": 3.451399477384133e-08,
+    "linear_slope_seconds_per_day": -1.927861742109212e-12,
+    "rms_after_diagnostic_linear_fit_seconds": 1.901943484975258e-12
+  },
+  "jpl_rate_difference": {
+    "count": 732,
+    "max_abs_dimensionless": 2.2986820341013314e-17,
+    "rms_dimensionless": 2.2359237038991973e-17,
+    "mean_dimensionless": -2.2356678682350282e-17,
+    "min_dimensionless": -2.2986820341013314e-17,
+    "max_dimensionless": -2.187189890685666e-17,
+    "p50_abs_dimensionless": 2.227893853075547e-17,
+    "p95_abs_dimensionless": 2.2934676737646818e-17,
+    "linear_slope_dimensionless_per_day": -4.997893208492765e-22,
+    "rms_after_diagnostic_linear_fit_dimensionless": 3.2131866745390035e-19
+  }
+}

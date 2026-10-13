@@ -1,0 +1,12 @@
+{
+  "count": 732,
+  "max_abs_seconds": 1.2068122114692117e-08,
+  "rms_seconds": 8.680067582265922e-09,
+  "mean_seconds": -8.535349721505237e-09,
+  "min_seconds": -1.2068122114692117e-08,
+  "max_seconds": -5.912778352004655e-09,
+  "p50_abs_seconds": 8.008190950539555e-09,
+  "p95_abs_seconds": 1.1248017547395553e-08,
+  "linear_slope_seconds_per_day": 8.417101716072421e-13,
+  "rms_after_diagnostic_linear_fit_seconds": 1.5683569594999743e-09
+}

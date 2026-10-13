@@ -1,0 +1,115 @@
+{
+  "retrieved_utc_date": "2026-10-13",
+  "files": {
+    "de440.bsp": {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp",
+      "bytes": 119799808,
+      "sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+      "role": "core",
+      "official_md5": "c9d581bfd84209dbeee8b1583939b148"
+    },
+    "gm_de440.tpc": {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/gm_de440.tpc",
+      "bytes": 12406,
+      "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+      "role": "core"
+    },
+    "de440t.bsp": {
+      "url": "https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de440t.bsp",
+      "bytes": 152747008,
+      "sha256": "4f003b4437a8b479aaca262716a779e3683413200adfd6353c4901aab5de800e",
+      "role": "validation"
+    },
+    "header.440": {
+      "url": "https://ssd.jpl.nasa.gov/ftp/eph/planets/ascii/de440/header.440",
+      "bytes": 22802,
+      "sha256": "0f4636b663e6f00af9efa2b605ef23635489f56b23dd1a5e3821d3acc6ac3359",
+      "role": "validation"
+    },
+    "jpl_bsp_README.txt": {
+      "url": "https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/README.txt",
+      "bytes": 3897,
+      "sha256": "7700da7620c94da475921686055090e3630715921a6b747a54bfde8d473e6e60",
+      "role": "validation"
+    },
+    "naif_checksums.txt": {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/aa_checksums.txt",
+      "bytes": 559,
+      "sha256": "3c618bed7d51a48ee059269097eeeab1f69f3b2641ec2aeb96132757418c845b",
+      "role": "validation"
+    }
+  },
+  "de440_coverage_jd_tdb": [
+    2287184.5,
+    2688976.5
+  ],
+  "de440_segments": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      0,
+      10
+    ],
+    [
+      3,
+      301
+    ],
+    [
+      3,
+      399
+    ],
+    [
+      1,
+      199
+    ],
+    [
+      2,
+      299
+    ]
+  ],
+  "time_reference_segment": {
+    "center": 1000000000,
+    "target": 1000000001,
+    "data_type": 2,
+    "x_unit": "seconds",
+    "x_meaning": "TT-TDB",
+    "jplephem_derivative_unit": "seconds/day",
+    "model_sign": "TDB-TT=-X"
+  },
+  "authenticity": "de440.bsp MD5 agrees with official NAIF aa_checksums.txt; other SHA256 values pin retrieved official HTTPS resources (not separately signed)",
+  "missing_external_potential": "343 asteroids; 30 individual KBOs; 36 Kuiper-ring points; planetary satellite higher multipoles; see small_body_gm.json"
+}

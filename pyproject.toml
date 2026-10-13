@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tt-tdb-eq21"
+version = "0.1.0"
+description = "Independent geocentric Turyshev Eq. (21) time integration using DE440"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "jplephem>=2.22", "spiceypy>=6", "pyerfa>=2", "mpmath>=1.3", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["de440: requires genuine external DE440 data", "integration: requires genuine external ephemeris kernels"]

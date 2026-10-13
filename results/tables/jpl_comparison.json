@@ -1,0 +1,31 @@
+{
+  "available": true,
+  "reference": "data/de440t.bsp",
+  "sign": "TDB-TT in SI seconds",
+  "time_difference": {
+    "count": 732,
+    "max_abs_seconds": 3.458502153409857e-08,
+    "rms_seconds": 3.3879534773798915e-08,
+    "mean_seconds": -3.387708543079736e-08,
+    "min_seconds": -3.458502153409857e-08,
+    "max_seconds": -3.317299926166282e-08,
+    "p50_abs_seconds": 3.387840724948331e-08,
+    "p95_abs_seconds": 3.451399477384133e-08,
+    "linear_slope_seconds_per_day": -1.927861742109212e-12,
+    "rms_after_diagnostic_linear_fit_seconds": 1.901943484975258e-12
+  },
+  "derivative_difference": {
+    "count": 732,
+    "max_abs_dimensionless": 2.2986820341013314e-17,
+    "rms_dimensionless": 2.2359237038991973e-17,
+    "mean_dimensionless": -2.2356678682350282e-17,
+    "min_dimensionless": -2.2986820341013314e-17,
+    "max_dimensionless": -2.187189890685666e-17,
+    "p50_abs_dimensionless": 2.227893853075547e-17,
+    "p95_abs_dimensionless": 2.2934676737646818e-17,
+    "linear_slope_dimensionless_per_day": -4.997893208492765e-22,
+    "rms_after_diagnostic_linear_fit_dimensionless": 3.2131866745390035e-19
+  },
+  "first_tdb_j2000_seconds": 757339200.0,
+  "last_tdb_j2000_seconds": 820497600.0
+}

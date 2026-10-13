@@ -1,0 +1,50 @@
+Validated checkpoint cache: romberg10_halfday
+Validated checkpoint cache: gauss16_halfday
+Full integration: anchor -725803167.8160655499 s → end 820497600.0 s
+Romberg complete: {'batches': 596, 'elapsed_seconds': 56.68492359375523, 'evaluations': 19489896, 'query_intervals': 2199, 'rate_calls': 5960, 'segments': 35793}
+Independent Gauss complete: {'batches': 596, 'elapsed_seconds': 2.053973030328052, 'evaluations': 911808, 'query_intervals': 2199, 'rate_calls': 1192, 'segments': 35793}
+Measuring raw / constant-subtracted / fitted-average floating-point forms
+Validated checkpoint cache: stability_gauss16
+{
+  "delta_min_seconds": -0.001640458087279172,
+  "delta_max_seconds": 0.001640590985716712,
+  "sofa_comparison": {
+    "count": 732,
+    "max_abs_seconds": 1.2068122114692117e-08,
+    "rms_seconds": 8.680067582265922e-09,
+    "mean_seconds": -8.535349721505237e-09,
+    "min_seconds": -1.2068122114692117e-08,
+    "max_seconds": -5.912778352004655e-09,
+    "p50_abs_seconds": 8.008190950539555e-09,
+    "p95_abs_seconds": 1.1248017547395553e-08,
+    "linear_slope_seconds_per_day": 8.417101716072421e-13,
+    "rms_after_diagnostic_linear_fit_seconds": 1.5683569594999743e-09
+  },
+  "long_romberg_vs_gauss": {
+    "count": 732,
+    "max_abs_seconds": 6.071532165918825e-18,
+    "rms_seconds": 5.3849615050562415e-18,
+    "mean_seconds": 5.377816810712893e-18,
+    "min_seconds": 4.553649124439119e-18,
+    "max_seconds": 6.071532165918825e-18,
+    "p50_abs_seconds": 5.421010862427522e-18,
+    "p95_abs_seconds": 5.854691731421724e-18,
+    "linear_slope_seconds_per_day": -7.816720305558477e-22,
+    "rms_after_diagnostic_linear_fit_seconds": 2.2274187258557795e-19
+  },
+  "elapsed_wall_seconds": 2.714616173005197,
+  "jpl_comparison": {
+    "count": 732,
+    "max_abs_seconds": 3.458502153409857e-08,
+    "rms_seconds": 3.3879534773798915e-08,
+    "mean_seconds": -3.387708543079736e-08,
+    "min_seconds": -3.458502153409857e-08,
+    "max_seconds": -3.317299926166282e-08,
+    "p50_abs_seconds": 3.387840724948331e-08,
+    "p95_abs_seconds": 3.451399477384133e-08,
+    "linear_slope_seconds_per_day": -1.927861742109212e-12,
+    "rms_after_diagnostic_linear_fit_seconds": 1.901943484975258e-12
+  }
+}
+{'count': 732, 'max_abs_seconds': 1.2068122114692117e-08, 'rms_seconds': 8.680067582265922e-09, 'mean_seconds': -8.535349721505237e-09, 'min_seconds': -1.2068122114692117e-08, 'max_seconds': -5.912778352004655e-09, 'p50_abs_seconds': 8.008190950539555e-09, 'p95_abs_seconds': 1.1248017547395553e-08, 'linear_slope_seconds_per_day': 8.417101716072421e-13, 'rms_after_diagnostic_linear_fit_seconds': 1.5683569594999743e-09}
+{'available': True, 'reference': 'data/de440t.bsp', 'sign': 'TDB-TT in SI seconds', 'time_difference': {'count': 732, 'max_abs_seconds': 3.458502153409857e-08, 'rms_seconds': 3.3879534773798915e-08, 'mean_seconds': -3.387708543079736e-08, 'min_seconds': -3.458502153409857e-08, 'max_seconds': -3.317299926166282e-08, 'p50_abs_seconds': 3.387840724948331e-08, 'p95_abs_seconds': 3.451399477384133e-08, 'linear_slope_seconds_per_day': -1.927861742109212e-12, 'rms_after_diagnostic_linear_fit_seconds': 1.901943484975258e-12}, 'derivative_difference': {'count': 732, 'max_abs_dimensionless': 2.2986820341013314e-17, 'rms_dimensionless': 2.2359237038991973e-17, 'mean_dimensionless': -2.2356678682350282e-17, 'min_dimensionless': -2.2986820341013314e-17, 'max_dimensionless': -2.187189890685666e-17, 'p50_abs_dimensionless': 2.227893853075547e-17, 'p95_abs_dimensionless': 2.2934676737646818e-17, 'linear_slope_dimensionless_per_day': -4.997893208492765e-22, 'rms_after_diagnostic_linear_fit_dimensionless': 3.2131866745390035e-19}, 'first_tdb_j2000_seconds': 757339200.0, 'last_tdb_j2000_seconds': 820497600.0}

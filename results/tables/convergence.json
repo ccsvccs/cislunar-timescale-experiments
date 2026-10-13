@@ -1,0 +1,785 @@
+{
+  "kind": "real_DE440_Turyshev_eq21_finite_monopole_geocenter_short_window",
+  "anchor_seconds_since_j2000": 0.0,
+  "duration_days": 32,
+  "sample_count": 33,
+  "channels": [
+    "integral(F2-C_exact) dt",
+    "integral F4 dt"
+  ],
+  "time_units": "seconds",
+  "rate_input_scale": "TDB-compatible",
+  "romberg_order_definition": "number of table rows; order 10 uses 513 points per segment",
+  "reference": {
+    "method": "gauss_legendre",
+    "order": 24,
+    "step_days": 0.25,
+    "runtime_seconds": 0.028025391991832294,
+    "stats": {
+      "segments": 128,
+      "evaluations": 4608,
+      "batches": 4,
+      "elapsed_seconds": 0.026613384994561784,
+      "query_intervals": 0,
+      "rate_calls": 8
+    },
+    "sum_segment_error_indicators_seconds": [
+      2.3030825835844426e-18,
+      6.54312789226516e-26
+    ],
+    "max_segment_error_indicator_seconds": [
+      5.675120746603812e-20,
+      1.6155871338926322e-27
+    ],
+    "max_final_partial_error_indicator_seconds": [
+      0.0,
+      0.0
+    ]
+  },
+  "reference_channels_seconds": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      2.897156850612686e-05,
+      1.0050513443626443e-11
+    ],
+    [
+      5.8008447296122285e-05,
+      2.0103268192111692e-11
+    ],
+    [
+      8.709236853248395e-05,
+      3.015773026188457e-11
+    ],
+    [
+      0.00011620405901790814,
+      4.021332694928905e-11
+    ],
+    [
+      0.0001453234142698737,
+      5.026945379311843e-11
+    ],
+    [
+      0.0001744297102990354,
+      6.032548292420595e-11
+    ],
+    [
+      0.00020350186431696346,
+      7.038077320666142e-11
+    ],
+    [
+      0.00023251874262972922,
+      8.043468210740091e-11
+    ],
+    [
+      0.00026145950705591225,
+      9.048657897887662e-11
+    ],
+    [
+      0.0002903039928070334,
+      1.005358594926788e-10
+    ],
+    [
+      0.00031903312042567587,
+      1.105819613014572e-10
+    ],
+    [
+      0.0003476293578473391,
+      1.2062438147947344e-10
+    ],
+    [
+      0.00037607725783532096,
+      1.3066269660565913e-10
+    ],
+    [
+      0.00040436408961755377,
+      1.4069658610073268e-10
+    ],
+    [
+      0.0004324805488238952,
+      1.5072585815875111e-10
+    ],
+    [
+      0.0004604214586032022,
+      1.6075047503904575e-10
+    ],
+    [
+      0.00048818627697969427,
+      1.7077057097683175e-10
+    ],
+    [
+      0.0005157791464266759,
+      1.8078645317156278e-10
+    ],
+    [
+      0.000543208241136601,
+      1.9079857708761223e-10
+    ],
+    [
+      0.0005704843485823156,
+      2.00807493892556e-10
+    ],
+    [
+      0.0005976189220354221,
+      2.1081377869912684e-10
+    ],
+    [
+      0.0006246220865412059,
+      2.2081795712961346e-10
+    ],
+    [
+      0.000651501095292736,
+      2.3082044822764386e-10
+    ],
+    [
+      0.0006782595077390001,
+      2.408215336004165e-10
+    ],
+    [
+      0.0007048970616713487,
+      2.508213518727542e-10
+    ],
+    [
+      0.0007314100149521189,
+      2.608199104052563e-10
+    ],
+    [
+      0.0007577916921962376,
+      2.7081710472183666e-10
+    ],
+    [
+      0.0007840330348209143,
+      2.808127383279138e-10
+    ],
+    [
+      0.0008101230445504011,
+      2.9080653889143373e-10
+    ],
+    [
+      0.0008360490859791136,
+      3.0079816948855697e-10
+    ],
+    [
+      0.0008617970617077664,
+      3.1078723536044546e-10
+    ],
+    [
+      0.0008873514992014323,
+      3.207732875693149e-10
+    ]
+  ],
+  "model_fingerprint": {
+    "A": 1.0000000148082688,
+    "C_exact": 1.4808268676920312e-08,
+    "T0": "2443144.5003725",
+    "TDB0": -6.55e-05,
+    "bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+    "gm": {
+      "jupiter": 1.2671276409999998e+17,
+      "mars": 42828375815756.1,
+      "mercury": 22031868551400.004,
+      "moon": 4902800118457.55,
+      "neptune": 6836527100580399.0,
+      "pluto": 975500000000.0,
+      "saturn": 3.79405848418e+16,
+      "sun": 1.3271244004127942e+20,
+      "uranus": 5794556399999999.0,
+      "venus": 324858592000000.0
+    },
+    "gm_sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+    "missing": [
+      "343 individual asteroids",
+      "30 KBOs",
+      "Kuiper-belt ring",
+      "resolved planetary satellite multipoles"
+    ],
+    "model": "Turyshev2507.22145v2_eq21_geocenter",
+    "scale": "TDB-compatible SI ICRF geometric",
+    "sources": {
+      "constants.py": "71f1197afdc125c9f8fc3fddaa8e64051f60cea5f5c134e0a1785f2539f3dea5",
+      "ephemeris.py": "be1e3ae0d57a2a62d0300cf7bafa087505435af903784c78f8c99b02ba481479",
+      "pn_rate.py": "9896da55114c7151b3eab380ac23d8162c82e8cbd4933da60621f322e04648c6",
+      "potential.py": "d0219bcd2caa40d817c2a1bf0f46da96098f7a7078d25d5dbf2ae28ab02a43a5",
+      "timebase.py": "a1ef2210f5ab3295ab467c3cba4ef0f3c9d00329c5d73dc4ed68ec42e0b16bda"
+    }
+  },
+  "cases": [
+    {
+      "method": "romberg",
+      "order": 6,
+      "step_days": 1.0,
+      "runtime_seconds": 0.009263864005333744,
+      "stats": {
+        "segments": 32,
+        "evaluations": 1056,
+        "batches": 1,
+        "elapsed_seconds": 0.008868903998518363,
+        "query_intervals": 0,
+        "rate_calls": 6
+      },
+      "sum_segment_error_indicators_seconds": [
+        1.3654171109739321e-18,
+        3.877409121342317e-26
+      ],
+      "max_segment_error_indicator_seconds": [
+        1.1180834903756764e-19,
+        3.2311742677852644e-27
+      ],
+      "max_final_partial_error_indicator_seconds": [
+        0.0,
+        0.0
+      ],
+      "difference_from_gauss24_quarterday": {
+        "F2_minus_C_integral": {
+          "max_abs_seconds": 2.168404344971009e-19,
+          "rms_seconds": 1.5453158866361493e-19,
+          "p95_abs_seconds": 2.168404344971009e-19,
+          "mean_seconds": 1.2484752289227022e-19
+        },
+        "F4_integral": {
+          "max_abs_seconds": 5.169878828456423e-26,
+          "rms_seconds": 1.180193161804092e-26,
+          "p95_abs_seconds": 2.5849394142282115e-26,
+          "mean_seconds": 4.748847029926828e-27
+        },
+        "sum_integral": {
+          "max_abs_seconds": 2.1684046034649503e-19,
+          "rms_seconds": 1.5453159214785473e-19,
+          "p95_abs_seconds": 2.1684044742179796e-19,
+          "mean_seconds": 1.2484752764111724e-19
+        },
+        "delta_equivalent": {
+          "max_abs_seconds": 2.1684046355752686e-19,
+          "rms_seconds": 1.545315944362001e-19,
+          "p95_abs_seconds": 2.168404506328296e-19,
+          "mean_seconds": 1.24847529489893e-19
+        }
+      }
+    },
+    {
+      "method": "romberg",
+      "order": 8,
+      "step_days": 1.0,
+      "runtime_seconds": 0.0217759160004789,
+      "stats": {
+        "segments": 32,
+        "evaluations": 4128,
+        "batches": 1,
+        "elapsed_seconds": 0.021384671999840066,
+        "query_intervals": 0,
+        "rate_calls": 8
+      },
+      "sum_segment_error_indicators_seconds": [
+        6.674619624363887e-19,
+        5.331437541845686e-26
+      ],
+      "max_segment_error_indicator_seconds": [
+        6.098637220230962e-20,
+        4.8467614016778965e-27
+      ],
+      "max_final_partial_error_indicator_seconds": [
+        0.0,
+        0.0
+      ],
+      "difference_from_gauss24_quarterday": {
+        "F2_minus_C_integral": {
+          "max_abs_seconds": 1.0842021724855044e-19,
+          "rms_seconds": 6.333947669138343e-20,
+          "p95_abs_seconds": 1.0842021724855044e-19,
+          "mean_seconds": 3.377864722989876e-20
+        },
+        "F4_integral": {
+          "max_abs_seconds": 5.169878828456423e-26,
+          "rms_seconds": 1.8080320245969734e-26,
+          "p95_abs_seconds": 5.169878828456423e-26,
+          "mean_seconds": 9.154993758724916e-27
+        },
+        "sum_integral": {
+          "max_abs_seconds": 1.0842023017324751e-19,
+          "rms_seconds": 6.333947786198943e-20,
+          "p95_abs_seconds": 1.0842022629583838e-19,
+          "mean_seconds": 3.377865638489252e-20
+        },
+        "delta_equivalent": {
+          "max_abs_seconds": 1.0842023177876343e-19,
+          "rms_seconds": 6.333947879993746e-20,
+          "p95_abs_seconds": 1.0842022790135425e-19,
+          "mean_seconds": 3.3778656885095945e-20
+        }
+      }
+    },
+    {
+      "method": "romberg",
+      "order": 10,
+      "step_days": 1.0,
+      "runtime_seconds": 0.07326526399992872,
+      "stats": {
+        "segments": 32,
+        "evaluations": 16416,
+        "batches": 1,
+        "elapsed_seconds": 0.07280412799445912,
+        "query_intervals": 0,
+        "rate_calls": 10
+      },
+      "sum_segment_error_indicators_seconds": [
+        4.54009659728305e-19,
+        9.04728794979874e-26
+      ],
+      "max_segment_error_indicator_seconds": [
+        4.0657581468206416e-20,
+        8.077935669463161e-27
+      ],
+      "max_final_partial_error_indicator_seconds": [
+        0.0,
+        0.0
+      ],
+      "difference_from_gauss24_quarterday": {
+        "F2_minus_C_integral": {
+          "max_abs_seconds": 2.168404344971009e-19,
+          "rms_seconds": 1.0033676428069518e-19,
+          "p95_abs_seconds": 1.1926223897340545e-19,
+          "mean_seconds": 2.494897044639939e-20
+        },
+        "F4_integral": {
+          "max_abs_seconds": 2.5849394142282115e-26,
+          "rms_seconds": 1.0819427315062149e-26,
+          "p95_abs_seconds": 2.5849394142282115e-26,
+          "mean_seconds": -5.483204818059843e-27
+        },
+        "sum_integral": {
+          "max_abs_seconds": 2.168404344971009e-19,
+          "rms_seconds": 1.0033676017092325e-19,
+          "p95_abs_seconds": 1.1926223897340545e-19,
+          "mean_seconds": 2.4948964963194575e-20
+        },
+        "delta_equivalent": {
+          "max_abs_seconds": 2.1684043770813233e-19,
+          "rms_seconds": 1.0033676165673696e-19,
+          "p95_abs_seconds": 1.1926224073947274e-19,
+          "mean_seconds": 2.4948965332645556e-20
+        }
+      }
+    },
+    {
+      "method": "romberg",
+      "order": 6,
+      "step_days": 0.5,
+      "runtime_seconds": 0.01820283201232087,
+      "stats": {
+        "segments": 64,
+        "evaluations": 2112,
+        "batches": 2,
+        "elapsed_seconds": 0.01757684898620937,
+        "query_intervals": 0,
+        "rate_calls": 12
+      },
+      "sum_segment_error_indicators_seconds": [
+        1.1977045874175807e-18,
+        4.8467614016778965e-26
+      ],
+      "max_segment_error_indicator_seconds": [
+        5.590417451878382e-20,
+        2.4233807008389483e-27
+      ],
+      "max_final_partial_error_indicator_seconds": [
+        0.0,
+        0.0
+      ],
+      "difference_from_gauss24_quarterday": {
+        "F2_minus_C_integral": {
+          "max_abs_seconds": 2.168404344971009e-19,
+          "rms_seconds": 1.1890539124697497e-19,
+          "p95_abs_seconds": 2.0057740190981828e-19,
+          "mean_seconds": 7.905640841040136e-20
+        },
+        "F4_integral": {
+          "max_abs_seconds": 5.169878828456423e-26,
+          "rms_seconds": 1.4667559815624448e-26,
+          "p95_abs_seconds": 3.6189151799194924e-26,
+          "mean_seconds": 5.874862305064117e-27
+        },
+        "sum_integral": {
+          "max_abs_seconds": 2.168404344971009e-19,
+          "rms_seconds": 1.1890539245225862e-19,
+          "p95_abs_seconds": 2.0057740578722741e-19,
+          "mean_seconds": 7.905641428526367e-20
+        },
+        "delta_equivalent": {
+          "max_abs_seconds": 2.1684043770813233e-19,
+          "rms_seconds": 1.1890539421304164e-19,
+          "p95_abs_seconds": 2.0057740875743155e-19,
+          "mean_seconds": 7.90564154559523e-20
+        }
+      }
+    },
+    {
+      "method": "romberg",
+      "order": 8,
+      "step_days": 0.5,
+      "runtime_seconds": 0.041154204998747446,
+      "stats": {
+        "segments": 64,
+        "evaluations": 8256,
+        "batches": 2,
+        "elapsed_seconds": 0.04053873001248576,
+        "query_intervals": 0,
+        "rate_calls": 16
+      },
+      "sum_segment_error_indicators_seconds": [
+        5.861467994999758e-19,
+        5.492996255234949e-26
+      ],
+      "max_segment_error_indicator_seconds": [
+        3.218725199566341e-20,
+        2.4233807008389483e-27
+      ],
+      "max_final_partial_error_indicator_seconds": [
+        0.0,
+        0.0
+      ],
+      "difference_from_gauss24_quarterday": {
+        "F2_minus_C_integral": {
+          "max_abs_seconds": 2.168404344971009e-19,
+          "rms_seconds": 1.0793787560380054e-19,
+          "p95_abs_seconds": 1.8431436932253568e-19,
+          "mean_seconds": 8.891279179663322e-20
+        },
+        "F4_integral": {
+          "max_abs_seconds": 5.169878828456423e-26,
+          "rms_seconds": 2.3307117156266358e-26,
+          "p95_abs_seconds": 5.169878828456423e-26,
+          "mean_seconds": 1.3805926416900674e-26
+        },
+        "sum_integral": {
+          "max_abs_seconds": 2.1684046034649503e-19,
+          "rms_seconds": 1.0793788535293682e-19,
+          "p95_abs_seconds": 1.8431438741711158e-19,
+          "mean_seconds": 8.891280560255964e-20
+        },
+        "delta_equivalent": {
+          "max_abs_seconds": 2.1684046355752686e-19,
+          "rms_seconds": 1.0793788695131004e-19,
+          "p95_abs_seconds": 1.8431439014648858e-19,
+          "mean_seconds": 8.891280691920438e-20
+        }
+      }
+    },
+    {
+      "method": "romberg",
+      "order": 10,
+      "step_days": 0.5,
+      "runtime_seconds": 0.1381848830060335,
+      "stats": {
+        "segments": 64,
+        "evaluations": 32832,
+        "batches": 2,
+        "elapsed_seconds": 0.1374693819816457,
+        "query_intervals": 0,
+        "rate_calls": 20
+      },
+      "sum_segment_error_indicators_seconds": [
+        5.031375706690544e-19,
+        9.128067306493372e-26
+      ],
+      "max_segment_error_indicator_seconds": [
+        2.371692252312041e-20,
+        4.8467614016778965e-27
+      ],
+      "max_final_partial_error_indicator_seconds": [
+        0.0,
+        0.0
+      ],
+      "difference_from_gauss24_quarterday": {
+        "F2_minus_C_integral": {
+          "max_abs_seconds": 1.0842021724855044e-19,
+          "rms_seconds": 6.948862241100937e-20,
+          "p95_abs_seconds": 1.0842021724855044e-19,
+          "mean_seconds": 5.472346192564147e-20
+        },
+        "F4_integral": {
+          "max_abs_seconds": 5.169878828456423e-26,
+          "rms_seconds": 1.3662476169588142e-26,
+          "p95_abs_seconds": 2.843433355651027e-26,
+          "mean_seconds": 5.483204818059843e-27
+        },
+        "sum_integral": {
+          "max_abs_seconds": 1.0842023017324751e-19,
+          "rms_seconds": 6.94886245545891e-20,
+          "p95_abs_seconds": 1.0842022241842928e-19,
+          "mean_seconds": 5.472346740884628e-20
+        },
+        "delta_equivalent": {
+          "max_abs_seconds": 1.0842023177876343e-19,
+          "rms_seconds": 6.948862558359533e-20,
+          "p95_abs_seconds": 1.0842022402394507e-19,
+          "mean_seconds": 5.47234682192061e-20
+        }
+      }
+    },
+    {
+      "method": "romberg",
+      "order": 6,
+      "step_days": 0.25,
+      "runtime_seconds": 0.036020554005517624,
+      "stats": {
+        "segments": 128,
+        "evaluations": 4224,
+        "batches": 4,
+        "elapsed_seconds": 0.03492818200902548,
+        "query_intervals": 0,
+        "rate_calls": 24
+      },
+      "sum_segment_error_indicators_seconds": [
+        1.2519146960418559e-18,
+        4.8467614016778965e-26
+      ],
+      "max_segment_error_indicator_seconds": [
+        3.4728350837426314e-20,
+        1.2116903504194741e-27
+      ],
+      "max_final_partial_error_indicator_seconds": [
+        0.0,
+        0.0
+      ],
+      "difference_from_gauss24_quarterday": {
+        "F2_minus_C_integral": {
+          "max_abs_seconds": 1.0842021724855044e-19,
+          "rms_seconds": 7.065032153658994e-20,
+          "p95_abs_seconds": 1.0842021724855044e-19,
+          "mean_seconds": 4.199230005175865e-20
+        },
+        "F4_integral": {
+          "max_abs_seconds": 5.169878828456423e-26,
+          "rms_seconds": 2.3082054132748413e-26,
+          "p95_abs_seconds": 5.169878828456423e-26,
+          "mean_seconds": 1.3903840788651743e-26
+        },
+        "sum_integral": {
+          "max_abs_seconds": 1.0842024309794459e-19,
+          "rms_seconds": 7.065032499256717e-20,
+          "p95_abs_seconds": 1.0842023534312635e-19,
+          "mean_seconds": 4.1992313955599437e-20
+        },
+        "delta_equivalent": {
+          "max_abs_seconds": 1.084202447034607e-19,
+          "rms_seconds": 7.065032603877618e-20,
+          "p95_abs_seconds": 1.0842023694864234e-19,
+          "mean_seconds": 4.199231457743291e-20
+        }
+      }
+    },
+    {
+      "method": "romberg",
+      "order": 8,
+      "step_days": 0.25,
+      "runtime_seconds": 0.08331140999507625,
+      "stats": {
+        "segments": 128,
+        "evaluations": 16512,
+        "batches": 4,
+        "elapsed_seconds": 0.082199208001839,
+        "query_intervals": 0,
+        "rate_calls": 32
+      },
+      "sum_segment_error_indicators_seconds": [
+        6.310395457044538e-19,
+        4.967930436719844e-26
+      ],
+      "max_segment_error_indicator_seconds": [
+        1.6093625997831706e-20,
+        1.2116903504194741e-27
+      ],
+      "max_final_partial_error_indicator_seconds": [
+        0.0,
+        0.0
+      ],
+      "difference_from_gauss24_quarterday": {
+        "F2_minus_C_integral": {
+          "max_abs_seconds": 1.0842021724855044e-19,
+          "rms_seconds": 8.505574850965046e-20,
+          "p95_abs_seconds": 1.0842021724855044e-19,
+          "mean_seconds": 4.6920491744874574e-20
+        },
+        "F4_integral": {
+          "max_abs_seconds": 5.169878828456423e-26,
+          "rms_seconds": 1.7171623899734153e-26,
+          "p95_abs_seconds": 5.169878828456423e-26,
+          "mean_seconds": 7.245663509579077e-27
+        },
+        "sum_integral": {
+          "max_abs_seconds": 1.0842024309794459e-19,
+          "rms_seconds": 8.505574526456477e-20,
+          "p95_abs_seconds": 1.0842023017324751e-19,
+          "mean_seconds": 4.692049899053809e-20
+        },
+        "delta_equivalent": {
+          "max_abs_seconds": 1.084202447034607e-19,
+          "rms_seconds": 8.505574652409312e-20,
+          "p95_abs_seconds": 1.0842023177876343e-19,
+          "mean_seconds": 4.6920499685349455e-20
+        }
+      }
+    },
+    {
+      "method": "romberg",
+      "order": 10,
+      "step_days": 0.25,
+      "runtime_seconds": 0.280716905996087,
+      "stats": {
+        "segments": 128,
+        "evaluations": 65664,
+        "batches": 4,
+        "elapsed_seconds": 0.2794523389748065,
+        "query_intervals": 0,
+        "rate_calls": 40
+      },
+      "sum_segment_error_indicators_seconds": [
+        3.7692966152816365e-19,
+        8.56261180963095e-26
+      ],
+      "max_segment_error_indicator_seconds": [
+        1.1858461261560205e-20,
+        2.4233807008389483e-27
+      ],
+      "max_final_partial_error_indicator_seconds": [
+        0.0,
+        0.0
+      ],
+      "difference_from_gauss24_quarterday": {
+        "F2_minus_C_integral": {
+          "max_abs_seconds": 1.0842021724855044e-19,
+          "rms_seconds": 7.357361175994702e-20,
+          "p95_abs_seconds": 1.0842021724855044e-19,
+          "mean_seconds": 5.1848683437990505e-20
+        },
+        "F4_integral": {
+          "max_abs_seconds": 2.5849394142282115e-26,
+          "rms_seconds": 8.11213331234577e-27,
+          "p95_abs_seconds": 2.5849394142282115e-26,
+          "mean_seconds": -1.9582874350213724e-27
+        },
+        "sum_integral": {
+          "max_abs_seconds": 1.0842023017324751e-19,
+          "rms_seconds": 7.3573608874158e-20,
+          "p95_abs_seconds": 1.0842021724855044e-19,
+          "mean_seconds": 5.184868147970307e-20
+        },
+        "delta_equivalent": {
+          "max_abs_seconds": 1.0842023177876343e-19,
+          "rms_seconds": 7.357360996365578e-20,
+          "p95_abs_seconds": 1.0842021885406617e-19,
+          "mean_seconds": 5.184868224749228e-20
+        }
+      }
+    }
+  ],
+  "independent_gauss16": {
+    "method": "gauss_legendre",
+    "order": 16,
+    "step_days": 0.5,
+    "runtime_seconds": 0.010256372988806106,
+    "stats": {
+      "segments": 64,
+      "evaluations": 1536,
+      "batches": 2,
+      "elapsed_seconds": 0.009642946999520063,
+      "query_intervals": 0,
+      "rate_calls": 4
+    },
+    "sum_segment_error_indicators_seconds": [
+      2.092171379718122e-18,
+      6.54312789226516e-26
+    ],
+    "max_segment_error_indicator_seconds": [
+      1.1858461261560205e-19,
+      3.2311742677852644e-27
+    ],
+    "max_final_partial_error_indicator_seconds": [
+      0.0,
+      0.0
+    ],
+    "difference_from_gauss24_quarterday": {
+      "F2_minus_C_integral": {
+        "max_abs_seconds": 1.3552527156068805e-19,
+        "rms_seconds": 7.800734071643855e-20,
+        "p95_abs_seconds": 1.0842021724855044e-19,
+        "mean_seconds": 6.191040814476886e-20
+      },
+      "F4_integral": {
+        "max_abs_seconds": 2.5849394142282115e-26,
+        "rms_seconds": 7.899723988466276e-27,
+        "p95_abs_seconds": 2.5849394142282115e-26,
+        "mean_seconds": -2.692645223154387e-27
+      },
+      "sum_integral": {
+        "max_abs_seconds": 1.3552527156068805e-19,
+        "rms_seconds": 7.80073376948502e-20,
+        "p95_abs_seconds": 1.0842021724855044e-19,
+        "mean_seconds": 6.191040545212363e-20
+      },
+      "delta_equivalent": {
+        "max_abs_seconds": 1.355252735675827e-19,
+        "rms_seconds": 7.800733885000383e-20,
+        "p95_abs_seconds": 1.0842021885406617e-19,
+        "mean_seconds": 6.191040636890956e-20
+      }
+    }
+  },
+  "step_comparisons_at_order10": {
+    "one_day_minus_half_day": {
+      "F2_minus_C_integral": {
+        "max_abs_seconds": 2.168404344971009e-19,
+        "rms_seconds": 8.947063251017938e-20,
+        "p95_abs_seconds": 2.168404344971009e-19,
+        "mean_seconds": -2.977449147924207e-20
+      },
+      "F4_integral": {
+        "max_abs_seconds": 5.169878828456423e-26,
+        "rms_seconds": 1.7928760493229528e-26,
+        "p95_abs_seconds": 3.6189151799194924e-26,
+        "mean_seconds": -1.0966409636119685e-26
+      },
+      "sum_integral": {
+        "max_abs_seconds": 2.168404344971009e-19,
+        "rms_seconds": 8.947063503154278e-20,
+        "p95_abs_seconds": 2.168404344971009e-19,
+        "mean_seconds": -2.977450244565171e-20
+      },
+      "delta_equivalent": {
+        "max_abs_seconds": 2.1684043770813233e-19,
+        "rms_seconds": 8.9470636356448e-20,
+        "p95_abs_seconds": 2.1684043770813233e-19,
+        "mean_seconds": -2.977450288656055e-20
+      }
+    },
+    "half_day_minus_quarter_day": {
+      "F2_minus_C_integral": {
+        "max_abs_seconds": 1.0842021724855044e-19,
+        "rms_seconds": 3.662451122774563e-20,
+        "p95_abs_seconds": 1.0842021724855044e-19,
+        "mean_seconds": 2.8747784876509588e-21
+      },
+      "F4_integral": {
+        "max_abs_seconds": 5.169878828456423e-26,
+        "rms_seconds": 1.5567461360526467e-26,
+        "p95_abs_seconds": 3.6189151799194924e-26,
+        "mean_seconds": 7.441492253081215e-27
+      },
+      "sum_integral": {
+        "max_abs_seconds": 1.0842021724855044e-19,
+        "rms_seconds": 3.6624509343673684e-20,
+        "p95_abs_seconds": 1.0842021724855044e-19,
+        "mean_seconds": 2.8747859291432117e-21
+      },
+      "delta_equivalent": {
+        "max_abs_seconds": 1.0842021885406617e-19,
+        "rms_seconds": 3.6624509886019264e-20,
+        "p95_abs_seconds": 1.0842021885406617e-19,
+        "mean_seconds": 2.874785971713815e-21
+      }
+    }
+  },
+  "limitations": "Convergence checks numerical quadrature, not absolute physical-model accuracy. No zero-point adjustment or detrending was applied."
+}
