@@ -1,0 +1,12 @@
+Command: DE440_BSP=/tmp/phase2-no-de440.bsp DE440_GM=/tmp/phase2-no-gm.tpc JPL_TIME_BSP=/tmp/phase2-no-time.bsp SB441_BSP=/tmp/phase2-no-small-body.bsp .venv/bin/python -m pytest -q -rs
+.s..ss........................s.s.s....s.....s...............            [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_de440_transform.py:11: Genuine DE440 BSP and matching gm_de440.tpc absent; run scripts/download_data.py
+SKIPPED [1] tests/test_ephemeris.py:24: Genuine DE440 BSP and matching gm_de440.tpc absent; run scripts/download_data.py
+SKIPPED [1] tests/test_ephemeris.py:44: Genuine DE440 BSP and matching gm_de440.tpc absent; run scripts/download_data.py
+SKIPPED [1] tests/test_jpl_model.py:119: Genuine DE440 BSP and matching gm_de440.tpc absent; run scripts/download_data.py
+SKIPPED [1] tests/test_jpl_model.py:162: Genuine DE440 BSP and matching gm_de440.tpc absent; run scripts/download_data.py
+SKIPPED [1] tests/test_jpl_reference.py:23: Genuine JPL numerical TT−TDB reference not downloaded
+SKIPPED [1] tests/test_pn_rate.py:22: Genuine DE440 BSP and matching gm_de440.tpc absent; run scripts/download_data.py
+SKIPPED [1] tests/test_small_body.py:40: Genuine DE440 BSP and matching gm_de440.tpc absent; run scripts/download_data.py
+53 passed, 8 skipped in 0.49s

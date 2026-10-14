@@ -1,0 +1,60 @@
+{
+  "reference": "independent Gauss16 residual channels, no detrending",
+  "fitted_mean_rate": 1.4809306247274762e-08,
+  "raw_vs_residual": {
+    "count": 732,
+    "max_abs_seconds": 7.371598990946193e-15,
+    "rms_seconds": 3.6040844598216795e-15,
+    "mean_seconds": -3.1661187696267715e-15,
+    "min_seconds": -7.371598990946193e-15,
+    "max_seconds": 1.6263032587282567e-15,
+    "p50_abs_seconds": 3.192108036231822e-15,
+    "p95_abs_seconds": 6.025242154164554e-15,
+    "linear_slope_seconds_per_day": -4.781358648893053e-20,
+    "rms_after_diagnostic_linear_fit_seconds": 1.7219217896451353e-15
+  },
+  "paper_mean_restored_vs_residual": {
+    "count": 732,
+    "max_abs_seconds": 1.0842021724855044e-18,
+    "rms_seconds": 7.562845193144465e-19,
+    "mean_seconds": -7.450372203379301e-19,
+    "min_seconds": -1.0842021724855044e-18,
+    "max_seconds": -3.2526065174565133e-19,
+    "p50_abs_seconds": 7.589415207398531e-19,
+    "p95_abs_seconds": 8.765096938187486e-19,
+    "linear_slope_seconds_per_day": 1.9264268002501834e-22,
+    "rms_after_diagnostic_linear_fit_seconds": 1.2340473313144567e-19
+  },
+  "fitted_mean_restored_vs_residual": {
+    "count": 732,
+    "max_abs_seconds": 8.673617379884035e-19,
+    "rms_seconds": 4.378578053528741e-19,
+    "mean_seconds": -4.076959347543895e-19,
+    "min_seconds": -8.673617379884035e-19,
+    "max_seconds": 1.0842021724855044e-19,
+    "p50_abs_seconds": 4.336808689942018e-19,
+    "p95_abs_seconds": 6.505213034913027e-19,
+    "linear_slope_seconds_per_day": 2.34875944351899e-22,
+    "rms_after_diagnostic_linear_fit_seconds": 1.5178993112072906e-19
+  },
+  "paper_mean_without_restoration_vs_correct": {
+    "count": 732,
+    "max_abs_seconds": 2.0321533185117054e-07,
+    "rms_seconds": 1.990796429244332e-07,
+    "mean_seconds": 1.9906518348314303e-07,
+    "min_seconds": 1.9491503511540574e-07,
+    "max_seconds": 2.0321533185117054e-07,
+    "p50_abs_seconds": 1.990651834829832e-07,
+    "p95_abs_seconds": 2.0280031701441076e-07,
+    "linear_slope_seconds_per_day": 1.1354715096645892e-11,
+    "rms_after_diagnostic_linear_fit_seconds": 1.3270460158111123e-19
+  },
+  "stats": {
+    "segments": 35793,
+    "evaluations": 876600,
+    "batches": 572,
+    "elapsed_seconds": 3.8404044000071735,
+    "query_intervals": 732,
+    "rate_calls": 1144
+  }
+}

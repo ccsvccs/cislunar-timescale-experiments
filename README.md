@@ -1,5 +1,30 @@
 # 地心 TT↔TDB：Turyshev 式 (21) 的独立 DE440 积分
 
+Phase 2 在保留下面 Phase 1 实现的基础上，新增按 Park et al. (2021)
+Eq. (3)–(7) 分解的独立地心模型。原始论文、逐项数学映射与实测结果见
+[模型映射](docs/phase2_model_mapping.md) 和
+[Phase 2 复现报告](docs/phase2_jpl_reproduction_report.md)。模型和参考保持独立，
+所有验收残差保留 IAU 1977 定义锚点，不调零、不拟合线性修正。
+
+2024–2026 的 732 个每日样本上，主天体加公开环几何候选的最大原始
+残差为 **11.282 ns**；加入实际 SB441 小天体轨道的独立诊断后为
+**2.819 ps**，按 Park 字面黄道纬度定义的诊断为 **1.954 ps**。
+**1 ps 目标尚未达到**。SB441 是另行拟合的 DE441 参考轨道，原 DE440
+小天体状态及部分模型约定仍未取得或核实，详见报告。
+
+```sh
+.venv/bin/python -m pytest -q
+.venv/bin/python scripts/compare_phase2_jpl.py --no-cache
+.venv/bin/python scripts/download_data.py --phase2-small-bodies
+.venv/bin/python scripts/compare_phase2_small_bodies.py
+.venv/bin/python scripts/compare_phase2_solar_axis.py
+```
+
+新增模块为 `extended_ephemeris.py`（真实 SPK 的速度和解析加速度）与
+`jpl_model.py`（逐项开关、太阳 J2、向量势、PN 标量项和文献公布的 Kuiper
+环直接势）。缺失或版本一致性未核实的小天体输入会明确标注；运行脚本不会
+用 JPL 时间参考补齐物理项。Phase 2 结果以 `phase2_` 前缀单独保存。
+
 本项目使用真实 DE440 几何星历和配套 GM，直接积分地球轨道速度与外部势的 $c^{-2}$、$c^{-4}$ 贡献。核心不调用 SOFA/ERFA；ERFA 仅用于对照。研究范围是地球质心，非地面站或任意航天器。
 
 ## 安装和数据

@@ -1,0 +1,164 @@
+{
+  "kind": "real_DE440_states_and_samples_fixed_at_binary64_inputs",
+  "mpmath_digits": 60,
+  "epoch_seconds_since_j2000": 0.0,
+  "limitations": [
+    "DE440 Chebyshev evaluation, coordinates, velocities and GMs remain binary64 inputs.",
+    "High precision does not recover information lost when computing those inputs.",
+    "High precision GL weights reuse the binary64-node samples; their nodes are not reevaluated.",
+    "These tests measure arithmetic discrepancies, not physical or absolute ephemeris error."
+  ],
+  "potential_binary64_minus_fixed_state_mp_SI": 5.48745096923036e-08,
+  "v2_binary64_minus_fixed_state_mp_SI": 1.0945397615679349e-07,
+  "F2": 1.5143142606004184e-08,
+  "F4": 1.163104833868828e-16,
+  "formula_F2_binary64_minus_mp": 2.4094814128725326e-24,
+  "formula_F4_binary64_minus_mp": -2.896215195447336e-32,
+  "fixed_state_F2_binary64_minus_mp": 3.628962539253835e-24,
+  "fixed_state_F4_binary64_minus_mp": -4.297442770728221e-33,
+  "residual_binary64_minus_fixed_state_mp": 3.628962539253835e-24,
+  "gauss_fixed_inputs": {
+    "degree": 24,
+    "interval_seconds": [
+      0.0,
+      43200.0
+    ],
+    "double_integral_seconds": [
+      1.447652236774236e-05,
+      5.024944872908295e-12
+    ],
+    "mp_fixed_weights_integral_seconds": [
+      "0.0000144765223677423613831460500902565653633310294764230076485095",
+      "0.00000000000502494487290829476182196821529196293600668753937617401272771"
+    ],
+    "weighted_sum_binary64_minus_mp_seconds": [
+      -8.037009220243114e-22,
+      3.1499353004698624e-28
+    ],
+    "double_weights_minus_mp_weights_seconds": [
+      -6.279623635205246e-22,
+      -2.1792631540995647e-28
+    ],
+    "max_double_node_minus_mp_node": 4.953319652513121e-17
+  },
+  "independent_scipy_quad": {
+    "kind": "real_DE440_independent_scipy_QUADPACK_short_interval",
+    "interval_seconds": [
+      0.0,
+      43200.0
+    ],
+    "quad_integral_seconds": [
+      1.4476522367742339e-05,
+      5.024944872908294e-12
+    ],
+    "quad_reported_errors_seconds": [
+      1.6072168449168632e-19,
+      5.57880949537492e-26
+    ],
+    "quad_details": [
+      {
+        "channel": 0,
+        "evaluations": 21,
+        "subintervals": 1,
+        "message": "converged"
+      },
+      {
+        "channel": 1,
+        "evaluations": 21,
+        "subintervals": 1,
+        "message": "converged"
+      }
+    ],
+    "romberg_minus_quad_seconds": [
+      3.8963515573697816e-20,
+      2.4233807008389483e-27
+    ],
+    "gauss24_minus_quad_seconds": [
+      2.202285662861181e-20,
+      8.077935669463161e-28
+    ],
+    "romberg_evaluations": 513,
+    "gauss_evaluations": 36
+  },
+  "time_representation": [
+    {
+      "requested_seconds": 1e-06,
+      "single_jd_recovered_seconds": 0.0,
+      "day_float_seconds_recovered_seconds": 1.0000003385357559e-06,
+      "j2000_float_seconds_recovered_seconds": 9.5367431640625e-07,
+      "split_recovered_seconds": 1.0000000000287557e-06,
+      "split_error_seconds": 2.875570976809943e-17,
+      "two_double_jd_roundtrip_error_seconds": 0.0
+    },
+    {
+      "requested_seconds": 1e-09,
+      "single_jd_recovered_seconds": 0.0,
+      "day_float_seconds_recovered_seconds": 1.000444171950221e-09,
+      "j2000_float_seconds_recovered_seconds": 0.0,
+      "split_recovered_seconds": 9.999999717180685e-10,
+      "split_error_seconds": -2.828193152570687e-17,
+      "two_double_jd_roundtrip_error_seconds": 0.0
+    },
+    {
+      "requested_seconds": 1e-12,
+      "single_jd_recovered_seconds": 0.0,
+      "day_float_seconds_recovered_seconds": 1.8189894035458565e-12,
+      "j2000_float_seconds_recovered_seconds": 0.0,
+      "split_recovered_seconds": 9.999778782798785e-13,
+      "split_error_seconds": -2.2121720121483927e-17,
+      "two_double_jd_roundtrip_error_seconds": 0.0
+    },
+    {
+      "requested_seconds": 1e-13,
+      "single_jd_recovered_seconds": 0.0,
+      "day_float_seconds_recovered_seconds": 0.0,
+      "j2000_float_seconds_recovered_seconds": 0.0,
+      "split_recovered_seconds": 1.000310945187266e-13,
+      "split_error_seconds": 3.1094518726601255e-17,
+      "two_double_jd_roundtrip_error_seconds": 0.0
+    }
+  ],
+  "kepler_validation": {
+    "kind": "explicit_synthetic_exact_Newtonian_ellipse_c2_only",
+    "period_days": 365.2568983272364,
+    "analytic_amplitude_seconds": 0.0016567125995924077,
+    "eccentricity": 0.0167086,
+    "derivation": "docs/kepler_reference.md",
+    "methods": {
+      "romberg": {
+        "difference_from_exact": {
+          "max_abs_seconds": 6.139294801699169e-18,
+          "rms_seconds": 3.0558599222413503e-18,
+          "p95_abs_seconds": 5.0740661672321604e-18,
+          "mean_seconds": -2.5829986209884017e-18
+        },
+        "runtime_seconds": 0.0263380699998379,
+        "stats": {
+          "segments": 730,
+          "evaluations": 440154,
+          "batches": 28,
+          "elapsed_seconds": 0.023602620993187884,
+          "query_intervals": 128,
+          "rate_calls": 280
+        }
+      },
+      "gauss_legendre": {
+        "difference_from_exact": {
+          "max_abs_seconds": 6.193504910323444e-18,
+          "rms_seconds": 3.00218524871508e-18,
+          "p95_abs_seconds": 5.106592232406725e-18,
+          "mean_seconds": -2.5550293488914778e-18
+        },
+        "runtime_seconds": 0.012133944001107011,
+        "stats": {
+          "segments": 730,
+          "evaluations": 30888,
+          "batches": 28,
+          "elapsed_seconds": 0.009515319994534366,
+          "query_intervals": 128,
+          "rate_calls": 56
+        }
+      }
+    }
+  }
+}

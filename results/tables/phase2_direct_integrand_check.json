@@ -1,0 +1,134 @@
+{
+  "command": ".venv/bin/python scripts/check_phase2_direct_integrand.py",
+  "kind": "direct_two_channel_final_JPLModel_from_original_1977_anchor",
+  "model_signature": {
+    "A": 1.0000000148082688,
+    "C_exact": 1.4808268676920312e-08,
+    "T0": "2443144.5003725",
+    "TDB0": -6.55e-05,
+    "bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+    "gm": {
+      "jupiter": 1.2671276409999998e+17,
+      "mars": 42828375815756.1,
+      "mercury": 22031868551400.004,
+      "moon": 4902800118457.55,
+      "neptune": 6836527100580399.0,
+      "pluto": 975500000000.0,
+      "saturn": 3.79405848418e+16,
+      "sun": 1.3271244004127942e+20,
+      "uranus": 5794556399999999.0,
+      "venus": 324858592000000.0
+    },
+    "gm_sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+    "header_sha256": "0f4636b663e6f00af9efa2b605ef23635489f56b23dd1a5e3821d3acc6ac3359",
+    "latitude_convention": "Park 3.5 solar spin axis",
+    "missing": [
+      "343 individual asteroids",
+      "30 KBOs",
+      "resolved planetary satellite multipoles",
+      "Kuiper ring velocity/acceleration, mixed c^-4 and PN potentials"
+    ],
+    "model": "Park2021_eq3_7_major_bodies_plus_ring_scalar_candidate_v2",
+    "ring": {
+      "channels": "leading scalar only",
+      "count": 36,
+      "frame": "SPICE ECLIPJ2000",
+      "gm_si": 8916783186240.352,
+      "phase_radians": 0.0,
+      "radius_m": 6582306310800.0
+    },
+    "scale": "TDB-compatible SI ICRF geometric",
+    "solar_axis": [
+      0.12235349347232782,
+      -0.42307208364764326,
+      0.8977971010607901
+    ],
+    "sources": {
+      "constants.py": "71f1197afdc125c9f8fc3fddaa8e64051f60cea5f5c134e0a1785f2539f3dea5",
+      "ephemeris.py": "be1e3ae0d57a2a62d0300cf7bafa087505435af903784c78f8c99b02ba481479",
+      "extended_ephemeris.py": "9f06b63039ab25c69d821eed57701533182412b97f555a31265a051fe8b45719",
+      "jpl_model.py": "e90131e29e7fac8a0a6fae8cabfcbcd2fa40c1122b4a04f16b404c3285d91357",
+      "pn_rate.py": "9896da55114c7151b3eab380ac23d8162c82e8cbd4933da60621f322e04648c6",
+      "potential.py": "d0219bcd2caa40d817c2a1bf0f46da96098f7a7078d25d5dbf2ae28ab02a43a5",
+      "timebase.py": "a1ef2210f5ab3295ab467c3cba4ef0f3c9d00329c5d73dc4ed68ec42e0b16bda"
+    },
+    "switches": {
+      "kinetic_c2": true,
+      "kinetic_c4": true,
+      "kuiper_ring_c2": true,
+      "mixed_c4": true,
+      "monopole_c2": true,
+      "pn_acceleration_c4": true,
+      "pn_body_potential_c4": true,
+      "pn_radial_velocity_c4": true,
+      "pn_velocity_c4": true,
+      "potential_squared_c4": true,
+      "solar_j2_c2": true,
+      "vector_c4": true
+    }
+  },
+  "anchor_seconds": -725803167.8160655,
+  "sample_count": 732,
+  "method": "gauss_legendre",
+  "order": 24,
+  "step_days": 0.5,
+  "channels": 2,
+  "direct_minus_component_gauss": {
+    "count": 732,
+    "max_abs_seconds": 8.109832250191573e-17,
+    "rms_seconds": 7.866351125100047e-17,
+    "mean_seconds": 7.865337809974988e-17,
+    "min_seconds": 7.654467337747661e-17,
+    "max_seconds": 8.109832250191573e-17,
+    "p50_abs_seconds": 7.865886761382335e-17,
+    "p95_abs_seconds": 8.088148206741863e-17,
+    "linear_slope_seconds_per_day": 5.876785117611091e-21,
+    "rms_after_diagnostic_linear_fit_seconds": 2.28013816978273e-19
+  },
+  "direct_minus_component_romberg": {
+    "count": 732,
+    "max_abs_seconds": 7.871307772244762e-17,
+    "rms_seconds": 7.65013811511706e-17,
+    "mean_seconds": 7.649342108591832e-17,
+    "min_seconds": 7.43762690325056e-17,
+    "max_seconds": 7.871307772244762e-17,
+    "p50_abs_seconds": 7.665309359472516e-17,
+    "p95_abs_seconds": 7.827939685345342e-17,
+    "linear_slope_seconds_per_day": 5.1273948434342525e-21,
+    "rms_after_diagnostic_linear_fit_seconds": 2.0962294052719972e-19
+  },
+  "direct_rate_minus_component_rate": {
+    "count": 732,
+    "max_abs_dimensionless": 8.271806125530277e-24,
+    "rms_dimensionless": 2.1531184559695158e-24,
+    "mean_dimensionless": 1.2287428505468483e-25,
+    "min_dimensionless": -8.271806125530277e-24,
+    "max_dimensionless": 6.617444900424222e-24,
+    "p50_abs_dimensionless": 5.169878828456423e-26,
+    "p95_abs_dimensionless": 4.9566213267825955e-24,
+    "linear_slope_dimensionless_per_day": 2.4889563932995636e-28,
+    "rms_after_diagnostic_linear_fit_dimensionless": 2.14896599604774e-24
+  },
+  "direct_raw_jpl_residual": {
+    "count": 732,
+    "max_abs_seconds": 1.1282037516290467e-08,
+    "rms_seconds": 1.1050989981364116e-08,
+    "mean_seconds": -1.1050196639257278e-08,
+    "min_seconds": -1.1282037516290467e-08,
+    "max_seconds": -1.0821223657702002e-08,
+    "p50_abs_seconds": 1.1051000737633465e-08,
+    "p95_abs_seconds": 1.1259020026163028e-08,
+    "linear_slope_seconds_per_day": -6.265616431455544e-13,
+    "rms_after_diagnostic_linear_fit_seconds": 2.0916897233099405e-12
+  },
+  "stats": {
+    "batches": 1165,
+    "elapsed_seconds": 16.138718991000133,
+    "evaluations": 1341252,
+    "query_intervals": 1464,
+    "rate_calls": 2330,
+    "segments": 35793
+  },
+  "elapsed_wall_seconds": 0.30575708399919677,
+  "limitations": "This measures numerical/source-path consistency, not completeness of unavailable small-body physics."
+}

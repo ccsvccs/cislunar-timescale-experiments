@@ -1,0 +1,525 @@
+JET PROPULSION LABORATORY                                         INTEROFFICE MEMORANDUM
+                                                                  IOM 392R-21-005
+                                                                  March 30, 2021
+TO:            Sec. 392
+FROM:          D. Farnocchia (Jet Propulsion Laboratory, California Institute of Technology)
+SUBJECT:       Small-Body Perturber Files SB441-N16 and SB441-N343
+
+
+This memorandum presents the small-body perturber file SB441-N373, which is available for use with JPL
+planetary ephemeris DE441. The file includes the ephemerides of the 373 small-body perturbers used by
+Park et al. (2021) for DE440 and DE441. A second file SB441-N16 is also available and contains the same
+ephemerides restricted to the 16 most massive perturbers in the main asteroid belt.
+
+
+We generated the small-body ephemeris (SBE) perturber file (Chamberlin 1998) SB441-N373 containing
+the mutually perturbed ephemerides of the 373 small bodies used for JPL planetary ephemerides DE440
+and DE441 (Park et al. 2021). Table 1 provides the corresponding list of perturbers and their masses, which
+are set according to the DE441 planetary ephemeris solution. In addition to the 343 small-body perturbers
+already considered for DE431 (Folkner et al. 2014, Farnocchia 2017), this perturber set also includes 30
+Kuiper Belt objects. The reduced file SB431-N16 contains the same ephemerides but only for the 16 most
+massive bodies in the main asteroid belt. The two SBE files cover the time interval from 8001 BC-12-21
+TDB (JD -1200525.5) to 9000-01-01 TDB (JD 5008242.5).
+
+We generated SB441-N373 and SB441-N16 with the same iterative procedure used to create the previous
+SB431-N16 and SB431-N343 small-body perturber files (Farnocchia 2017). The orbit of each perturber
+was integrated relative to the solar system barycenter using DE441 as a reference planetary ephemeris. At
+each iteration the orbit of each perturber was estimated based on the following dataset:
+1) All available optical astrometry from the Minor Planet Center (https://minorplanetcenter.net) from
+    January 1950 to March 2021. Earlier observations have the potential for larger, non-random errors and
+    were therefore ignored. We corrected the astrometry for star catalog systematic errors using the Eggl
+    et al. (2020) debiasing scheme and weighted the data according to Veres et al. (2017). Outliers were
+    rejected based on the Carpino et al. (2003) scheme with χrej = 3.
+2) High-accuracy astrometry from the second data release of Gaia (Gaia Collaboration 2018).
+3) Asteroid radar delay and Doppler measurements (Ostro et al. 2002, https://ssd.jpl.nasa.gov/?radar).
+4) Pseudo-range points for Ceres and Vesta from the Dawn mission (Konopliv et al. 2014, 2018).
+
+Figure 1 shows the position differences between consecutive iterations as a function of time for (1) Ceres.
+While the Ceres position is well constrained at the time of the observations included in the orbital fit,
+position differences tend to increase toward the ends of the time interval, i.e., from year 8001 BC to year
+9000. This behavior is expected and common to all the 373 asteroids considered in the analysis.
+
+For a more comprehensive assessment, Figure 2 shows the cumulative distribution of the position
+differences between consecutive iterations for all 373 perturbers. The procedure converges in terms of
+minimizing the differences between iterations after six iterations. The final trajectory differences can be as
+large as 1000 km as we approach the ends of the considered time interval, where the fidelity of the
+ephemeris necessarily degrades. However, as shown by Figure 3, the vast majority of these differences are
+within 1 km from year 1500 to 2500. These position differences are a mere measure of convergence and
+should not be interpreted as a measure of the ephemeris uncertainty.
+
+
+
+
+                                                      1
+   Figure 1. Position differences between consecutive iterations as a function of time for Ceres.
+
+
+
+
+Figure 2. Cumulative density function of the position differences between consecutive iterations for
+             all 373 perturbers. The time interval is from year -8001 to year +9000.
+
+
+
+
+                                                 2
+Figure 3. Cumulative density function of the position differences between consecutive iterations for
+              all 373 perturbers. The time interval is from year 1500 to year 2500.
+
+The new SBE files correspond to the sixth iteration and are available on nexus at the following path:
+
+      nexus:/home/dfarnocc/data/sb441-n373.nio                     (NAVIO native format)
+      nexus:/home/dfarnocc/data/sb441-n16.nio                      (NAVIO native format)
+
+ACKNOLEDGEMENTS
+
+The research was carried out at the Jet Propulsion Laboratory, California Institute of Technology, under a
+contract with the National Aeronautics and Space Administration (80NM0018D0004).
+©2021. California Institute of Technology. Government sponsorship acknowledged.
+
+REFERENCES
+
+Carpino, M., Milani, A., Chesley, S. R. (2003). Error statistics in asteroid optical astrometric observations.
+Icarus 166, 248-270.
+
+Chamberlin, A. B. (1998). Small-body ephemeris NAVIO file format - version 2. Technical Report IOM
+312.F-98-004, Jet Propulsion Laboratory.
+
+Eggl, S., Farnocchia, D., Chamberlin, A. B., Chesley, S. R. (2020). Star catalog position and proper motion
+corrections in asteroid astrometry II: The Gaia era. Icarus 339, 113569.
+
+Farnocchia, D. (2017). Small-Body Perturber Files SB431-N16 and SB431-N343. Technical Report IOM
+392R-17-005, Jet Propulsion Laboratory.
+
+Folkner, W. M., Williams, J. G., Boggs, D. H., Park, R. S., Kuchynka, P. (2014). The Planetary and Lunar
+
+
+                                                      3
+Ephemerides DE430 and DE431. IPN Progress Report 42-196, 1-81.
+
+Gaia Collaboration, Spoto, F., Tanga, O., et al. (2018). Gaia Data Release 2. Observations of solar system
+objects. A&A 616, A13.
+
+Konopliv, A. S., Asmar, S. W., Park, R. S., et al. (2014). The Vesta gravity field, spin pole and rotation
+period, landmark positions, and ephemeris from the Dawn tracking and optical data. Icarus 240, 103-117.
+
+Konopliv, A. S., Park, R. S., Vaughan, A. T., et al. (2018). The Ceres gravity field, spin pole, rotation
+period and orbit from the Dawn radiometric tracking and optical Data. Icarus 299, 411-429.
+
+Ostro, S. J., Hudson, R. S., Benner, L. A. M., et al. (2002). Asteroid Radar Astronomy. Asteroids III, 151-
+168.
+
+Park, R. S., Folkner, W. M., Williams, J. G., Boggs, D. H. (2021). The JPL Planetary and Lunar
+Ephemerides DE440 and DE441. AJ 161, 105.
+
+Veres, P., Farnocchia, D., Chesley, S. R., Chamberlin, A. B. (2017). Statistical Analysis of Astrometric
+Errors for the Most Productive Asteroid Surveys. Icarus 296, 139-149.
+
+ Table 1. Name (or provisional designation for unnamed asteroids), number (if available), SPICE
+ ID, and GM of 373 perturbers. The GM values match the ones used for DE441 (Park et al., 2021)
+          and they are reported in full precision even though not all digits are significant.
+
+ Name/Provisional designation     Number                Spice ID            GM - au3/d2
+ Ceres                            1                     2000001             1.3964518123081070e-13
+ Vesta                            4                     2000004             3.8548000225257904e-14
+ Pallas                           2                     2000002             3.0471146330043200e-14
+ Hygiea                           10                    2000010             1.2542530761640810e-14
+ Davida                           511                   2000511             8.6836253492286545e-15
+ Interamnia                       704                   2000704             6.3110343420878887e-15
+ Europa                           52                    2000052             5.9824315264869841e-15
+ Sylvia                           87                    2000087             4.8345606546105521e-15
+ Eunomia                          15                    2000015             4.5107799051436795e-15
+ Juno                             3                     2000003             4.2823439677995011e-15
+ Psyche                           16                    2000016             3.5445002842488978e-15
+ Camilla                          107                   2000107             3.2191392075878588e-15
+ Thisbe                           88                    2000088             2.6529436610356353e-15
+ Iris                             7                     2000007             2.5416014973471498e-15
+ Euphrosyne                       31                    2000031             2.4067012218937576e-15
+ Cybele                           65                    2000065             2.0917175955133682e-15
+ Dido                             209                   2000209             1.9511008134506610e-15
+ Aurora                           94                    2000094             1.9476499609659456e-15
+ Doris                            48                    2000048             1.9085161956485640e-15
+ Bertha                           154                   2000154             1.9062882233624486e-15
+ Amphitrite                       29                    2000029             1.7788759570378772e-15
+ Ursula                           375                   2000375             1.7716875294908651e-15
+ Herculina                        532                   2000532             1.7651295651126369e-15
+ Stereoskopia                     566                   2000566             1.7007818925283807e-15
+ Siegena                          386                   2000386             1.6744520343182799e-15
+
+
+                                                    4
+Alauda       702       2000702   1.6730262398441171e-15
+Laetitia     39        2000039   1.6238080168284406e-15
+Metis        9         2000009   1.4490138025867273e-15
+Hebe         6         2000006   1.4423591761343029e-15
+Bamberga     324       2000324   1.3808681586222395e-15
+Elektra      130       2000130   1.3272835717079433e-15
+Themis       24        2000024   1.3109170444249925e-15
+Patientia    451       2000451   1.2973797046097596e-15
+Fortuna      19        2000019   1.2396175182794244e-15
+Palma        372       2000372   1.2340564359220072e-15
+Daphne       41        2000041   1.2055616051144469e-15
+Irene        14        2000014   1.1863795139948057e-15
+Diotima      423       2000423   1.1511452195400677e-15
+Egeria       13        2000013   1.1389436761809467e-15
+Hesperia     69        2000069   1.1215489958719225e-15
+Parthenope   11        2000011   1.0258530487431674e-15
+Papagena     471       2000471   1.0154946317000345e-15
+Lachesis     120       2000120   1.0049283867977807e-15
+Aglaja       47        2000047   9.5484521825652372e-16
+Aegle        96        2000096   9.4294212130582306e-16
+Hedwig       476       2000476   9.3290849487079058e-16
+Aspasia      409       2000409   9.3071301802989339e-16
+Juewa        139       2000139   9.2595552169711510e-16
+Winchester   747       2000747   8.9162160614799751e-16
+Kalliope     22        2000022   8.8054945035882155e-16
+Lomia        117       2000117   8.7956326624912993e-16
+Scheila      596       2000596   8.7503854623745788e-16
+Nemesis      128       2000128   8.5847861311410371e-16
+Io           85        2000085   8.4105681134479927e-16
+Hestia       46        2000046   8.2924109896839845e-16
+Sibylla      168       2000168   8.2862151230975531e-16
+Germania     241       2000241   8.2578918855189583e-16
+Eugenia      45        2000045   8.0375351695515079e-16
+Pales        49        2000049   8.0309019561585371e-16
+Kreusa       488       2000488   7.9522883193510027e-16
+Dembowska    349       2000349   7.7770392072089233e-16
+Lucina       146       2000146   7.4145517820883541e-16
+Eukrate      247       2000247   7.2166473124525787e-16
+Freia        76        2000076   7.1965348672034277e-16
+Philomela    196       2000196   7.1883691717843153e-16
+Lamberta     187       2000187   6.9988762217142864e-16
+Eleonora     354       2000354   6.9799427588689871e-16
+Berbericia   776       2000776   6.9144773619266927e-16
+Elpis        59        2000059   6.1242440038278814e-16
+Minerva      93        2000093   5.8909323687573915e-16
+Flora        8         2000008   5.7402666475018234e-16
+Massalia     20        2000020   5.7134184386435100e-16
+Julia        89        2000089   5.6998032445109094e-16
+Armenia      780       2000780   5.6837732628121214e-16
+
+
+                   5
+Nemausa       51        2000051   5.5966052085629955e-16
+Philosophia   227       2000227   5.2949727893225519e-16
+Pompeja       203       2000203   5.1804790437901480e-16
+Eucharis      181       2000181   5.1233398977263506e-16
+Pretoria      790       2000790   5.0431481947350735e-16
+Atalante      36        2000036   5.0135973834869766e-16
+Gudrun        328       2000328   4.9982468308633827e-16
+Melpomene     18        2000018   4.8181149848174751e-16
+Bettina       250       2000250   4.6944966247935396e-16
+Arethusa      95        2000095   4.6026462068512803e-16
+Aletheia      259       2000259   4.5251089435001250e-16
+Myrrha        381       2000381   4.4933216634745898e-16
+Medea         212       2000212   4.4605106892003544e-16
+Klymene       104       2000104   4.4137261924065115e-16
+Melete        56        2000056   4.3334389285268117e-16
+Gyptis        444       2000444   4.2471030993597299e-16
+Kleopatra     216       2000216   4.1427288444080811e-16
+Pulcova       762       2000762   4.1146229595421110e-16
+Vibilia       144       2000144   4.0738380707775932e-16
+Erminia       705       2000705   3.9116752395114746e-16
+Adorea        268       2000268   3.8623042613708653e-16
+Emma          283       2000283   3.8354815246046577e-16
+Harmonia      40        2000040   3.7393826630015266e-16
+Argentina     469       2000469   3.6478450110028057e-16
+Ino           173       2000173   3.4944452970189009e-16
+Aquitania     387       2000387   3.4383044497176679e-16
+Bellona       28        2000028   3.4043931236013436e-16
+Lampetia      393       2000393   3.3572279402433382e-16
+Siwa          140       2000140   3.3451752752267848e-16
+Victoria      12        2000012   3.2843482824404967e-16
+Hippo         426       2000426   3.2507694999797983e-16
+Astraea       5         2000005   3.2161933241855116e-16
+Ianthe        98        2000098   3.1864312654754617e-16
+Chloris       410       2000410   3.1527319370312520e-16
+Circe         34        2000034   3.1392144602052048e-16
+Adeona        145       2000145   3.1319493503427420e-16
+Ophelia       171       2000171   3.0262531306199368e-16
+Hermione      121       2000121   3.0027755581135258e-16
+Comacina      489       2000489   2.8775529812775966e-16
+Ninina        357       2000357   2.8721263188047396e-16
+Ausonia       63        2000063   2.8598833773736982e-16
+Thia          405       2000405   2.8343442027590178e-16
+Xanthippe     156       2000156   2.7907996428036474e-16
+Ornamenta     350       2000350   2.7857999144799436e-16
+Thalia        23        2000023   2.7673067211701877e-16
+Gallia        148       2000148   2.7635117872432285e-16
+Merapi        536       2000536   2.7333272315776016e-16
+Nuwa          150       2000150   2.6906654264657009e-16
+Charybdis     388       2000388   2.6866209145075665e-16
+
+
+                    6
+Eva           164       2000164   2.6856363262058272e-16
+Athamantis    230       2000230   2.6546896309806863e-16
+Loreley       165       2000165   2.6454299615525259e-16
+Antiope       90        2000090   2.6428816005892839e-16
+Meliboea      137       2000137   2.6291667570900683e-16
+Princetonia   508       2000508   2.6003747033565168e-16
+Wratislavia   690       2000690   2.5859089556681753e-16
+Euterpe       27        2000027   2.5613865804152161e-16
+Alexandra     54        2000054   2.5613643856735632e-16
+Hispania      804       2000804   2.5527830470049859e-16
+Elfriede      618       2000618   2.5193204889207218e-16
+Liguria       356       2000356   2.5189815204630036e-16
+Adria         143       2000143   2.4983185526188601e-16
+Kassandra     114       2000114   2.4884067006540889e-16
+Protogeneia   147       2000147   2.4858578423681320e-16
+Johanna       127       2000127   2.4754901346706772e-16
+Prokne        194       2000194   2.4561528144043314e-16
+Fides         37        2000037   2.4281305508271871e-16
+Chicago       334       2000334   2.4136220339629290e-16
+Aurelia       419       2000419   2.3773578209205859e-16
+Bertholda     420       2000420   2.3670178521081795e-16
+Marianna      602       2000602   2.2809674909014779e-16
+Polyxena      595       2000595   2.2465030240169206e-16
+Padua         363       2000363   2.2392126408313992e-16
+Hypatia       238       2000238   2.2188561497353161e-16
+Lumen         141       2000141   2.1889333845457843e-16
+Polyxo        308       2000308   2.1647804370959252e-16
+Ani           791       2000791   2.1076085204803308e-16
+Roberta       335       2000335   2.0843132667000589e-16
+Carlova       360       2000360   2.0487987640827176e-16
+Diana         78        2000078   2.0368097558802117e-16
+Undina        92        2000092   2.0222499285918262e-16
+Asterope      233       2000233   1.9979624331073550e-16
+Adelheid      276       2000276   1.9922195146137866e-16
+Lutetia       21        2000021   1.9760028913855683e-16
+Gerlinde      663       2000663   1.9725537729863713e-16
+Bredichina    786       2000786   1.9534428745516884e-16
+Messalina     545       2000545   1.9519850083243681e-16
+Aemilia       159       2000159   1.9236219019969684e-16
+Marion        506       2000506   1.9069839846057659e-16
+Galatea       74        2000074   1.9011716936752780e-16
+Helio         895       2000895   1.8942493318435747e-16
+Armida        514       2000514   1.8861295755338590e-16
+Isis          42        2000042   1.8735257964754667e-16
+Beatrix       83        2000083   1.8459902693767395e-16
+Zelinda       654       2000654   1.8271153845028229e-16
+Concordia     58        2000058   1.8012505811829385e-16
+Proserpina    26        2000026   1.7812616814154862e-16
+Hohensteina   788       2000788   1.7711871549942670e-16
+
+
+                    7
+Edith         517        2000517   1.7655929611836170e-16
+Hersilia      206        2000206   1.7485910807435368e-16
+Tanete        772        2000772   1.7365447581348131e-16
+Denise        667        2000667   1.7174750596131368e-16
+Penelope      201        2000201   1.6663045771433504e-16
+Aline         266        2000266   1.6594282580293835e-16
+Vaticana      416        2000416   1.6511852151088483e-16
+Tokio         498        2000498   1.6166164033700236e-16
+Arsinoe       404        2000404   1.6144760474032773e-16
+Peraga        554        2000554   1.5935521711557882e-16
+Tercidina     345        2000345   1.5891479446112133e-16
+Iduna         176        2000176   1.5731944639940773e-16
+Brixia        521        2000521   1.5584113647898650e-16
+Faina         751        2000751   1.5375064738104504e-16
+Erato         62         2000062   1.5213428223941847e-16
+Feronia       72         2000072   1.5086969937360234e-16
+Dynamene      200        2000200   1.5063743226656710e-16
+Christa       1015       2001015   1.4774018524534620e-16
+Eunike        185        2000185   1.4541092712549263e-16
+Eos           221        2000221   1.4535063882245356e-16
+Hertha        135        2000135   1.4516053346827936e-16
+Semele        86         2000086   1.4367577023452309e-16
+Veritas       490        2000490   1.4268068051088923e-16
+Emita         481        2000481   1.4232478918230183e-16
+Aegina        91         2000091   1.4195955177021533e-16
+Alkeste       124        2000124   1.4082516742158776e-16
+Artemis       105        2000105   1.4049343696798120e-16
+Nephele       431        2000431   1.3981336733485380e-16
+Freda         1093       2001093   1.3774121589661637e-16
+Antigone      129        2000129   1.3694441284769087e-16
+Erigone       163        2000163   1.3501425119063151e-16
+Thetis        17         2000017   1.3398683097840782e-16
+Desiderata    344        2000344   1.3166985822586556e-16
+Niobe         71         2000071   1.3120783938467559e-16
+Rusthawelia   1171       2001171   1.3076632020262883e-16
+Lictoria      1107       2001107   1.2924733629447915e-16
+Melusina      373        2000373   1.2907423434479045e-16
+Hera          103        2000103   1.2873552745693193e-16
+Ate           111        2000111   1.2685989278560462e-16
+Ariadne       43         2000043   1.2683502962561622e-16
+Terpsichore   81         2000081   1.2659277966238143e-16
+Boliviana     712        2000712   1.2600845433723963e-16
+Elisabetha    412        2000412   1.2572594904492957e-16
+Sapientia     275        2000275   1.2560415636174639e-16
+Tatjana       769        2000769   1.2538556013158105e-16
+Josephina     303        2000303   1.2250630736040161e-16
+Panopaea      70         2000070   1.2210133021360091e-16
+Arachne       407        2000407   1.2159649691849770e-16
+Sophrosyne    134        2000134   1.2041493785248888e-16
+
+
+                     8
+Lanzia        683        2000683   1.2001846940536772e-16
+Fringilla     709        2000709   1.1932045854274149e-16
+Mandeville    739        2000739   1.1895704235209679e-16
+Leto          68         2000068   1.1706570191254942e-16
+Cantabia      740        2000740   1.1508271223874676e-16
+Irmintraud    773        2000773   1.1496018031508255e-16
+Bruchsalia    455        2000455   1.1481333345022554e-16
+Cava          505        2000505   1.1434524745954757e-16
+Hamburga      449        2000449   1.1381715328316359e-16
+Havnia        362        2000362   1.1276722765420132e-16
+Lydia         110        2000110   1.1273277623952921e-16
+Luscinia      713        2000713   1.1149155704508719e-16
+Gratia        424        2000424   1.1020156825676931e-16
+Hermentaria   346        2000346   1.0985328629139597e-16
+Vundtia       635        2000635   1.0924383869373906e-16
+Ludmilla      675        2000675   1.0490232752479031e-16
+Klotho        97         2000097   1.0268048353591737e-16
+Luisa         599        2000599   1.0123777316180206e-16
+Ilmatar       385        2000385   9.9761856285164428e-17
+Rachele       674        2000674   9.9353572574888636e-17
+Laurentia     162        2000162   9.9012689165513785e-17
+Apollonia     358        2000358   9.6707984008514061e-17
+Mashona       1467       2001467   9.5394755694739102e-17
+Ara           849        2000849   9.5120755198622806e-17
+Campania      377        2000377   9.3034159609754771e-17
+Kolga         191        2000191   9.2700509595298383e-17
+Vanadis       240        2000240   9.2554952801502296e-17
+Octavia       598        2000598   9.2033836661599851e-17
+Virginia      50         2000050   9.0658136009410138e-17
+Carina        491        2000491   9.0327213999208335e-17
+Eurykleia     195        2000195   8.8316977379090735e-17
+Felicitas     109        2000109   8.7342926229301395e-17
+Hekate        100        2000100   8.5508621409348064e-17
+Edna          445        2000445   8.5315615035236235e-17
+Corduba       365        2000365   8.4396008586097327e-17
+Aeria         369        2000369   8.3367824102254174e-17
+Leukothea     35         2000035   8.2709231678802929e-17
+Evelyn        503        2000503   8.2076751772281633e-17
+Leda          38         2000038   8.1662072211026138e-17
+Genoveva      680        2000680   8.1500190613822256e-17
+Nausikaa      192        2000192   8.1421291402953426e-17
+Nysa          44         2000044   8.1199988686104986e-17
+Phaeo         322        2000322   8.0728377277727621e-17
+Palatia       415        2000415   8.0573077475670552e-17
+Flammario     1021       2001021   8.0204286497228632e-17
+Olga          304        2000304   8.0059632073324802e-17
+Industria     389        2000389   8.0059339257419884e-17
+Vincentina    366        2000366   7.9789468325426613e-17
+Cheruskia     568        2000568   7.9746650958283244e-17
+
+
+                     9
+Pomona        32     2000032   7.8745071666519418e-17
+Kalypso       53     2000053   7.7095685025651228e-17
+Isabella      210    2000210   7.6634863234092905e-17
+Marghanna     735    2000735   7.5655501926340450e-17
+Isolda        211    2000211   7.5601798507442215e-17
+Tisiphone     466    2000466   7.5283506550204848e-17
+Klio          84     2000084   7.4956976014309418e-17
+Mnemosyne     57     2000057   7.4726412893591611e-17
+Andromache    175    2000175   7.3124241595549987e-17
+Devosa        337    2000337   7.3103127682005358e-17
+Lilaea        213    2000213   7.2814102101785253e-17
+Miriam        102    2000102   7.2712620981242410e-17
+Chaldaea      313    2000313   7.1875707986893794e-17
+Notburga      626    2000626   7.0220769064283794e-17
+Thyra         115    2000115   6.9735406024392451e-17
+Tamara        326    2000326   6.8326580922414544e-17
+Massinga      760    2000760   6.8050136041110561e-17
+Leonora       696    2000696   6.7737156689916036e-17
+Mathesis      454    2000454   6.6798192418293831e-17
+Una           160    2000160   6.5142513315502267e-17
+Anacostia     980    2000980   6.3470276384468785e-17
+Honoria       236    2000236   6.2517263026028503e-17
+Henrietta     225    2000225   6.1488489136531271e-17
+Montague      535    2000535   6.0506637862539676e-17
+Dione         106    2000106   5.9339850700917689e-17
+Megaira       464    2000464   5.8233026402841637e-17
+Eurydike      75     2000075   5.8027456297983493e-17
+Tauris        814    2000814   5.7450720854270621e-17
+Urania        30     2000030   5.7057263757897529e-17
+Amherstia     516    2000516   5.6630276385517128e-17
+Sappho        80     2000080   5.6471154275060233e-17
+Misa          569    2000569   5.5692610319519898e-17
+Rosa          223    2000223   5.5210833825561731e-17
+Sulamitis     752    2000752   5.5029875850101036e-17
+Pickeringia   784    2000784   5.3189337421443262e-17
+Frigga        77     2000077   5.2724601168331567e-17
+Martha        205    2000205   5.2364312133805402e-17
+Alekto        465    2000465   5.1867195285102107e-17
+Lehigh        691    2000691   5.1209748534841818e-17
+Nephthys      287    2000287   5.1065425768005637e-17
+Ekard         694    2000694   5.1009798048889617e-17
+Svea          329    2000329   5.0225799203206768e-17
+Dike          99     2000099   5.0146072111900431e-17
+Eurynome      79     2000079   4.8242269181746132e-17
+Baucis        172    2000172   4.6588271221088771e-17
+Tekmessa      604    2000604   4.6458511951546986e-17
+Oceana        224    2000224   4.6384503227747140e-17
+Genua         485    2000485   4.5881147721288083e-17
+Palisana      914    2000914   4.4492831201915857e-17
+
+
+                    10
+Titania       593       2000593   4.3152660225791144e-17
+Ulla          909       2000909   3.9646932614462939e-17
+Semiramis     584       2000584   3.8849243156686706e-17
+Alkmene       82        2000082   3.8285657667248552e-17
+Eichsfeldia   442       2000442   3.7681035098461244e-17
+Ampella       198       2000198   3.4690964938059876e-17
+Praxedis      547       2000547   3.2890148523379750e-17
+Phocaea       25        2000025   3.2560800200694920e-17
+Irma          177       2000177   3.1948857613518979e-17
+Amalthea      113       2000113   3.0819925205610637e-17
+Iphigenia     112       2000112   3.0519626458450430e-17
+Budrosa       338       2000338   2.8649827091745162e-17
+Pariana       347       2000347   2.4842140182945907e-17
+Ganymed       1036      2001036   2.1127616210185089e-17
+Theobalda     778       2000778   2.0592519759347046e-17
+Aethra        132       2000132   1.7504352843147015e-17
+Irmgard       591       2000591   1.5650082930549903e-17
+Echo          60        2000060   1.4826078565237201e-17
+Lacadiera     336       2000336   1.4252117646877083e-17
+Pythia        432       2000432   1.3601888558172924e-17
+Peitho        118       2000118   1.3157171164548998e-17
+Chimaera      623       2000623   1.0120911587092832e-17
+Bilkis        585       2000585   9.5027260308642622e-18
+Eros          433       2000433   9.9506001554648484e-19
+Orcus         90482     2090482   9.4096246431561093e-14
+2002 MS4      307261    2307261   7.6535017490671978e-14
+2006 QH181              3361580   6.9916025897378817e-14
+Salacia       120347    2120347   6.5117020793631265e-14
+2003 UZ413    455502    2455502   6.4838580755817233e-14
+2003 AZ84     208996    2208996   6.0821235283947692e-14
+2002 AW197    55565     2055565   6.0247324245997600e-14
+Haumea        136108    2136108   5.9616300545042843e-13
+Varuna        20000     2020000   5.4950752234118650e-14
+Ixion         28978     2028978   4.5176656225097590e-14
+Varda         174567    2174567   3.9657768869641912e-14
+2004 GV9      90568     2090568   3.7193502373824432e-14
+2004 XA192    230965    2230965   3.6450226020091094e-15
+2005 RN43     145452    2145452   3.6285479917789626e-14
+Makemake      136472    2136472   3.4318555006292089e-13
+2010 KZ39               3525142   2.9579875156960054e-14
+2004 XR190              3308265   2.9040995181884837e-14
+2001 UR163    42301     2042301   2.7251938920337723e-14
+2007 JJ43     278361    2278361   2.6769158975337699e-14
+Gonggong      225088    2225088   2.5856788277090390e-13
+2010 FX86               3515022   2.5710342570810209e-14
+Chaos         19521     2019521   2.5383796456297310e-14
+Eris          136199    2136199   2.4854480302873160e-12
+2002 TC302    84522     2084522   2.2819963431204538e-13
+2008 ST291    528381    2528381   2.1338903510045792e-14
+
+
+                       11
+2010 RE64   523639    2523639   1.9128866968694360e-14
+2002 UX25   55637     2055637   1.8603512445448687e-14
+2010 RF43             3545742   1.7561425934907343e-14
+Quaoar      50000     2050000   1.5294877459751145e-13
+Sedna       90377     2090377   1.4934867884244863e-13
+
+
+
+
+                     12
+

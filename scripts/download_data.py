@@ -42,12 +42,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data-dir', type=Path, default=Path(__file__).resolve().parents[1]/'data')
     parser.add_argument('--core-only', action='store_true', help='Only de440.bsp and compatible GM PCK')
+    parser.add_argument('--phase2-small-bodies', action='store_true', help='Include the optional 982 MB SB441 373-body diagnostic kernel; version differs from original DE440 small-body states')
     parser.add_argument('--verify-only', action='store_true', help='Check files without networking')
     args = parser.parse_args()
     manifest_path = Path(__file__).resolve().parents[1]/'data'/'manifest.json'
     files = json.loads(manifest_path.read_text())['files']
     args.data_dir.mkdir(parents=True, exist_ok=True)
     for name, record in files.items():
+        if record['role'] == 'phase2_optional_diagnostic' and not args.phase2_small_bodies:
+            continue
         if not args.core_only or record['role'] == 'core':
             download(name, record, args.data_dir, args.verify_only)
 

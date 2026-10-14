@@ -1,0 +1,100 @@
+{
+  "purpose": "published latitude conventions, not calibration; default model unchanged",
+  "axes_predeclared_from_sources": true,
+  "reference_used_to_choose_axis": false,
+  "sources": {
+    "spin_equator": "https://ipnpr.jpl.nasa.gov/progress_report/42-196/196C.pdf#page=7",
+    "literal_ecliptic": "https://ssd.jpl.nasa.gov/doc/Park.2021.AJ.DE440.pdf#page=3"
+  },
+  "source_equations": [
+    "Folkner 2014 Eq. (7)",
+    "Park 2021 Eq. (5)"
+  ],
+  "signature": {
+    "purpose": "two_predeclared_original_source_latitude_conventions",
+    "bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+    "header_sha256": "0f4636b663e6f00af9efa2b605ef23635489f56b23dd1a5e3821d3acc6ac3359",
+    "axes": [
+      [
+        0.12235349347232782,
+        -0.42307208364764326,
+        0.8977971010607901
+      ],
+      [
+        0.0,
+        -0.3977771559319137,
+        0.9174820620691818
+      ]
+    ]
+  },
+  "anchor_seconds": -725803167.8160655,
+  "sample_count": 732,
+  "ecliptic_minus_spin_first_seconds": 8.320169924855292e-13,
+  "ecliptic_minus_spin_last_seconds": 8.674357973045276e-13,
+  "modern_max_abs_rate_difference": 1.1489619725037716e-21,
+  "ecliptic_minus_spin_time_metrics": {
+    "count": 732,
+    "max_abs_seconds": 8.674357973045276e-13,
+    "rms_seconds": 8.508731412746792e-13,
+    "mean_seconds": 8.508098338595493e-13,
+    "min_seconds": 8.320169924855292e-13,
+    "max_seconds": 8.674357973045276e-13,
+    "p50_abs_seconds": 8.497264092523603e-13,
+    "p95_abs_seconds": 8.672718943154196e-13,
+    "linear_slope_seconds_per_day": 4.8891291355378696e-17,
+    "rms_after_diagnostic_linear_fit_seconds": 9.975308354852953e-16
+  },
+  "independent_quadrature_difference": {
+    "count": 732,
+    "max_abs_seconds": 1.2924697071141057e-26,
+    "rms_seconds": 4.941476350532397e-27,
+    "mean_seconds": -3.0899207478820832e-27,
+    "min_seconds": -1.2924697071141057e-26,
+    "max_seconds": 0.0,
+    "p50_abs_seconds": 0.0,
+    "p95_abs_seconds": 1.2924697071141057e-26,
+    "linear_slope_seconds_per_day": 1.2345312420455942e-30,
+    "rms_after_diagnostic_linear_fit_seconds": 3.847405068964523e-27
+  },
+  "independent_quadrature_max_each_channel_seconds": [
+    6.462348535570529e-27,
+    6.462348535570529e-27
+  ],
+  "independent_ecliptic_minus_spin_quadrature_difference": {
+    "count": 732,
+    "max_abs_seconds": 6.462348535570529e-27,
+    "rms_seconds": 3.939302110442733e-27,
+    "mean_seconds": 1.5891020989107857e-28,
+    "min_seconds": -6.462348535570529e-27,
+    "max_seconds": 6.462348535570529e-27,
+    "p50_abs_seconds": 0.0,
+    "p95_abs_seconds": 6.462348535570529e-27,
+    "linear_slope_seconds_per_day": 6.046118735066346e-31,
+    "rms_after_diagnostic_linear_fit_seconds": 3.934021594758052e-27
+  },
+  "not_used_in_primary_acceptance": true,
+  "SB441_diagnostic_original_spin_residual": {
+    "count": 732,
+    "max_abs_seconds": 2.818949568672742e-12,
+    "rms_seconds": 2.801277755567863e-12,
+    "mean_seconds": -2.8012609753829255e-12,
+    "min_seconds": -2.818949568672742e-12,
+    "max_seconds": -2.7853967369357788e-12,
+    "p50_abs_seconds": 2.8006037701595876e-12,
+    "p95_abs_seconds": 2.817045229898396e-12,
+    "linear_slope_seconds_per_day": -4.5831287226405276e-17,
+    "rms_after_diagnostic_linear_fit_seconds": 4.690175571888805e-16
+  },
+  "SB441_diagnostic_literal_ecliptic_residual": {
+    "count": 732,
+    "max_abs_seconds": 1.9535196899102025e-12,
+    "rms_seconds": 1.95045157237679e-12,
+    "mean_seconds": -1.950451141523376e-12,
+    "min_seconds": -1.9535196899102025e-12,
+    "max_seconds": -1.9481630807314285e-12,
+    "p50_abs_seconds": 1.9503943448628435e-12,
+    "p95_abs_seconds": 1.953064178099795e-12,
+    "linear_slope_seconds_per_day": 3.0600041289734227e-18,
+    "rms_after_diagnostic_linear_fit_seconds": 1.1236607301613296e-15
+  }
+}

@@ -1,5 +1,8 @@
 # 真实 JPL 数据与读取约定
 
+结果 CSV 的原始字节用于来源摘要；`.gitattributes` 保留 `csv.writer` 的
+CRLF 行尾，避免跨平台 Git 行尾转换改变这些摘要。
+
 `python scripts/download_data.py` 下载完整 DE440（119,799,808 字节）、配套
 GM 参数、真正 DE440 数值时间参考和审计元数据；`--core-only` 只下载核心。
 `--verify-only` 离线核验已下载文件。下载先写 `.part`，大小和 SHA256 成功
@@ -79,3 +82,18 @@ $1.3665878145967424\times10^{10}$、$1.7288232879171516\times10^{10}$ m³/s²。
 1.3240–1.3868 m²/s²。仅该项的 $U/c^2$ 对时间积累约为
 0.4649–0.4869 ns/year。这是给定距离条件下的上下界，尚不能替代
 343 小行星和 30 KBO 的实际逐项计算，也不能直接当作与 JPL 的总差异。
+
+## Phase 2 实际小体诊断数据
+
+已实际取得JPL `sb441-n373s.bsp`，982,106,112字节，SHA256 `2143113282bfc2b2a0b0b4626125d4f84362339b5a8ae7eea40f4120ca8da10b`；373个不同小体，374个Sun-relative Type2段，真实覆盖与DE440相同。完整来源、特殊分段体、版本混合限制见 [phase2_small_body_provenance.md](phase2_small_body_provenance.md)。其GM身份与DE440 header逐项匹配，但SB441轨道不是原DE440小体积分解的证明。
+
+默认下载命令保留Phase1行为；额外数据显式请求：
+
+```sh
+.venv/bin/python scripts/download_data.py --phase2-small-bodies
+.venv/bin/python scripts/download_data.py --phase2-small-bodies --verify-only
+```
+
+下载同样采用`.part`、固定大小/SHA256成功后原子替换。IOM来源PDF及提取文本已随文献档案保存，不需再次网络下载。
+
+`de440_spk_comments.txt`为本次用`spiceypy.dafec`从真实DE440 BSP只读导出的全部注释，59,312字节，SHA256 `e8123d2cd6daba62459661ad355b54f1431e56d2703ba42380dba46e7581eedc`。其原BSP SHA及导出方式写在manifest的`derived_artifacts`；不是单独HTTP下载资源。包含`GMSDOT=-9e-14`、`JDEPOC=2440400.5`但未解释导数单位或时间势的用法，因此不据此创造太阳质量变化修正。

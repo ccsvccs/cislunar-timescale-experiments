@@ -17,8 +17,8 @@
 - 论文：*The JPL Planetary and Lunar Ephemerides DE440 and DE441*，*The Astronomical Journal* **161**, 105 (2021)
 - DOI：[10.3847/1538-3881/abd414](https://doi.org/10.3847/1538-3881/abd414)
 - **JPL 官方完整 PDF**：[Park.2021.AJ.DE440.pdf](https://ssd.jpl.nasa.gov/doc/Park.2021.AJ.DE440.pdf)（15 页，开放获取，CC BY 4.0；转载须保留作者、题目、期刊、DOI 归属）
-- **当前仓库只有来源说明，PDF 尚未写入 Git**：见 [sources/park_2021_de440_de441.reference.md](sources/park_2021_de440_de441.reference.md)。
-- 预定下载入库路径：`docs/sources/park_2021_de440_de441.pdf`，请在有网络及 Git 认证的本地 Codex 环境下载、验文件、保存 SHA256 后提交。
+- **已取得并验证实际 15 页 PDF**：[sources/park_2021_de440_de441.pdf](sources/park_2021_de440_de441.pdf)，SHA256 `96c3945deb12e0f0843c2bf0703d3542d950cf85ff903b1fe11a501634f68ee0`；见 [sources/park_2021_de440_de441.reference.md](sources/park_2021_de440_de441.reference.md)。
+- 下载日期 2026-10-14；PDF 5,501,569 字节，`file`/`pdfinfo`/签名验证，页面 3–4 原式视觉核对；提取文本也已存档。
 - 重点：Sec. 2.3、Eq. (3)–(7) 的 TT−TDB 模型（包含外部势、太阳 J2、矢量势、补充 PN 项）；Sec. 3 的轨道动力学；与 DE440/441 模型/数据适用范围相关内容。
 - 勿把含站点位置项的完整表达式直接当成地心项；先置地心观测位置为零，再核对正负号、变量、单位、时间尺度缩放。
 

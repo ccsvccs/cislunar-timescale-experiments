@@ -1,6 +1,12 @@
 # Phase 2 — Independent DE440 geocentric TT↔TDB time ephemeris reproduction
 
-**Status:** Ready to implement (2026-10-14). **Scope:** geocenter only; retain Phase 1 Turyshev Eq. (21) exactly as the unchanged baseline. **Goal:** reproduce JPL `de440t.bsp` TT−TDB independently with a model matching Park et al. (2021), rather than improve the already stable quadrature in isolation.
+**Status:** Implemented and measured, target not yet achieved (2026-10-14). The separate Park candidate with major-body PN terms, solar J2 and the published ring's leading potential has a maximum raw residual of **11.282037595 ns** over the 732 modern epochs. See the [term mapping](phase2_model_mapping.md) and [measured report](phase2_jpl_reproduction_report.md) for additional small-body diagnostics, provenance and unresolved model inputs. **Scope:** geocenter only; retain Phase 1 Turyshev Eq. (21) exactly as the unchanged baseline. **Goal:** reproduce JPL `de440t.bsp` TT−TDB independently with a model matching Park et al. (2021), rather than improve the already stable quadrature in isolation.
+
+Measured follow-up: the independent SB441 direct-potential diagnostic reaches
+**2.818949569 ps** maximum raw residual; the separately specified Park literal
+ecliptic-latitude diagnostic reaches **1.953519690 ps**. Both fail the 1 ps gate.
+Neither introduces a fitted offset or linear correction. Original DE440
+small-body trajectories and complete all-body PN inputs remain unverified.
 
 ## Reference sources
 

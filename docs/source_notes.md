@@ -1,6 +1,6 @@
 # 原始资料、版本与实际阅读证据
 
-查阅日期：2026-10-13。除用户提供的 v3 PDF 外，下面都是本次实际打开或下载的原始资料。不会把搜索摘要、模型记忆或未下载的文件写成已读。数值公式审计先于积分器建立，见 [model_audit.md](model_audit.md)。
+查阅日期：2026-10-13；Phase 2 增补 2026-10-14。除用户提供的 v3 PDF 外，下面都是本次实际打开或下载的原始资料。不会把搜索摘要、模型记忆或未下载的文件写成已读。数值公式审计先于积分器建立，见 [model_audit.md](model_audit.md)。
 
 | 资料 | 原始链接 / 固定版本 | 本地证据与阅读范围 |
 |---|---|---|
@@ -8,7 +8,7 @@
 | 用户提供论文 | [arXiv v3](https://arxiv.org/pdf/2507.22145v3) | 根目录 `paper.pdf`，首页实际标记 v3 15 Nov 2025，文本 `sources/paper_local.txt`；SecII、AppendixA与v2核心公式一致，不能将它标成v2 |
 | Turyshev HTML | [v2 HTML](https://arxiv.org/html/2507.22145v2) | 网页标记v2，但正文日期显示2026，附录编号161/162，官方PDF为A43/A44；以固定PDF核对原始符号 |
 | Lu, Yang & Xie | [arXiv 2509.18511v1 PDF](https://arxiv.org/pdf/2509.18511v1)、[Section3 HTML](https://arxiv.org/html/2509.18511#S3) | `sources/lte440_2509.18511v1.pdf`、`sources/lte440_v1.txt`；已读Section3 Algorithm，额外检查式7含向量势与混合势；v2 URL实际404，查询历史只有v1，故保存v1 |
-| Park, Folkner, Williams & Boggs (2021), DE440/DE441 | [JPL 官方 PDF](https://ssd.jpl.nasa.gov/doc/Park.2021.AJ.DE440.pdf)、[DOI](https://doi.org/10.3847/1538-3881/abd414) | **参考链接已归档，PDF 尚未作为二进制文件提交**；具体获取和验证步骤见 [Park 2021 来源记录](sources/park_2021_de440_de441.reference.md)。本阶段应阅读 Sec. 2.3 Eq. (3)–(7) 及轨道模型相关章节；不得假称已经核验 PDF 哈希。 |
+| Park, Folkner, Williams & Boggs (2021), DE440/DE441 | [JPL 官方 PDF](https://ssd.jpl.nasa.gov/doc/Park.2021.AJ.DE440.pdf)、[DOI](https://doi.org/10.3847/1538-3881/abd414) | **实际 PDF 已下载并验证 15 页、5,501,569 字节**；本地 `sources/park_2021_de440_de441.pdf` 和提取文本；具体校验见 [Park 2021 来源记录](sources/park_2021_de440_de441.reference.md)。已阅读 Sec. 2.2–2.3 Eq. (3)–(7)、Sec. 3.1/3.2/3.5 及实际模型参数；第 3 页公式视觉核对。 |
 | LTE440仓库 | [GitHub](https://github.com/xlucn/LTE440) | 本地HEAD `76ea3a97fdbbd645352d3855b91dd2e878221351`，工作树只README，实际阅读完整README；没有LICENSE，没有原始积分源码 |
 | LTE440 Release | [20250620](https://github.com/xlucn/LTE440/releases/tag/20250620)、[资产清单](https://github.com/xlucn/LTE440/releases/expanded_assets/20250620) | `sources/lte440_release_assets.html`；实际资产为 `lte440-tclmtdb.zip`、`lte440-zh.pdf` 和源树自动归档；未下载无关月球数据 |
 | IAU 2006 B3 | [官方原链接](https://www.iau.org/static/resolutions/IAU2006_Resol3.pdf)、[ESO IAU档案镜像](https://iauarchive.eso.org/static/resolutions/IAU2006_Resol3.pdf) | `sources/iau2006_b3.pdf`、`sources/iau2006_b3.txt`；完整阅读定义式、注1/2/4/5；原网页工具失败后成功下载档案镜像 |
@@ -31,6 +31,7 @@ LTE440 Section3 的可复用内容是积分组织思想：10阶Romberg、半天�
 |---|---|
 | 用户 `paper.pdf` | `c4d8ef3d9dc0a592585eaa985e84a434240fdb3632f13d47bcda38371c5db79c` |
 | Turyshev v2 PDF | `dbbd9b74ee55f8bd1383d39d4b9aec505dca4a8fbb31531319ae5e4b110ece01` |
+| Park 2021 PDF | `96c3945deb12e0f0843c2bf0703d3542d950cf85ff903b1fe11a501634f68ee0` |
 | LTE440 v1 PDF | `b6a620c0388f01b5349cbafdc2c7febc7ec8db43336b49dc65293ddaba2f72ac` |
 | IAU B3 PDF | `1c8da5a20e4d67213f6008286cf133e0a495762719c4067b665f158ef83059da` |
 | ERFA dtdb.c 快照 | `228bd7c7c1c88dda44c29a076f289c968f64d77a2dc389138b03ab5d1d442105` |
@@ -40,3 +41,7 @@ LTE440 Section3 的可复用内容是积分组织思想：10阶Romberg、半天�
 ERFA源码下载自`master`，采用本地内容哈希固定证据，不伪造不存在的commit固定版本。源码自带原许可与版权说明。LTE440资产网页公布zip的SHA256为`baa74b47ef42633297617a1ed507daeb2157eb7a9a53bda26b5d5cc951b7b6dc`；本任务没有下载zip，因此这只是**服务器公布摘要**，不是本地验签结果。
 
 壳层网络首次被沙箱拒绝，按权限规则使用批准的下载命令完成小型原始资料获取。GitHub API返回403，改为实际公开Release资产页；失败尝试不写成读取成功。CALCEPH网页工具未成功打开，故不声称已阅读其具体API；本项目实际采用SPK Type2独立读取路径。
+
+## Phase 2 小体原始数据增补
+
+2026-10-14 实际下载并核验 JPL Farnocchia IOM392R-21-005（12页，SHA256 `124fe0fb48f8e71f3f1dba9607cfe5b47a016b95aa5429b61bf7cba301ed4b22`）、真实 `sb441-n373s.bsp`（982,106,112字节，SHA256 `2143113282bfc2b2a0b0b4626125d4f84362339b5a8ae7eea40f4120ca8da10b`）。原论文给的是同一373体集合；IOM给的是以DE441行星轨道重新拟合/积分的小体解，不保证原DE440轨道相同。具体coverage、Sun-relative段、分段特殊ID与数据限制见 [数据来源](../data/phase2_small_body_provenance.md)。

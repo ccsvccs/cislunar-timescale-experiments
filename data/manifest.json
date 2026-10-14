@@ -37,6 +37,19 @@
       "bytes": 559,
       "sha256": "3c618bed7d51a48ee059269097eeeab1f69f3b2641ec2aeb96132757418c845b",
       "role": "validation"
+    },
+    "sb441-n373s.bsp": {
+      "url": "https://ssd.jpl.nasa.gov/ftp/eph/small_bodies/asteroids_de441/sb441-n373s.bsp",
+      "bytes": 982106112,
+      "sha256": "2143113282bfc2b2a0b0b4626125d4f84362339b5a8ae7eea40f4120ca8da10b",
+      "role": "phase2_optional_diagnostic",
+      "provenance": "DE441 separately fitted/integrated small-body solution; Sun-relative SPK; not original DE440 small-body trajectories",
+      "coverage_jd_tdb": [
+        2287184.5,
+        2688976.5
+      ],
+      "distinct_targets": 373,
+      "segments": 374
     }
   },
   "de440_coverage_jd_tdb": [
@@ -111,5 +124,16 @@
     "model_sign": "TDB-TT=-X"
   },
   "authenticity": "de440.bsp MD5 agrees with official NAIF aa_checksums.txt; other SHA256 values pin retrieved official HTTPS resources (not separately signed)",
-  "missing_external_potential": "343 asteroids; 30 individual KBOs; 36 Kuiper-ring points; planetary satellite higher multipoles; see small_body_gm.json"
+  "missing_external_potential": "343 asteroids; 30 individual KBOs; 36 Kuiper-ring points; planetary satellite higher multipoles; see small_body_gm.json",
+  "phase2_retrieved_utc_date": "2026-10-14",
+  "derived_artifacts": {
+    "de440_spk_comments.txt": {
+      "bytes": 59312,
+      "sha256": "e8123d2cd6daba62459661ad355b54f1431e56d2703ba42380dba46e7581eedc",
+      "source_file": "de440.bsp",
+      "source_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+      "method": "spiceypy.dafec extraction of all comments, read-only, no kernel alteration",
+      "notes": "Contains GMSDOT and JDEPOC values; no unit/solar time-potential prescription supplied"
+    }
+  }
 }

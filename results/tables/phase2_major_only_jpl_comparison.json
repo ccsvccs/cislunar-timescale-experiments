@@ -1,0 +1,627 @@
+{
+  "command": "scripts/compare_phase2_jpl.py",
+  "versions": {
+    "python": "3.14.4",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "jplephem": "2.24",
+      "spiceypy": "8.3.0",
+      "pyerfa": "2.0.1.5",
+      "mpmath": "1.4.1",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1"
+    }
+  },
+  "model_signature": {
+    "model": {
+      "A": 1.0000000148082688,
+      "C_exact": 1.4808268676920312e-08,
+      "T0": "2443144.5003725",
+      "TDB0": -6.55e-05,
+      "bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+      "gm": {
+        "jupiter": 1.2671276409999998e+17,
+        "mars": 42828375815756.1,
+        "mercury": 22031868551400.004,
+        "moon": 4902800118457.55,
+        "neptune": 6836527100580399.0,
+        "pluto": 975500000000.0,
+        "saturn": 3.79405848418e+16,
+        "sun": 1.3271244004127942e+20,
+        "uranus": 5794556399999999.0,
+        "venus": 324858592000000.0
+      },
+      "gm_sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+      "header_sha256": "0f4636b663e6f00af9efa2b605ef23635489f56b23dd1a5e3821d3acc6ac3359",
+      "latitude_convention": "Park 3.5 solar spin axis",
+      "missing": [
+        "343 individual asteroids",
+        "30 KBOs",
+        "Kuiper-belt ring",
+        "resolved planetary satellite multipoles"
+      ],
+      "model": "Park2021_eq3_7_geocenter_major_bodies_candidate_v1",
+      "scale": "TDB-compatible SI ICRF geometric",
+      "solar_axis": [
+        0.12235349347232782,
+        -0.42307208364764326,
+        0.8977971010607901
+      ],
+      "sources": {
+        "constants.py": "71f1197afdc125c9f8fc3fddaa8e64051f60cea5f5c134e0a1785f2539f3dea5",
+        "ephemeris.py": "be1e3ae0d57a2a62d0300cf7bafa087505435af903784c78f8c99b02ba481479",
+        "extended_ephemeris.py": "9f06b63039ab25c69d821eed57701533182412b97f555a31265a051fe8b45719",
+        "jpl_model.py": "f132c7fc01a4019ecf7af603a7de9142ef7f30fabeb655ae55cddb37410b10e5",
+        "pn_rate.py": "9896da55114c7151b3eab380ac23d8162c82e8cbd4933da60621f322e04648c6",
+        "potential.py": "d0219bcd2caa40d817c2a1bf0f46da96098f7a7078d25d5dbf2ae28ab02a43a5",
+        "timebase.py": "a1ef2210f5ab3295ab467c3cba4ef0f3c9d00329c5d73dc4ed68ec42e0b16bda"
+      },
+      "switches": {
+        "kinetic_c2": true,
+        "kinetic_c4": true,
+        "mixed_c4": true,
+        "monopole_c2": true,
+        "pn_acceleration_c4": true,
+        "pn_body_potential_c4": true,
+        "pn_radial_velocity_c4": true,
+        "pn_velocity_c4": true,
+        "potential_squared_c4": true,
+        "solar_j2_c2": true,
+        "vector_c4": true
+      }
+    },
+    "baseline": {
+      "A": 1.0000000148082688,
+      "C_exact": 1.4808268676920312e-08,
+      "T0": "2443144.5003725",
+      "TDB0": -6.55e-05,
+      "bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+      "gm": {
+        "jupiter": 1.2671276409999998e+17,
+        "mars": 42828375815756.1,
+        "mercury": 22031868551400.004,
+        "moon": 4902800118457.55,
+        "neptune": 6836527100580399.0,
+        "pluto": 975500000000.0,
+        "saturn": 3.79405848418e+16,
+        "sun": 1.3271244004127942e+20,
+        "uranus": 5794556399999999.0,
+        "venus": 324858592000000.0
+      },
+      "gm_sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+      "missing": [
+        "343 individual asteroids",
+        "30 KBOs",
+        "Kuiper-belt ring",
+        "resolved planetary satellite multipoles"
+      ],
+      "model": "Turyshev2507.22145v2_eq21_geocenter",
+      "scale": "TDB-compatible SI ICRF geometric",
+      "sources": {
+        "constants.py": "71f1197afdc125c9f8fc3fddaa8e64051f60cea5f5c134e0a1785f2539f3dea5",
+        "ephemeris.py": "be1e3ae0d57a2a62d0300cf7bafa087505435af903784c78f8c99b02ba481479",
+        "pn_rate.py": "9896da55114c7151b3eab380ac23d8162c82e8cbd4933da60621f322e04648c6",
+        "potential.py": "d0219bcd2caa40d817c2a1bf0f46da96098f7a7078d25d5dbf2ae28ab02a43a5",
+        "timebase.py": "a1ef2210f5ab3295ab467c3cba4ef0f3c9d00329c5d73dc4ed68ec42e0b16bda"
+      }
+    },
+    "channels": [
+      "baseline_F2_minus_C",
+      "baseline_F4",
+      "solar_j2_c2",
+      "vector_c4",
+      "pn_velocity_c4",
+      "pn_body_potential_c4",
+      "pn_radial_velocity_c4",
+      "pn_acceleration_c4"
+    ],
+    "integration_source_sha256": "08656a9c2ba7adb02bf6ebfe2517fd291e0a743c938de49b3a56cc8d034f0ce6",
+    "script_sha256": "c4fcf441f9ac1b477fc271224f090fa64cb645a584cda970aedc135da01a8e8f",
+    "versions": {
+      "python": "3.14.4",
+      "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+      "packages": {
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "jplephem": "2.24",
+        "spiceypy": "8.3.0",
+        "pyerfa": "2.0.1.5",
+        "mpmath": "1.4.1",
+        "matplotlib": "3.11.2",
+        "pytest": "9.1.1"
+      }
+    }
+  },
+  "sample_count": 732,
+  "start_jd": "2460310.5",
+  "end_jd": "2461041.5",
+  "anchor_jd_parts": [
+    2443144.500372499,
+    1.4374344437219612e-11
+  ],
+  "anchor_j2000_seconds": -725803167.8160655,
+  "anchor_delta_seconds": -6.55e-05,
+  "anchor_model_minus_jpl_seconds": 1.7740258047294066e-17,
+  "sign": "TDB-TT; SI seconds; d/dTDB dimensionless",
+  "reference": {
+    "path": "data/de440t.bsp",
+    "sha256": "4f003b4437a8b479aaca262716a779e3683413200adfd6353c4901aab5de800e",
+    "segment": [
+      1000000000,
+      1000000001
+    ],
+    "common_coverage_jd": [
+      2287184.5,
+      2688976.5
+    ],
+    "derivative": "analytic Chebyshev derivative / 86400, sign reversed; independently checked against SPICE"
+  },
+  "acceptance": {
+    "threshold_seconds": 1e-12,
+    "max_abs_raw_seconds": 3.459185159368776e-08,
+    "passed": false,
+    "zero_point_fitted": false,
+    "linear_rate_fitted": false
+  },
+  "baseline_time_residual": {
+    "count": 732,
+    "max_abs_seconds": 3.458502153409857e-08,
+    "rms_seconds": 3.3879534773798915e-08,
+    "mean_seconds": -3.387708543079736e-08,
+    "min_seconds": -3.458502153409857e-08,
+    "max_seconds": -3.317299926166282e-08,
+    "p50_abs_seconds": 3.387840724948331e-08,
+    "p95_abs_seconds": 3.451399477384133e-08,
+    "linear_slope_seconds_per_day": -1.927861742109212e-12,
+    "rms_after_diagnostic_linear_fit_seconds": 1.901943484975258e-12
+  },
+  "baseline_rate_residual": {
+    "count": 732,
+    "max_abs_dimensionless": 2.2986820341013314e-17,
+    "rms_dimensionless": 2.2359237038991973e-17,
+    "mean_dimensionless": -2.2356678682350282e-17,
+    "min_dimensionless": -2.2986820341013314e-17,
+    "max_dimensionless": -2.187189890685666e-17,
+    "p50_abs_dimensionless": 2.227893853075547e-17,
+    "p95_abs_dimensionless": 2.2934676737646818e-17,
+    "linear_slope_dimensionless_per_day": -4.997893208492765e-22,
+    "rms_after_diagnostic_linear_fit_dimensionless": 3.2131866745390035e-19
+  },
+  "time_residual": {
+    "count": 732,
+    "max_abs_seconds": 3.459185159368776e-08,
+    "rms_seconds": 3.3886419704969515e-08,
+    "mean_seconds": -3.3883967944074574e-08,
+    "min_seconds": -3.459185159368776e-08,
+    "max_seconds": -3.3178952223419174e-08,
+    "p50_abs_seconds": 3.3884772059631155e-08,
+    "p95_abs_seconds": 3.4521230017495534e-08,
+    "linear_slope_seconds_per_day": -1.9290046308554627e-12,
+    "rms_after_diagnostic_linear_fit_seconds": 2.0918610620174974e-12
+  },
+  "rate_residual": {
+    "count": 732,
+    "max_abs_dimensionless": 2.2948181639232885e-17,
+    "rms_dimensionless": 2.237321223596392e-17,
+    "mean_dimensionless": -2.237041733561873e-17,
+    "min_dimensionless": -2.2948181639232885e-17,
+    "max_dimensionless": -2.180589863107015e-17,
+    "p50_abs_dimensionless": 2.2351026616743477e-17,
+    "p95_abs_dimensionless": 2.2934031362931853e-17,
+    "linear_slope_dimensionless_per_day": -3.7216291993535093e-22,
+    "rms_after_diagnostic_linear_fit_dimensionless": 3.4477450797011365e-19
+  },
+  "residual_first_seconds": -3.3178952223419174e-08,
+  "residual_last_seconds": -3.459185159368776e-08,
+  "residual_peak_to_peak_seconds": 1.4128993702685862e-09,
+  "independent_quadratures": {
+    "count": 732,
+    "max_abs_seconds": 2.8189256484623115e-18,
+    "rms_seconds": 2.184335408069956e-18,
+    "mean_seconds": 2.164829405966934e-18,
+    "min_seconds": 1.5178830414797062e-18,
+    "max_seconds": 2.8189256484623115e-18,
+    "p50_abs_seconds": 2.168404344971009e-18,
+    "p95_abs_seconds": 2.6020852139652106e-18,
+    "linear_slope_seconds_per_day": 7.934313966204505e-22,
+    "rms_after_diagnostic_linear_fit_seconds": 2.381699937761028e-19
+  },
+  "max_channel_quadrature_difference_seconds": [
+    2.846030702774449e-18,
+    2.6469779601696886e-23,
+    6.462348535570529e-27,
+    1.6155871338926322e-27,
+    3.2311742677852644e-27,
+    6.462348535570529e-27,
+    1.0097419586828951e-28,
+    1.502496034520148e-25
+  ],
+  "term_reconstruction_max_abs_rate": 6.565746112139657e-24,
+  "short_convergence": {
+    "gauss_legendre24_0.25day": {
+      "delta_difference": {
+        "count": 33,
+        "max_abs_seconds": 0.0,
+        "rms_seconds": 0.0,
+        "mean_seconds": 0.0,
+        "min_seconds": 0.0,
+        "max_seconds": 0.0,
+        "p50_abs_seconds": 0.0,
+        "p95_abs_seconds": 0.0,
+        "linear_slope_seconds_per_day": 0.0,
+        "rms_after_diagnostic_linear_fit_seconds": 0.0
+      },
+      "stats": {
+        "segments": 128,
+        "evaluations": 4608,
+        "batches": 4,
+        "elapsed_seconds": 0.06622769699788478,
+        "query_intervals": 0,
+        "rate_calls": 8
+      }
+    },
+    "gauss_legendre16_0.5day": {
+      "delta_difference": {
+        "count": 33,
+        "max_abs_seconds": 5.421010942703308e-19,
+        "rms_seconds": 2.83368354990963e-19,
+        "mean_seconds": -2.3696389329454483e-19,
+        "min_seconds": -5.421010942703308e-19,
+        "max_seconds": 0.0,
+        "p50_abs_seconds": 2.1684046355752686e-19,
+        "p95_abs_seconds": 4.336809271150537e-19,
+        "linear_slope_seconds_per_day": -1.5423247593602932e-20,
+        "rms_after_diagnostic_linear_fit_seconds": 5.077659438558455e-20
+      },
+      "stats": {
+        "segments": 64,
+        "evaluations": 1536,
+        "batches": 2,
+        "elapsed_seconds": 0.022668775000056485,
+        "query_intervals": 0,
+        "rate_calls": 4
+      }
+    },
+    "romberg10_0.5day": {
+      "delta_difference": {
+        "count": 33,
+        "max_abs_seconds": 1.0842021885406617e-19,
+        "rms_seconds": 5.565393819918732e-20,
+        "mean_seconds": -2.5462320991558626e-20,
+        "min_seconds": -1.0842021885406617e-19,
+        "max_seconds": 1.0842021885406617e-19,
+        "p50_abs_seconds": 2.710505471351654e-20,
+        "p95_abs_seconds": 1.0842021885406617e-19,
+        "linear_slope_seconds_per_day": 1.8095705642239835e-21,
+        "rms_after_diagnostic_linear_fit_seconds": 4.6391151203244835e-20
+      },
+      "stats": {
+        "segments": 64,
+        "evaluations": 32832,
+        "batches": 2,
+        "elapsed_seconds": 0.28127805899930536,
+        "query_intervals": 0,
+        "rate_calls": 20
+      }
+    },
+    "romberg10_1day": {
+      "delta_difference": {
+        "count": 33,
+        "max_abs_seconds": 1.0842027055285522e-19,
+        "rms_seconds": 5.947610076498545e-20,
+        "mean_seconds": -3.275194718285696e-20,
+        "min_seconds": -1.0842027055285522e-19,
+        "max_seconds": 1.0842021885406617e-19,
+        "p50_abs_seconds": 1.3552520894409639e-20,
+        "p95_abs_seconds": 1.0842021885406617e-19,
+        "linear_slope_seconds_per_day": -4.42767615602783e-22,
+        "rms_after_diagnostic_linear_fit_seconds": 4.9466573946137694e-20
+      },
+      "stats": {
+        "segments": 32,
+        "evaluations": 16416,
+        "batches": 1,
+        "elapsed_seconds": 0.13898954199976288,
+        "query_intervals": 0,
+        "rate_calls": 10
+      }
+    }
+  },
+  "romberg": {
+    "method": "romberg",
+    "order": 10,
+    "step_days": 0.5,
+    "elapsed_wall_seconds": 221.00460558799932,
+    "stats": {
+      "segments": 35793,
+      "evaluations": 18737838,
+      "batches": 1142,
+      "elapsed_seconds": 220.16898969200884,
+      "query_intervals": 733,
+      "rate_calls": 11420
+    },
+    "sum_segment_error_indicators_seconds": [
+      2.084326663486465e-16,
+      4.37016319717957e-23,
+      9.732768633390538e-27,
+      3.9758919229498016e-26,
+      6.083350174418409e-27,
+      1.1148182312583339e-26,
+      9.40437177041126e-28,
+      2.1947641163212898e-23
+    ],
+    "max_segment_error_indicators_seconds": [
+      3.3881317890172014e-20,
+      7.270142102516845e-27,
+      1.7749370367472766e-30,
+      9.466330862652142e-30,
+      1.1832913578315177e-30,
+      1.9721522630525295e-30,
+      2.9582283945787943e-31,
+      9.149177347576603e-26
+    ],
+    "cache_fingerprint": "0bd03133796babbc8e5dad5759f2a715785ff9753e6a7d5639d9a445854705a2"
+  },
+  "gauss": {
+    "method": "gauss_legendre",
+    "order": 24,
+    "step_days": 0.5,
+    "elapsed_wall_seconds": 21.8210049169993,
+    "stats": {
+      "segments": 35793,
+      "evaluations": 1314936,
+      "batches": 1142,
+      "elapsed_seconds": 21.26290319297368,
+      "query_intervals": 733,
+      "rate_calls": 2284
+    },
+    "sum_segment_error_indicators_seconds": [
+      1.0482588711720694e-15,
+      2.8377788006824084e-23,
+      6.0247279483991724e-27,
+      5.0173920454570093e-26,
+      2.1567309237322734e-26,
+      1.249003471236428e-26,
+      5.1556056460827725e-27,
+      5.06519575373843e-28
+    ],
+    "max_segment_error_indicators_seconds": [
+      1.5161889755851976e-19,
+      4.8467614016778965e-27,
+      9.860761315262648e-31,
+      1.4988357199199224e-29,
+      7.296963373294359e-30,
+      3.549874073494553e-30,
+      1.6301071049293564e-30,
+      1.232595164407831e-31
+    ],
+    "cache_fingerprint": "6388a70832f2886a2bd9832452d6ef1ce7dd6720ad10833188ec68c68217e322"
+  },
+  "attribution": {
+    "solar_j2_c2": {
+      "max_abs_instantaneous_delta_rate": 2.4588471664176846e-20,
+      "anchor_to_first_epoch_seconds": 3.3978069168343525e-11,
+      "anchor_to_last_epoch_seconds": 3.54250623378901e-11,
+      "modern_peak_to_peak_seconds": 1.4469931695465718e-12,
+      "net_modern_accumulation_seconds": 1.4469931695465718e-12,
+      "raw_residual_without_term": {
+        "count": 732,
+        "max_abs_seconds": 3.462727665602565e-08,
+        "rms_seconds": 3.392112299944869e-08,
+        "mean_seconds": -3.3918668738791925e-08,
+        "min_seconds": -3.462727665602565e-08,
+        "max_seconds": -3.321293029258752e-08,
+        "p50_abs_seconds": 3.391947362403999e-08,
+        "p95_abs_seconds": 3.455657765161381e-08,
+        "linear_slope_seconds_per_day": -1.93097589554173e-12,
+        "rms_after_diagnostic_linear_fit_seconds": 2.0887958555005445e-12
+      },
+      "max_abs_residual_change_when_added_seconds": 3.542506233789248e-11,
+      "rate_residual_without_term": {
+        "count": 732,
+        "max_abs_dimensionless": 2.2970528368434057e-17,
+        "rms_dimensionless": 2.2396113196484438e-17,
+        "mean_dimensionless": -2.2393330016541726e-17,
+        "min_dimensionless": -2.2970528368434057e-17,
+        "max_dimensionless": -2.1830066680438787e-17,
+        "p50_abs_dimensionless": 2.2373588835094048e-17,
+        "p95_abs_dimensionless": 2.2956168821220166e-17,
+        "linear_slope_dimensionless_per_day": -3.7236270364602014e-22,
+        "rms_after_diagnostic_linear_fit_dimensionless": 3.4418877654306116e-19
+      }
+    },
+    "vector_c4": {
+      "max_abs_instantaneous_delta_rate": 1.630251352578105e-19,
+      "anchor_to_first_epoch_seconds": -1.2059349610484956e-11,
+      "anchor_to_last_epoch_seconds": -1.318953690907798e-11,
+      "modern_peak_to_peak_seconds": 1.993485612559628e-12,
+      "net_modern_accumulation_seconds": -1.130187298593024e-12,
+      "raw_residual_without_term": {
+        "count": 732,
+        "max_abs_seconds": 3.457866205677868e-08,
+        "rms_seconds": 3.387330146478581e-08,
+        "mean_seconds": -3.387085254094313e-08,
+        "min_seconds": -3.457866205677868e-08,
+        "max_seconds": -3.316689287380869e-08,
+        "p50_abs_seconds": 3.3872178974577194e-08,
+        "p95_abs_seconds": 3.4507649261176e-08,
+        "linear_slope_seconds_per_day": -1.927519405388395e-12,
+        "rms_after_diagnostic_linear_fit_seconds": 1.902931780532843e-12
+      },
+      "max_abs_residual_change_when_added_seconds": -1.3189536909077567e-11,
+      "rate_residual_without_term": {
+        "count": 732,
+        "max_abs_dimensionless": 2.2983013209322663e-17,
+        "rms_dimensionless": 2.2355233024007414e-17,
+        "mean_dimensionless": -2.2352670749281093e-17,
+        "min_dimensionless": -2.2983013209322663e-17,
+        "max_dimensionless": -2.1868390061629982e-17,
+        "p50_abs_dimensionless": 2.2274650162436768e-17,
+        "p95_abs_dimensionless": 2.2931396566724783e-17,
+        "linear_slope_dimensionless_per_day": -4.997749120500859e-22,
+        "rms_after_diagnostic_linear_fit_dimensionless": 3.215602604247855e-19
+      }
+    },
+    "pn_velocity_c4": {
+      "max_abs_instantaneous_delta_rate": 1.3991837096185346e-20,
+      "anchor_to_first_epoch_seconds": 1.6799754719910758e-11,
+      "anchor_to_last_epoch_seconds": 1.7529119912935246e-11,
+      "modern_peak_to_peak_seconds": 7.293651930244883e-13,
+      "net_modern_accumulation_seconds": 7.293651930244883e-13,
+      "raw_residual_without_term": {
+        "count": 732,
+        "max_abs_seconds": 3.46093807136007e-08,
+        "rms_seconds": 3.390358513581057e-08,
+        "mean_seconds": -3.39011320490902e-08,
+        "min_seconds": -3.46093807136007e-08,
+        "max_seconds": -3.319575197813909e-08,
+        "p50_abs_seconds": 3.390193702816861e-08,
+        "p95_abs_seconds": 3.4538720301777715e-08,
+        "linear_slope_seconds_per_day": -1.9300149539826596e-12,
+        "rms_after_diagnostic_linear_fit_seconds": 2.0855426517045393e-12
+      },
+      "max_abs_residual_change_when_added_seconds": 1.7529119912938257e-11,
+      "rate_residual_without_term": {
+        "count": 732,
+        "max_abs_dimensionless": 2.2958808018228028e-17,
+        "rms_dimensionless": 2.2384746932319757e-17,
+        "mean_dimensionless": -2.238196727436358e-17,
+        "min_dimensionless": -2.2958808018228028e-17,
+        "max_dimensionless": -2.1819317930681424e-17,
+        "p50_abs_dimensionless": 2.236155001845437e-17,
+        "p95_abs_dimensionless": 2.2944546832319473e-17,
+        "linear_slope_dimensionless_per_day": -3.7224853798473157e-22,
+        "rms_after_diagnostic_linear_fit_dimensionless": 3.438732077894374e-19
+      }
+    },
+    "pn_body_potential_c4": {
+      "max_abs_instantaneous_delta_rate": 2.940367558097637e-20,
+      "anchor_to_first_epoch_seconds": -4.0768551854687886e-11,
+      "anchor_to_last_epoch_seconds": -4.2533043562814276e-11,
+      "modern_peak_to_peak_seconds": 1.7644917081263908e-12,
+      "net_modern_accumulation_seconds": -1.7644917081263908e-12,
+      "raw_residual_without_term": {
+        "count": 732,
+        "max_abs_seconds": 3.4549318550124946e-08,
+        "rms_seconds": 3.384476262136094e-08,
+        "mean_seconds": -3.3842313992644724e-08,
+        "min_seconds": -3.4549318550124946e-08,
+        "max_seconds": -3.3138183671564485e-08,
+        "p50_abs_seconds": 3.3843116177433184e-08,
+        "p95_abs_seconds": 3.4478786422450944e-08,
+        "linear_slope_seconds_per_day": -1.9265866172779146e-12,
+        "rms_after_diagnostic_linear_fit_seconds": 2.0960025548097622e-12
+      },
+      "max_abs_residual_change_when_added_seconds": -4.2533043562814296e-11,
+      "rate_residual_without_term": {
+        "count": 732,
+        "max_abs_dimensionless": 2.2920963060489523e-17,
+        "rms_dimensionless": 2.2345287222488906e-17,
+        "mean_dimensionless": -2.2342478565615476e-17,
+        "min_dimensionless": -2.2920963060489523e-17,
+        "max_dimensionless": -2.1776761940036223e-17,
+        "p50_abs_dimensionless": 2.2323695205466578e-17,
+        "p95_abs_dimensionless": 2.290684050800753e-17,
+        "linear_slope_dimensionless_per_day": -3.729841331896486e-22,
+        "rms_after_diagnostic_linear_fit_dimensionless": 3.4539941016497045e-19
+      }
+    },
+    "pn_radial_velocity_c4": {
+      "max_abs_instantaneous_delta_rate": 1.090257590913634e-21,
+      "anchor_to_first_epoch_seconds": -7.590055679096811e-13,
+      "anchor_to_last_epoch_seconds": -7.90990869640841e-13,
+      "modern_peak_to_peak_seconds": 3.198530173115994e-14,
+      "net_modern_accumulation_seconds": -3.198530173115994e-14,
+      "raw_residual_without_term": {
+        "count": 732,
+        "max_abs_seconds": 3.4591060602818116e-08,
+        "rms_seconds": 3.388564509980931e-08,
+        "mean_seconds": -3.3883193397855443e-08,
+        "min_seconds": -3.4591060602818116e-08,
+        "max_seconds": -3.317819321785126e-08,
+        "p50_abs_seconds": 3.388399826377025e-08,
+        "p95_abs_seconds": 3.452044052630822e-08,
+        "linear_slope_seconds_per_day": -1.9289593854697364e-12,
+        "rms_after_diagnostic_linear_fit_seconds": 2.0922677396847272e-12
+      },
+      "max_abs_residual_change_when_added_seconds": -7.909908696439495e-13,
+      "rate_residual_without_term": {
+        "count": 732,
+        "max_abs_dimensionless": 2.2947407334699217e-17,
+        "rms_dimensionless": 2.2372706751836983e-17,
+        "mean_dimensionless": -2.236991100854937e-17,
+        "min_dimensionless": -2.2947407334699217e-17,
+        "max_dimensionless": -2.1805477424709517e-17,
+        "p50_abs_dimensionless": 2.235020815184196e-17,
+        "p95_abs_dimensionless": 2.2933612795271635e-17,
+        "linear_slope_dimensionless_per_day": -3.720480066483482e-22,
+        "rms_after_diagnostic_linear_fit_dimensionless": 3.448306359724234e-19
+      }
+    },
+    "pn_acceleration_c4": {
+      "max_abs_instantaneous_delta_rate": 4.13237798555093e-21,
+      "anchor_to_first_epoch_seconds": -3.1438786162661264e-12,
+      "anchor_to_last_epoch_seconds": -3.27067049847329e-12,
+      "modern_peak_to_peak_seconds": 1.2679188220716367e-13,
+      "net_modern_accumulation_seconds": -1.2679188220716367e-13,
+      "raw_residual_without_term": {
+        "count": 732,
+        "max_abs_seconds": 3.458858092318929e-08,
+        "rms_seconds": 3.388321597745655e-08,
+        "mean_seconds": -3.3880764431844675e-08,
+        "min_seconds": -3.458858092318929e-08,
+        "max_seconds": -3.317580834480291e-08,
+        "p50_abs_seconds": 3.388156347964522e-08,
+        "p95_abs_seconds": 3.451797069797193e-08,
+        "linear_slope_seconds_per_day": -1.928828638728691e-12,
+        "rms_after_diagnostic_linear_fit_seconds": 2.096370184648973e-12
+      },
+      "max_abs_residual_change_when_added_seconds": -3.2706704984731164e-12,
+      "rate_residual_without_term": {
+        "count": 732,
+        "max_abs_dimensionless": 2.294640309988335e-17,
+        "rms_dimensionless": 2.2371212767008685e-17,
+        "mean_dimensionless": -2.2368407745982516e-17,
+        "min_dimensionless": -2.294640309988335e-17,
+        "max_dimensionless": -2.1802239847879864e-17,
+        "p50_abs_dimensionless": 2.2349933818837212e-17,
+        "p95_abs_dimensionless": 2.2932603351740383e-17,
+        "linear_slope_dimensionless_per_day": -3.7118562862703005e-22,
+        "rms_after_diagnostic_linear_fit_dimensionless": 3.4546127141137214e-19
+      }
+    }
+  },
+  "sparse_full_coverage_rate_only": {
+    "count": 221,
+    "start_jd": 2287185.0,
+    "end_jd": 2688976.0,
+    "extended_rate_residual": {
+      "count": 221,
+      "max_abs_dimensionless": 2.5143385925192273e-17,
+      "rms_dimensionless": 2.2865618945492412e-17,
+      "mean_dimensionless": -2.285389313282942e-17,
+      "min_dimensionless": -2.5143385925192273e-17,
+      "max_dimensionless": -2.1607997168781697e-17,
+      "p50_abs_dimensionless": 2.277426630798285e-17,
+      "p95_abs_dimensionless": 2.4134516280164103e-17,
+      "linear_slope_dimensionless_per_day": 1.09684198844693e-24,
+      "rms_after_diagnostic_linear_fit_dimensionless": 7.209483342161792e-19
+    },
+    "baseline_rate_residual": {
+      "count": 221,
+      "max_abs_dimensionless": 2.528178394332157e-17,
+      "rms_dimensionless": 2.2862438559804078e-17,
+      "mean_dimensionless": -2.285055781404284e-17,
+      "min_dimensionless": -2.528178394332157e-17,
+      "max_dimensionless": -2.1508419046992244e-17,
+      "p50_abs_dimensionless": 2.2776192863328273e-17,
+      "p95_abs_dimensionless": 2.4149679069478872e-17,
+      "linear_slope_dimensionless_per_day": 1.1061542832315627e-24,
+      "rms_after_diagnostic_linear_fit_dimensionless": 7.255991029582686e-19
+    },
+    "integrated_long_interval_test_performed": false
+  },
+  "elapsed_wall_seconds": 243.760100255
+}
