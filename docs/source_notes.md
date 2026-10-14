@@ -8,6 +8,7 @@
 | 用户提供论文 | [arXiv v3](https://arxiv.org/pdf/2507.22145v3) | 根目录 `paper.pdf`，首页实际标记 v3 15 Nov 2025，文本 `sources/paper_local.txt`；SecII、AppendixA与v2核心公式一致，不能将它标成v2 |
 | Turyshev HTML | [v2 HTML](https://arxiv.org/html/2507.22145v2) | 网页标记v2，但正文日期显示2026，附录编号161/162，官方PDF为A43/A44；以固定PDF核对原始符号 |
 | Lu, Yang & Xie | [arXiv 2509.18511v1 PDF](https://arxiv.org/pdf/2509.18511v1)、[Section3 HTML](https://arxiv.org/html/2509.18511#S3) | `sources/lte440_2509.18511v1.pdf`、`sources/lte440_v1.txt`；已读Section3 Algorithm，额外检查式7含向量势与混合势；v2 URL实际404，查询历史只有v1，故保存v1 |
+| Park, Folkner, Williams & Boggs (2021), DE440/DE441 | [JPL 官方 PDF](https://ssd.jpl.nasa.gov/doc/Park.2021.AJ.DE440.pdf)、[DOI](https://doi.org/10.3847/1538-3881/abd414) | **参考链接已归档，PDF 尚未作为二进制文件提交**；具体获取和验证步骤见 [Park 2021 来源记录](sources/park_2021_de440_de441.reference.md)。本阶段应阅读 Sec. 2.3 Eq. (3)–(7) 及轨道模型相关章节；不得假称已经核验 PDF 哈希。 |
 | LTE440仓库 | [GitHub](https://github.com/xlucn/LTE440) | 本地HEAD `76ea3a97fdbbd645352d3855b91dd2e878221351`，工作树只README，实际阅读完整README；没有LICENSE，没有原始积分源码 |
 | LTE440 Release | [20250620](https://github.com/xlucn/LTE440/releases/tag/20250620)、[资产清单](https://github.com/xlucn/LTE440/releases/expanded_assets/20250620) | `sources/lte440_release_assets.html`；实际资产为 `lte440-tclmtdb.zip`、`lte440-zh.pdf` 和源树自动归档；未下载无关月球数据 |
 | IAU 2006 B3 | [官方原链接](https://www.iau.org/static/resolutions/IAU2006_Resol3.pdf)、[ESO IAU档案镜像](https://iauarchive.eso.org/static/resolutions/IAU2006_Resol3.pdf) | `sources/iau2006_b3.pdf`、`sources/iau2006_b3.txt`；完整阅读定义式、注1/2/4/5；原网页工具失败后成功下载档案镜像 |
