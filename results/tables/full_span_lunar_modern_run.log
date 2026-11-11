@@ -1,0 +1,36 @@
+convergence {"major": {"scope": "modern 732 intervals, computational convergence anchor 2024-01-01 only; not physical origin", "configs": [["gauss_legendre", 8, 1], ["romberg", 5, 1], ["gauss_legendre", 12, 2]], "wall_seconds": [0.1479377149953507, 0.21237529399513733, 0.42408389000047464], "max_primary_minus_highorder_seconds": 6.173810792396573e-18, "max_independent_minus_highorder_seconds": 2.081795599000466e-18}, "SB441": {"scope": "modern 732 intervals, computational convergence anchor 2024-01-01 only; not physical origin", "configs": [["gauss_legendre", 4, 1], ["romberg", 4, 1], ["gauss_legendre", 12, 2]], "wall_seconds": [0.4803651130059734, 0.7239623200002825, 2.546405262008193], "max_primary_minus_highorder_seconds": 3.9960538014875574e-26, "max_independent_minus_highorder_seconds": 3.884982186032439e-26}}
+full_span_lunar_modern_major_gl8 {"method": "gauss_legendre", "order": 8, "subdivisions_per_output_interval": 1, "interval_count": 18630, "evaluations": 223560, "sum_local_order_difference_indicators_seconds": [5.190880713694587e-14, 1.8228386903962138e-21, 1.1272625120381953e-26, 2.9463260612408196e-24, 4.714215572433033e-23, 5.477540892379859e-24, 2.6831383974319335e-24, 1.2162734063980406e-22, 1.0118707725626006e-21, 4.3064151612574864e-21, 1.6645001215374662e-25], "integration_wall_seconds": 4.144116033989121, "loaded_cache": false, "call_wall_seconds": 4.220215820998419, "anchor_index": 1, "cumulative_directions": "independent forward and backward from original anchor", "cache_identity_sha256": "03623132421c93a6da87f624151782b2dbf9fb259158ce2b67701ccf3fde66e6", "longdouble_mantissa_bits": 63}
+full_span_lunar_modern_SB441_gl4 {"method": "gauss_legendre", "order": 4, "subdivisions_per_output_interval": 1, "interval_count": 18630, "evaluations": 111780, "sum_local_order_difference_indicators_seconds": [1.3161736325921437e-18, 4.984794238146003e-21], "integration_wall_seconds": 14.304596741989371, "loaded_cache": false, "call_wall_seconds": 14.329245461995015, "anchor_index": 1, "cumulative_directions": "independent forward and backward from original anchor", "cache_identity_sha256": "5f576d5bb699196e0244bdd61207919d91b139896682dd9cdaa0e1b01999d26f", "longdouble_mantissa_bits": 63}
+full_span_lunar_modern_major_romberg5 {"method": "romberg", "order": 5, "subdivisions_per_output_interval": 1, "interval_count": 18630, "evaluations": 316710, "sum_local_order_difference_indicators_seconds": [1.6096167281134746e-14, 5.65926440511951e-22, 7.612902165835374e-27, 3.1629157113783006e-24, 5.687073392859233e-24, 2.6665865179185862e-24, 1.3332522381922216e-24, 4.354344255497723e-23, 1.3946352007483988e-21, 1.5429585089517975e-21, 1.0319741960381816e-25], "integration_wall_seconds": 6.932816137996269, "loaded_cache": false, "call_wall_seconds": 7.010141388003831, "anchor_index": 1, "cumulative_directions": "independent forward and backward from original anchor", "cache_identity_sha256": "99c5d229052f1321e91479caef7bd9153e0e7e99bb8bebf9f3d8e23dc14eddf7", "longdouble_mantissa_bits": 63}
+full_span_lunar_modern_SB441_romberg4 {"method": "romberg", "order": 4, "subdivisions_per_output_interval": 1, "interval_count": 18630, "evaluations": 167670, "sum_local_order_difference_indicators_seconds": [2.8824674554188167e-22, 1.19193727335274e-24], "integration_wall_seconds": 23.46433303100639, "loaded_cache": false, "call_wall_seconds": 23.48767541500274, "anchor_index": 1, "cumulative_directions": "independent forward and backward from original anchor", "cache_identity_sha256": "b664029f3c55530c16a1fc04f1386a47eb1b1360857970bbd6083d551a7b0069", "longdouble_mantissa_bits": 63}
+{
+  "sample_count": 18631,
+  "time_residual_raw": {
+    "count": 18631,
+    "max_abs_seconds": 3.0475784114185334e-12,
+    "rms_seconds": 2.5000740568525526e-12,
+    "mean_seconds": 2.3761785692485955e-12,
+    "min_seconds": 4.351697940967972e-18,
+    "max_seconds": 3.0475784114185334e-12,
+    "max_epoch_tdb_seconds": 504316800.0
+  },
+  "modern_time_residual_raw": {
+    "count": 732,
+    "max_abs_seconds": 2.8302858104053974e-12,
+    "rms_seconds": 2.8043065526517494e-12,
+    "mean_seconds": 2.8042880588815417e-12,
+    "min_seconds": 2.79255644216464e-12,
+    "max_seconds": 2.8302858104053974e-12,
+    "max_epoch_tdb_seconds": 820497600.0
+  },
+  "independent_quadrature_difference": {
+    "count": 18631,
+    "max_abs_seconds": 7.399679827213568e-17,
+    "rms_seconds": 2.922880180564109e-17,
+    "mean_seconds": 4.468457226366404e-18,
+    "min_seconds": -6.011901046432122e-17,
+    "max_seconds": 7.399679827213568e-17,
+    "max_epoch_tdb_seconds": 710640000.0
+  },
+  "wall_elapsed_seconds_before_plot": 56.82612127799075
+}

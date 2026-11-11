@@ -1,0 +1,64 @@
+convergence {"major": {"scope": "modern 732 intervals, computational convergence anchor 2024-01-01 only; not physical origin", "configs": [["gauss_legendre", 8, 1], ["romberg", 5, 1], ["gauss_legendre", 12, 2]], "wall_seconds": [0.15066954000212718, 0.21390252400306053, 0.42026380699826404], "max_primary_minus_highorder_seconds": 6.173810792396573e-18, "max_independent_minus_highorder_seconds": 2.081795599000466e-18}, "SB441": {"scope": "modern 732 intervals, computational convergence anchor 2024-01-01 only; not physical origin", "configs": [["gauss_legendre", 4, 1], ["romberg", 4, 1], ["gauss_legendre", 12, 2]], "wall_seconds": [0.4648423189937603, 0.7107700970082078, 2.5217587950028246], "max_primary_minus_highorder_seconds": 3.9960538014875574e-26, "max_independent_minus_highorder_seconds": 3.884982186032439e-26}}
+full_span_lunar_full_major_gl8: 51456/401793 intervals, 11.3s
+full_span_lunar_full_major_gl8: 102656/401793 intervals, 22.7s
+full_span_lunar_full_major_gl8: 153856/401793 intervals, 33.7s
+full_span_lunar_full_major_gl8: 205056/401793 intervals, 45.0s
+full_span_lunar_full_major_gl8: 256256/401793 intervals, 56.3s
+full_span_lunar_full_major_gl8: 307456/401793 intervals, 67.4s
+full_span_lunar_full_major_gl8: 358656/401793 intervals, 78.7s
+full_span_lunar_full_major_gl8 {"method": "gauss_legendre", "order": 8, "subdivisions_per_output_interval": 1, "interval_count": 401793, "evaluations": 4821516, "sum_local_order_difference_indicators_seconds": [1.0468528340161012e-12, 3.697374553568744e-20, 2.629975485233209e-25, 6.664963356999838e-23, 2.815731937723902e-22, 1.3827413012332955e-22, 6.914778883603998e-23, 2.848166980145672e-21, 5.216362686722976e-25, 1.0270435151918944e-19, 3.763066065571477e-24], "integration_wall_seconds": 88.18651480000699, "loaded_cache": false, "call_wall_seconds": 89.9209194760042, "anchor_index": 155961, "cumulative_directions": "independent forward and backward from original anchor", "cache_identity_sha256": "a2e14697111c542dea7375818647a66ca0daba6b242bc15ffcd0818571248b0e", "longdouble_mantissa_bits": 63}
+full_span_lunar_full_SB441_gl4: 51456/401793 intervals, 39.3s
+full_span_lunar_full_SB441_gl4: 102656/401793 intervals, 78.4s
+full_span_lunar_full_SB441_gl4: 153856/401793 intervals, 116.7s
+full_span_lunar_full_SB441_gl4: 205056/401793 intervals, 155.8s
+full_span_lunar_full_SB441_gl4: 256256/401793 intervals, 194.6s
+full_span_lunar_full_SB441_gl4: 307456/401793 intervals, 233.2s
+full_span_lunar_full_SB441_gl4: 358656/401793 intervals, 268.1s
+full_span_lunar_full_SB441_gl4 {"method": "gauss_legendre", "order": 4, "subdivisions_per_output_interval": 1, "interval_count": 401793, "evaluations": 2410758, "sum_local_order_difference_indicators_seconds": [3.009820797566379e-17, 1.0210157946479932e-18], "integration_wall_seconds": 290.4207346040057, "loaded_cache": false, "call_wall_seconds": 290.7936792370019, "anchor_index": 155961, "cumulative_directions": "independent forward and backward from original anchor", "cache_identity_sha256": "92633a3e43c3099c413033b31f7adae19e6256998e3803dfc8509559db7d7e48", "longdouble_mantissa_bits": 63}
+full_span_lunar_full_major_romberg5: 51456/401793 intervals, 18.8s
+full_span_lunar_full_major_romberg5: 102656/401793 intervals, 35.2s
+full_span_lunar_full_major_romberg5: 153856/401793 intervals, 46.0s
+full_span_lunar_full_major_romberg5: 205056/401793 intervals, 57.1s
+full_span_lunar_full_major_romberg5: 256256/401793 intervals, 69.6s
+full_span_lunar_full_major_romberg5: 307456/401793 intervals, 81.1s
+full_span_lunar_full_major_romberg5: 358656/401793 intervals, 93.6s
+full_span_lunar_full_major_romberg5 {"method": "romberg", "order": 5, "subdivisions_per_output_interval": 1, "interval_count": 401793, "evaluations": 6830481, "sum_local_order_difference_indicators_seconds": [3.7228877190116324e-13, 1.3085215346416094e-20, 1.724568267948915e-25, 7.161554452280086e-23, 1.253079863849691e-22, 6.148403989406814e-23, 3.075093249600051e-23, 1.0202550196060727e-21, 3.188520660295749e-20, 3.680024109544744e-20, 2.3144332380589843e-24], "integration_wall_seconds": 105.64297838899074, "loaded_cache": false, "call_wall_seconds": 106.69472773600137, "anchor_index": 155961, "cumulative_directions": "independent forward and backward from original anchor", "cache_identity_sha256": "57f25bc20b3c28b477d0c34af5cc2ab627164f2db5b551856bbfe08dd4f76058", "longdouble_mantissa_bits": 63}
+full_span_lunar_full_SB441_romberg4: 51456/401793 intervals, 50.0s
+full_span_lunar_full_SB441_romberg4: 102656/401793 intervals, 110.5s
+full_span_lunar_full_SB441_romberg4: 153856/401793 intervals, 149.6s
+full_span_lunar_full_SB441_romberg4: 205056/401793 intervals, 193.7s
+full_span_lunar_full_SB441_romberg4: 256256/401793 intervals, 237.0s
+full_span_lunar_full_SB441_romberg4: 307456/401793 intervals, 273.3s
+full_span_lunar_full_SB441_romberg4: 358656/401793 intervals, 320.8s
+full_span_lunar_full_SB441_romberg4 {"method": "romberg", "order": 4, "subdivisions_per_output_interval": 1, "interval_count": 401793, "evaluations": 3616137, "sum_local_order_difference_indicators_seconds": [6.594281621889731e-21, 2.2245307023025877e-22], "integration_wall_seconds": 364.9524526269961, "loaded_cache": false, "call_wall_seconds": 365.14786974199524, "anchor_index": 155961, "cumulative_directions": "independent forward and backward from original anchor", "cache_identity_sha256": "fe902b5b64d6ed79f99e4cdfe670c6db3fd86b8a84f8b8fb80b5b46a18423624", "longdouble_mantissa_bits": 63}
+{
+  "sample_count": 401794,
+  "time_residual_raw": {
+    "count": 401794,
+    "max_abs_seconds": 4.029223499985024e-10,
+    "rms_seconds": 2.2082901087149758e-10,
+    "mean_seconds": 6.131865779888589e-11,
+    "min_seconds": -3.2867663885688403e-10,
+    "max_seconds": 4.029223499985024e-10,
+    "max_epoch_tdb_seconds": 20476065600.0
+  },
+  "modern_time_residual_raw": {
+    "count": 732,
+    "max_abs_seconds": 2.8302967608473395e-12,
+    "rms_seconds": 2.804314140028218e-12,
+    "mean_seconds": 2.804295639706076e-12,
+    "min_seconds": 2.792562188436154e-12,
+    "max_seconds": 2.8302967608473395e-12,
+    "max_epoch_tdb_seconds": 820497600.0
+  },
+  "independent_quadrature_difference": {
+    "count": 401794,
+    "max_abs_seconds": 7.28583859910259e-17,
+    "rms_seconds": 2.5439720258310323e-17,
+    "mean_seconds": -1.6520054881790396e-17,
+    "min_seconds": -7.28583859910259e-17,
+    "max_seconds": 1.9081958235744878e-17,
+    "max_epoch_tdb_seconds": -13485787200.0
+  },
+  "wall_elapsed_seconds_before_plot": 888.5501916849898
+}

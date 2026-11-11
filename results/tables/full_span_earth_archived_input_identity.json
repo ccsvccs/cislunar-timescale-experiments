@@ -1,0 +1,26 @@
+{
+  "prior_Phase1_complete_signature_matches": true,
+  "prior_Park_complete_signature_matches": true,
+  "prior_SB441_complete_signature_matches": true,
+  "prior_lunar_physical_signature_matches": true,
+  "json_normalization": "Tuples normalized to JSON arrays before complete comparisons",
+  "archived_report_sha256": {
+    "results/tables/phase2_jpl_comparison.json": "c09ed940bf0b8f1b968675ecedcfaa013a84acdfe8eaef20db0ca24d6d9c151e",
+    "results/tables/phase2_sb441_diagnostic.json": "23b9f4ac8378f140c19f3a352703c10d6aab6f4f13dc4dd018bdde608c019b99",
+    "results/tables/phase2_lunar_multipole_diagnostic.json": "b5a0c327388b417a9c73efcc741b2af7084b0c57f4833dbf2e1b6cb5cdd29594"
+  },
+  "current_new_model_source_sha256": "81056170cfc583bcf2e7f87cb59babeaa07312aa836177a84d17b9fb05341599",
+  "current_archived_report_sha256": {
+    "results/tables/phase2_jpl_comparison.json": "c09ed940bf0b8f1b968675ecedcfaa013a84acdfe8eaef20db0ca24d6d9c151e",
+    "results/tables/phase2_sb441_diagnostic.json": "23b9f4ac8378f140c19f3a352703c10d6aab6f4f13dc4dd018bdde608c019b99",
+    "results/tables/phase2_lunar_multipole_diagnostic.json": "b5a0c327388b417a9c73efcc741b2af7084b0c57f4833dbf2e1b6cb5cdd29594"
+  },
+  "current_physical_signature_matches_after_cosmetic_rerun": {
+    "Phase1": true,
+    "Park": true,
+    "SB441": true,
+    "lunar_static": true
+  },
+  "producer_note": "Root reran legacy plots with Chinese labels. Original archived report SHA above is retained; current report SHA differs for cosmetic producer metadata only. Physical signatures match after excluding lunar experiment_source_sha256.",
+  "current_modern_CSV_sha256_matches_measured_inputs": true
+}

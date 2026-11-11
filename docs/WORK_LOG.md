@@ -2,6 +2,53 @@
 
 任务来源：根目录 guild.md。保持原有 paper.pdf、LTE440/ 不变；不创建额外管理框架。
 
+## 全覆盖地心与月心比较（2026-11-11，已完成待提PR）
+
+用户明确授权：地心保留月球静态J2+C22、暂不加太阳直接自旋，以DE440t为参考；
+新增月心TCL−TDB，以固定LTE440发布产品为参考；两部分完整覆盖、中文图与报告，
+完成后commit、推送研究分支并向远端main开PR，不合并。已创建分支
+`research/full-span-earth-lunar-time`，远端main仍为67b8fd0，本地另含交接提交20e81c1。
+共同覆盖JD2287184.5–2688976.5，即1549-12-31至2650-01-25，共401793日点。
+
+分工/文件所有权：tt_fullpaper负责full_earth_model.py、compare_full_span_earth.py、
+地心结果与full_span_earth_report.md；transform_math负责lunar_model.py、lte_reference.py、
+compare_full_span_lunar.py、相关测试、月心结果与full_span_lunar_report.md；
+tl_readiness只读独立审查并写full_span_independent_review.md；主session整合README/AGENT、
+报告入口、全套验证及Git/PR。现有科学核心不改，新增组合/扩展独立存放。
+
+正式地心命令：`.venv/bin/python scripts/compare_full_span_earth.py`，运行日志
+`results/tables/full_span_earth_run.log`，缓存及大BSP/PCK继续忽略。已完成短区间性能/收敛试算，
+正在做真实全跨度累计；未提前宣称全期验收。月心参考已经固定发布哈希，
+Earth J2采用有来源的Park/Vondrak姿态候选，未核实的frameoffset和参数时间律不猜。
+前轮3张诊断图已中文化并重跑更新脚本SHA；用户原有package-lock.json持续排除。
+
+**收尾（2026-11-11，新 session）**：两套全覆盖均已完成，全套测试 81 passed。地心全覆盖
+最大原始残余 388.373581992 ps（现代2.0735609139 ps）；月心全覆盖最大原始残余
+402.922349999 ps（现代 2.830296761 ps）；两处独立求积差均约 10⁻¹⁶ s。两处均
+**未达到 1 ps 目标**，已写入月心报告第5节和独立审查第5节。月心 full-span 图像、每日表
+（gzip）与诊断 JSON 已产生。未把包络、小求积差当作物理准确度。待提交并开PR。
+
+## 两个候选直接势实算与月球验证方案（2026-11-10）
+
+用户授权后，分别新增独立太阳自旋、月球静态二阶外势诊断，默认物理模型未改。
+1977锚点累计到2026：太阳scalar+vector为−6.357068818ps，月球静态J2+C22为+0.745376642ps；
+三种配置、两种算法的全锚点求积相符，差约10⁻²⁷s。真实DE440月球PA姿态已取得并与CSPICE核查。
+太阳自旋单独叠加使旧SB441双轴残差增至9.176018/8.308583ps；月球静态项单独叠加
+为2.073573/1.238445ps；两者同时为8.430642/7.563206ps，均非验收通过。
+全套测试实际71 passed。源参数、静态系数范围、下载哈希、图和复现命令见
+[实算报告](phase2_additional_potentials_report.md)。新PCK二进制由data/*.bpc忽略。
+月球比较建议先月心TCL−TDB对实际LTE440完整产品；其地心<1ps验证和月球物理
+准确度估计必须区分，详见[比较方案](lunar_validation_plan.md)。未实现TCL/TL，未提交或推送。
+
+## 全文复核（2026-11-10）
+
+按用户要求通读固定Turyshev v2全文并独立核查关键公式，记录于
+[全文审阅](turyshev_fullpaper_review.md)。未改物理源码、未重跑实验、未提交或推送；
+用户已有的未跟踪package-lock.json未改动。新增需保留的物理候选为完整太阳自旋直接势、
+接近目标量级的月球非球形外势；均未被证明属于DE440时间模型或解释既有残差。
+月球扩展建议先TCL↔TDB，再明确TL缩放/原点；式(44)的比例、式(57)的下端点及
+同TDB双中心比较与同一事件坐标映射的区别，需要在实现前按原始定义处理。
+
 ## 并行分工
 
 - theory_audit：原始 v2 文献、常数及公式审计，docs/model_audit.md、source_notes.md。

@@ -1,0 +1,54 @@
+{
+  "solar_equator_J2": {
+    "before": {
+      "max_abs_seconds": 2.818949568672742e-12,
+      "rms_seconds": 2.801277755567863e-12,
+      "first_seconds": -2.7853967369357788e-12,
+      "last_seconds": -2.818949568672742e-12
+    },
+    "solar_spin_only": {
+      "max_abs_seconds": 9.176018386734805e-12,
+      "rms_seconds": 9.028948010437228e-12,
+      "first_seconds": -8.882802514914774e-12,
+      "last_seconds": -9.176018386734805e-12
+    },
+    "lunar_static_J2_C22_only": {
+      "max_abs_seconds": 2.0735729263778915e-12,
+      "rms_seconds": 2.0711018513688165e-12,
+      "first_seconds": -2.0704621324620323e-12,
+      "last_seconds": -2.0735729263778915e-12
+    },
+    "both_candidates": {
+      "max_abs_seconds": 8.430641744439954e-12,
+      "rms_seconds": 8.29873850283813e-12,
+      "first_seconds": -8.167867910441027e-12,
+      "last_seconds": -8.430641744439954e-12
+    }
+  },
+  "literal_ecliptic_J2": {
+    "before": {
+      "max_abs_seconds": 1.9535196899102025e-12,
+      "rms_seconds": 1.95045157237679e-12,
+      "first_seconds": -1.9533797444502495e-12,
+      "last_seconds": -1.9515137713682144e-12
+    },
+    "solar_spin_only": {
+      "max_abs_seconds": 8.308582589430277e-12,
+      "rms_seconds": 8.178079159777048e-12,
+      "first_seconds": -8.050785522429245e-12,
+      "last_seconds": -8.308582589430277e-12
+    },
+    "lunar_static_J2_C22_only": {
+      "max_abs_seconds": 1.238445139976503e-12,
+      "rms_seconds": 1.2203288630429706e-12,
+      "first_seconds": -1.238445139976503e-12,
+      "last_seconds": -1.2061371290733642e-12
+    },
+    "both_candidates": {
+      "max_abs_seconds": 7.563205947135427e-12,
+      "rms_seconds": 7.447870345929363e-12,
+      "first_seconds": -7.335850917955498e-12,
+      "last_seconds": -7.563205947135427e-12
+    }
+  }
+}

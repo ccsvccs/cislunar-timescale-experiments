@@ -1,0 +1,71 @@
+{
+  "command": "/home/ccs/OpenResearch/high-precision-relativistic-time-scales-for-cislunar-navigation/.venv/bin/python scripts/summarize_phase2_additional_potentials.py",
+  "script_sha256": "c19913164504c6eb4e8481f421f9978805f6073581b45b2f21dbbaa1d45243cf",
+  "classification": "Mixed SB441 residual plus independent sourced candidate increments; no acceptance",
+  "input_sha256": {
+    "phase2_solar_spin_diagnostic.json": "4a55680bb0c4a477aa2400818e7d279746d3b1d39052d731fbcb011b8210524e",
+    "phase2_solar_spin_overlay.csv": "58886b244caeccb4792150f27e834cf8dc5e5703e0ef29dee14b50db01f1db6e",
+    "phase2_solar_spin_time_series.csv": "dadc98f262eed2b904111d2fba8a8ab4ef7b577416213252f014363c7738ae72",
+    "phase2_lunar_multipole_diagnostic.json": "b5a0c327388b417a9c73efcc741b2af7084b0c57f4833dbf2e1b6cb5cdd29594",
+    "phase2_lunar_multipole_modern.csv": "fec72824152ab54f450ad936910fe0b19ca5002dde2fdb370a03ceca252c92d3"
+  },
+  "producer_sources_verified": true,
+  "shared_ephemeris_GM_header_anchor_and_epochs_verified": true,
+  "no_fitting_or_reanchoring": true,
+  "sample_count": 732,
+  "scope": "Solar direct spin and static lunar J2+C22 only; no default model change",
+  "residual_metrics": {
+    "solar_equator_J2": {
+      "before": {
+        "max_abs_seconds": 2.818949568672742e-12,
+        "rms_seconds": 2.801277755567863e-12,
+        "first_seconds": -2.7853967369357788e-12,
+        "last_seconds": -2.818949568672742e-12
+      },
+      "solar_spin_only": {
+        "max_abs_seconds": 9.176018386734805e-12,
+        "rms_seconds": 9.028948010437228e-12,
+        "first_seconds": -8.882802514914774e-12,
+        "last_seconds": -9.176018386734805e-12
+      },
+      "lunar_static_J2_C22_only": {
+        "max_abs_seconds": 2.0735729263778915e-12,
+        "rms_seconds": 2.0711018513688165e-12,
+        "first_seconds": -2.0704621324620323e-12,
+        "last_seconds": -2.0735729263778915e-12
+      },
+      "both_candidates": {
+        "max_abs_seconds": 8.430641744439954e-12,
+        "rms_seconds": 8.29873850283813e-12,
+        "first_seconds": -8.167867910441027e-12,
+        "last_seconds": -8.430641744439954e-12
+      }
+    },
+    "literal_ecliptic_J2": {
+      "before": {
+        "max_abs_seconds": 1.9535196899102025e-12,
+        "rms_seconds": 1.95045157237679e-12,
+        "first_seconds": -1.9533797444502495e-12,
+        "last_seconds": -1.9515137713682144e-12
+      },
+      "solar_spin_only": {
+        "max_abs_seconds": 8.308582589430277e-12,
+        "rms_seconds": 8.178079159777048e-12,
+        "first_seconds": -8.050785522429245e-12,
+        "last_seconds": -8.308582589430277e-12
+      },
+      "lunar_static_J2_C22_only": {
+        "max_abs_seconds": 1.238445139976503e-12,
+        "rms_seconds": 1.2203288630429706e-12,
+        "first_seconds": -1.238445139976503e-12,
+        "last_seconds": -1.2061371290733642e-12
+      },
+      "both_candidates": {
+        "max_abs_seconds": 7.563205947135427e-12,
+        "rms_seconds": 7.447870345929363e-12,
+        "first_seconds": -7.335850917955498e-12,
+        "last_seconds": -7.563205947135427e-12
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+GL24_halfday 13.480916134009021
+Romberg6_halfday 13.867692630999954
+GL16_day 4.605159771992476
+{
+  "channels": {
+    "vector": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -6.3570534679701884e-12,
+        "max": -6.0973821004302345e-12,
+        "max_abs": 6.3570534679701884e-12,
+        "mean": -6.2272787023842546e-12,
+        "rms": 6.227727659878767e-12,
+        "peak_to_peak": 2.5967136753995394e-13
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -4.3222550838523736e-21,
+        "max": -3.9113977890382995e-21,
+        "max_abs": 4.3222550838523736e-21,
+        "mean": -4.1117144964309656e-21,
+        "rms": 4.114261878187518e-21,
+        "peak_to_peak": 4.108572948140741e-22
+      },
+      "anchor_to_first_seconds": -6.0973821004302345e-12,
+      "anchor_to_last_seconds": -6.3570534679701884e-12,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -4.3264648708174e-21,
+        "max": -3.906524890229788e-21,
+        "max_abs": 4.3264648708174e-21,
+        "mean": -4.111148092416853e-21,
+        "rms": 4.113732047526117e-21,
+        "peak_to_peak": 4.19939980587612e-22
+      }
+    },
+    "scalar": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -2.47058401158044e-17,
+        "max": -2.8112114608546822e-18,
+        "max_abs": 2.47058401158044e-17,
+        "mean": -1.3278857493175043e-17,
+        "rms": 1.5192935307472563e-17,
+        "peak_to_peak": 2.189462865494972e-17
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -1.989106696794105e-24,
+        "max": 1.9770205967406707e-24,
+        "max_abs": 1.989106696794105e-24,
+        "mean": 1.2985609886908467e-25,
+        "rms": 1.324713217863433e-24,
+        "peak_to_peak": 3.966127293534775e-24
+      },
+      "anchor_to_first_seconds": -2.3677548760754548e-17,
+      "anchor_to_last_seconds": -1.5350091873493804e-17,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -2.2433128574661213e-24,
+        "max": 2.2141517109572786e-24,
+        "max_abs": 2.2433128574661213e-24,
+        "mean": -1.002269320710041e-26,
+        "rms": 1.2859718558357139e-24,
+        "peak_to_peak": 4.4574645684234e-24
+      }
+    },
+    "combined": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -6.357068818062063e-12,
+        "max": -6.097405777978995e-12,
+        "max_abs": 6.357068818062063e-12,
+        "mean": -6.2272919812417495e-12,
+        "rms": 6.227740912719974e-12,
+        "peak_to_peak": 2.596630400830676e-13
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -4.323605154484688e-21,
+        "max": -3.909872201820129e-21,
+        "max_abs": 4.323605154484688e-21,
+        "mean": -4.111584640332097e-21,
+        "rms": 4.114164478865069e-21,
+        "peak_to_peak": 4.1373295266455883e-22
+      },
+      "anchor_to_first_seconds": -6.097405777978995e-12,
+      "anchor_to_last_seconds": -6.357068818062063e-12,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -4.324556986993824e-21,
+        "max": -3.908531823526567e-21,
+        "max_abs": 4.324556986993824e-21,
+        "mean": -4.11115811511006e-21,
+        "rms": 4.113740538116952e-21,
+        "peak_to_peak": 4.16025163467257e-22
+      }
+    },
+    "relative": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -6.357068818062063e-12,
+        "max": -6.097405777978995e-12,
+        "max_abs": 6.357068818062063e-12,
+        "mean": -6.2272919812417495e-12,
+        "rms": 6.227740912719974e-12,
+        "peak_to_peak": 2.596630400830676e-13
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -4.3236051544846884e-21,
+        "max": -3.909872201820128e-21,
+        "max_abs": 4.3236051544846884e-21,
+        "mean": -4.111584640332097e-21,
+        "rms": 4.114164478865069e-21,
+        "peak_to_peak": 4.1373295266456033e-22
+      },
+      "anchor_to_first_seconds": -6.097405777978995e-12,
+      "anchor_to_last_seconds": -6.357068818062063e-12,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -4.324556986993824e-21,
+        "max": -3.908531823526566e-21,
+        "max_abs": 4.324556986993824e-21,
+        "mean": -4.11115811511006e-21,
+        "rms": 4.113740538116952e-21,
+        "peak_to_peak": 4.1602516346725773e-22
+      }
+    },
+    "unscaled_GS": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -6.3570690151972844e-12,
+        "max": -6.097405967061963e-12,
+        "max_abs": 6.3570690151972844e-12,
+        "mean": -6.2272921743525396e-12,
+        "rms": 6.2277411058446875e-12,
+        "peak_to_peak": 2.596630481353211e-13
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -4.323605288561397e-21,
+        "max": -3.9098723230668145e-21,
+        "max_abs": 4.323605288561397e-21,
+        "mean": -4.111584767833965e-21,
+        "rms": 4.114164606446939e-21,
+        "peak_to_peak": 4.1373296549458276e-22
+      },
+      "anchor_to_first_seconds": -6.097405967061963e-12,
+      "anchor_to_last_seconds": -6.3570690151972844e-12,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -4.324557121100049e-21,
+        "max": -3.9085319447316856e-21,
+        "max_abs": 4.324557121100049e-21,
+        "mean": -4.111158242598702e-21,
+        "rms": 4.1137406656856754e-21,
+        "peak_to_peak": 4.1602517636836353e-22
+      }
+    }
+  },
+  "closure": {
+    "instantaneous_combined_minus_relative_max_abs": 2.256949153578792e-36,
+    "integrated_combined_minus_vector_plus_scalar_max_seconds": 1.3828115370942133e-27,
+    "integrated_combined_minus_relative_max_seconds": 8.077935669463161e-28
+  },
+  "quadrature_max_abs_difference_each_channel_seconds": {
+    "Romberg6_halfday": [
+      8.077935669463161e-28,
+      6.162975822039155e-33,
+      8.077935669463161e-28,
+      8.077935669463161e-28,
+      8.077935669463161e-28,
+      1.0097419586828951e-28
+    ],
+    "GL16_day": [
+      8.077935669463161e-28,
+      3.0814879110195774e-33,
+      8.077935669463161e-28,
+      8.077935669463161e-28,
+      8.077935669463161e-28,
+      1.0097419586828951e-28
+    ]
+  },
+  "GS_scale_sensitivity_max_seconds": 1.9713522162258902e-19,
+  "elapsed_wall_seconds": 33.06136702199001
+}
