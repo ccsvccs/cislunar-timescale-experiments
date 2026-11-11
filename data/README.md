@@ -97,3 +97,24 @@ $1.3665878145967424\times10^{10}$、$1.7288232879171516\times10^{10}$ m³/s²。
 下载同样采用`.part`、固定大小/SHA256成功后原子替换。IOM来源PDF及提取文本已随文献档案保存，不需再次网络下载。
 
 `de440_spk_comments.txt`为本次用`spiceypy.dafec`从真实DE440 BSP只读导出的全部注释，59,312字节，SHA256 `e8123d2cd6daba62459661ad355b54f1431e56d2703ba42380dba46e7581eedc`。其原BSP SHA及导出方式写在manifest的`derived_artifacts`；不是单独HTTP下载资源。包含`GMSDOT=-9e-14`、`JDEPOC=2440400.5`但未解释导数单位或时间势的用法，因此不据此创造太阳质量变化修正。
+
+## 地心与月心全覆盖比较的附加输入
+
+两部分的共同覆盖为 TDB JD2287184.5–2688976.5，即1549-12-31至2650-01-25。
+地心参考仍为DE440t；月心参考为作者20250620发布的LTE440完整TCL−TDB函数。
+
+| 文件 | 用途与来源 |
+|---|---|
+| `moon_pa_de440_200625.bpc` | [NAIF DE440真实月球PA姿态](https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/moon_pa_de440_200625.bpc)，12,863,488字节，不提交Git |
+| `moon_de440_250416.tf` | [NAIF配套帧定义](https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_de440_250416.tf)，指定MOON_PA_DE440 |
+| `lte440.bsp`、`lte440.tpc` | [作者发布包](https://github.com/xlucn/LTE440/releases/download/20250620/lte440-tclmtdb.zip)中的周期时间段与完整线性率；BSP不提交Git |
+
+月球姿态、静态重力系数、下载校验与范围见
+[静态外势来源](phase2_lunar_multipole_provenance.md)；LTE440产品身份、哈希及参考读取见
+[月心参考来源](lte440_reference_provenance.md)。不能只读取LTE440 BSP的周期部分，
+也不能把其特殊X分量按通常SPK距离单位换算。所有参考仅在独立模型计算后读取。
+
+默认下载脚本不自动获取上述附加文件。复现时从表中官方/作者地址下载，按来源记录校验SHA256，
+并将发布包中的BSP/TPC分别置于`data/lte440.bsp`与`data/lte440.tpc`。
+原始模型还需前述DE440、配套GM与SB441数据；缓存写入被忽略的`results/cache/`。
+完整每日时间序列以无损`.csv.gz`保存，结果JSON分别记录采样数、方法、输入身份和原始残差。

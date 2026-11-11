@@ -1,0 +1,18 @@
+KPL/PCK
+
+\begintext
+
+This file contains TIME_TCLMTDB with a new ID code.
+
+\begindata
+
+NAIF_BODY_CODE += ( 1000000005 )
+NAIF_BODY_NAME += ( 'TIME_TCLMTDB' )
+
+\begintext
+
+The linear drift subtracted from TIME_TCLMTDB.
+
+\begindata
+
+BODY1000000005_RATE = ( +6.798355238724282D-10 )

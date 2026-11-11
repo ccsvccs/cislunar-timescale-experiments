@@ -1,0 +1,291 @@
+{
+  "purpose": "independent static lunar external U2/c2 diagnostic; default physical model unchanged",
+  "command": ".venv/bin/python scripts/compare_phase2_lunar_multipole.py",
+  "generated_utc": "2026-11-11T06:38:02.409381+00:00",
+  "anchor_tdb_j2000_seconds": -725803167.8160655,
+  "anchor_definition": "T0 + TDB0, IAU fixed original boundary",
+  "modern_sample_count": 732,
+  "history_sample_count": 50,
+  "modern_TDB_dates": [
+    "2024-01-01",
+    "2026-01-01"
+  ],
+  "history_TDB_dates": [
+    "1977 anchor",
+    "1978 through 2026 Jan 1 annually"
+  ],
+  "signature": {
+    "model": "DE440_PA_static_lunar_degree2_diagnostic_v1",
+    "source_sha256": {
+      "lunar_multipole.py": "e7fadb8c2a07cc83de3327953058f2baad73d9749e5926e9c3ec686574af2809",
+      "constants.py": "71f1197afdc125c9f8fc3fddaa8e64051f60cea5f5c134e0a1785f2539f3dea5",
+      "timebase.py": "a1ef2210f5ab3295ab467c3cba4ef0f3c9d00329c5d73dc4ed68ec42e0b16bda",
+      "integration.py": "08656a9c2ba7adb02bf6ebfe2517fd291e0a743c938de49b3a56cc8d034f0ce6",
+      "ephemeris.py": "be1e3ae0d57a2a62d0300cf7bafa087505435af903784c78f8c99b02ba481479",
+      "jpl_model.py": "e90131e29e7fac8a0a6fae8cabfcbcd2fa40c1122b4a04f16b404c3285d91357",
+      "small_body.py": "2e1dc0dc9bb9cec422b028373e358194bd73b585adb79b3e049e081e33175fe6"
+    },
+    "c_light_si": 299792458.0,
+    "A_SCALE": 1.0000000148082688,
+    "earth_moon_bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+    "gm_kernel_sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+    "header_sha256": "0f4636b663e6f00af9efa2b605ef23635489f56b23dd1a5e3821d3acc6ac3359",
+    "pck_sha256": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f",
+    "fk_sha256": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768",
+    "parameters": {
+      "AM": 1738.0,
+      "J2M": 0.000203214360135,
+      "C21M": 2.277956919447986e-10,
+      "S21M": 1.334345035839262e-09,
+      "C22M": 2.2380850528171017e-05,
+      "S22M": 0.0
+    },
+    "moon_gm_si": 4902800118457.55,
+    "radius_m": 1738000.0,
+    "channels": [
+      "lunar_J2_c2",
+      "lunar_C21_literal_c2",
+      "lunar_S21_literal_c2",
+      "lunar_C22_c2",
+      "lunar_S22_literal_c2"
+    ],
+    "primary_channels": [
+      "lunar_J2_c2",
+      "lunar_C22_c2"
+    ],
+    "normalization": "unnormalized; C20=-J2; no Condon-Shortley phase",
+    "coefficient_scope": "constant header J2M/C22M; C21M/S21M/S22M literal-header sensitivities only",
+    "frame": "ICRF/J2000 geometric -> MOON_PA_DE440 (31008); never ME or IAU_MOON",
+    "scale": "SI, TDB-compatible DE440 GM/positions; header AM in km; radius unscaled diagnostic convention",
+    "radius_scale_effect": "an O(LB) relative radius scaling ambiguity is below 1e-7 ps for this experiment",
+    "orientation_coverage_tdb_seconds": [
+      -14200747200.0,
+      20514081600.0
+    ],
+    "excluded": [
+      "time-dependent tidal/rotational degree-2 distortion",
+      "degree >=3",
+      "multipole PN scalar/vector/mixed c^-4 terms"
+    ],
+    "reference_used_in_integrand": false,
+    "experiment_source_sha256": {
+      "/home/ccs/OpenResearch/high-precision-relativistic-time-scales-for-cislunar-navigation/scripts/compare_phase2_lunar_multipole.py": "37d50c40fda945123cd596049519466da4236501fe4fdc1d6108fe79e4136a13",
+      "tests/test_lunar_multipole.py": "83161ae649ea771fad704eb1a6d281dcd26d68bb43a4f11be82c2a4d5a9d62dd",
+      "docs/sources/park_2021_de440_de441.pdf": "96c3945deb12e0f0843c2bf0703d3542d950cf85ff903b1fe11a501634f68ee0",
+      "docs/sources/moon_pa_de440_200625.cmt": "97d3bb1e75e7807a5e0b76f836a2d1d192e0d5bde0c0a87979b4c13255aef8c1"
+    }
+  },
+  "A_SCALE": 1.0000000148082688,
+  "normalization_equation": "U2=mu R²/r³[-J2(3nz²-1)/2+3C21 nx nz+3S21 ny nz+3C22(nx²-ny²)+6S22 nx ny]",
+  "output_sign": "add A_SCALE integral(U2/c²)dTDB to existing TDB-TT; no fitted correction",
+  "summary_helper_linear_fit_fields_diagnostic_only": true,
+  "primary_static_J2_C22_metrics_modern": {
+    "count": 732,
+    "max_abs_seconds": 7.453766422948502e-13,
+    "rms_seconds": 7.302124033941343e-13,
+    "mean_seconds": 7.301593659363502e-13,
+    "min_seconds": 7.149346044737465e-13,
+    "max_seconds": 7.453766422948502e-13,
+    "p50_abs_seconds": 7.301361206928607e-13,
+    "p95_abs_seconds": 7.438287806151795e-13,
+    "linear_slope_seconds_per_day": 4.1648717919887086e-17,
+    "rms_after_diagnostic_linear_fit_seconds": 2.214011909753392e-17
+  },
+  "primary_static_J2_C22_first_last_seconds": [
+    7.149346044737465e-13,
+    7.453766422948502e-13
+  ],
+  "primary_max_abs_rate_modern": 6.0957466661364905e-22,
+  "channels_modern": {
+    "lunar_J2_c2": {
+      "time_metrics": {
+        "count": 732,
+        "max_abs_seconds": 4.486299537540677e-13,
+        "rms_seconds": 4.395008842239e-13,
+        "mean_seconds": 4.394689634133018e-13,
+        "min_seconds": 4.30303969168914e-13,
+        "max_seconds": 4.486299537540677e-13,
+        "p50_abs_seconds": 4.394556516190099e-13,
+        "p95_abs_seconds": 4.47695927847896e-13,
+        "linear_slope_seconds_per_day": 2.5067008741761965e-17,
+        "rms_after_diagnostic_linear_fit_seconds": 1.3348363086699333e-17
+      },
+      "max_abs_rate": 3.6689320664391924e-22
+    },
+    "lunar_C21_literal_c2": {
+      "time_metrics": {
+        "count": 732,
+        "max_abs_seconds": 1.3081272650022936e-21,
+        "rms_seconds": 1.1846374786565543e-21,
+        "mean_seconds": 1.18279901259419e-21,
+        "min_seconds": 1.0363622540996637e-21,
+        "max_seconds": 1.3081272650022936e-21,
+        "p50_abs_seconds": 1.1791747140364156e-21,
+        "p95_abs_seconds": 1.2876704344470924e-21,
+        "linear_slope_seconds_per_day": -6.092415274781034e-26,
+        "rms_after_diagnostic_linear_fit_seconds": 6.47048281478989e-23
+      },
+      "max_abs_rate": 2.7726016807298864e-28
+    },
+    "lunar_S21_literal_c2": {
+      "time_metrics": {
+        "count": 732,
+        "max_abs_seconds": 2.2107475126224133e-21,
+        "rms_seconds": 1.16675318993859e-21,
+        "mean_seconds": 1.2352426471868482e-22,
+        "min_seconds": -1.5128273382253267e-21,
+        "max_seconds": 2.2107475126224133e-21,
+        "p50_abs_seconds": 1.037879849205258e-21,
+        "p95_abs_seconds": 2.0559761233726477e-21,
+        "linear_slope_seconds_per_day": -5.459022885583546e-24,
+        "rms_after_diagnostic_linear_fit_seconds": 1.2404064120279287e-22
+      },
+      "max_abs_rate": 1.8976599464002924e-28
+    },
+    "lunar_C22_c2": {
+      "time_metrics": {
+        "count": 732,
+        "max_abs_seconds": 2.9674668854078257e-13,
+        "rms_seconds": 2.907115191741991e-13,
+        "mean_seconds": 2.9069040252304837e-13,
+        "min_seconds": 2.846306353048325e-13,
+        "max_seconds": 2.9674668854078257e-13,
+        "p50_abs_seconds": 2.906804690738508e-13,
+        "p95_abs_seconds": 2.961328527672836e-13,
+        "linear_slope_seconds_per_day": 1.6581709178125112e-17,
+        "rms_after_diagnostic_linear_fit_seconds": 8.920546229357771e-18
+      },
+      "max_abs_rate": 2.4268145996972977e-22
+    },
+    "lunar_S22_literal_c2": {
+      "time_metrics": {
+        "count": 732,
+        "max_abs_seconds": 0.0,
+        "rms_seconds": 0.0,
+        "mean_seconds": 0.0,
+        "min_seconds": 0.0,
+        "max_seconds": 0.0,
+        "p50_abs_seconds": 0.0,
+        "p95_abs_seconds": 0.0,
+        "linear_slope_seconds_per_day": 0.0,
+        "rms_after_diagnostic_linear_fit_seconds": 0.0
+      },
+      "max_abs_rate": 0.0
+    }
+  },
+  "literal_static_header_all_five_modern_metrics": {
+    "count": 732,
+    "max_abs_seconds": 7.453766419345626e-13,
+    "rms_seconds": 7.302124046863041e-13,
+    "mean_seconds": 7.301593672426735e-13,
+    "min_seconds": 7.149346077787327e-13,
+    "max_seconds": 7.453766419345626e-13,
+    "p50_abs_seconds": 7.301361219124252e-13,
+    "p95_abs_seconds": 7.43828780333283e-13,
+    "linear_slope_seconds_per_day": 4.164871239994004e-17,
+    "rms_after_diagnostic_linear_fit_seconds": 2.214010019493546e-17
+  },
+  "orientation_validation": {
+    "sample_count": 130,
+    "frame_id": 31008,
+    "max_matrix_difference_from_cspice": 2.8594765444367454e-12,
+    "max_orthogonality_error": 4.440892098500626e-16,
+    "max_abs_determinant_minus_one": 4.440892098500626e-16,
+    "max_vector_difference_from_cspice_m": 0.001160508550432213,
+    "earth_unit_direction_in_PA_min": [
+      0.9845586202295697,
+      -0.1348468080096593,
+      -0.11802997262368989
+    ],
+    "earth_unit_direction_in_PA_max": [
+      0.9998448413473922,
+      0.1384701743794941,
+      0.11923291734857373
+    ],
+    "earth_near_positive_long_axis_verified": true,
+    "kernel_FK_example_position_at_717768000_tdb_seconds_km": [
+      373997.02832318156,
+      -23558.98729023081,
+      10284.05707354042
+    ]
+  },
+  "quadrature_comparisons_all_samples": {
+    "romberg8_halfday": {
+      "max_abs_each_channel_seconds": [
+        5.048709793414476e-29,
+        1.2311422533902146e-33,
+        1.7395529640756605e-32,
+        1.0602290566170399e-27,
+        0.0
+      ],
+      "max_abs_primary_sum_seconds": 1.0602290566170399e-27
+    },
+    "gl24_day": {
+      "max_abs_each_channel_seconds": [
+        5.048709793414476e-29,
+        8.343658902136597e-35,
+        7.496832771804221e-34,
+        1.0097419586828951e-28,
+        0.0
+      ],
+      "max_abs_primary_sum_seconds": 1.0097419586828951e-28
+    }
+  },
+  "integration_statistics": {
+    "gl24_halfday": {
+      "segments": 35793,
+      "evaluations": 1316556,
+      "batches": 287,
+      "elapsed_seconds": 1.551018438040046,
+      "query_intervals": 778,
+      "rate_calls": 574,
+      "wall_seconds": 1.7515273699973477,
+      "method": "gauss_legendre",
+      "order": 24,
+      "step_seconds": 43200.0
+    },
+    "romberg8_halfday": {
+      "segments": 35793,
+      "evaluations": 4717659,
+      "batches": 287,
+      "elapsed_seconds": 5.750819919994683,
+      "query_intervals": 778,
+      "rate_calls": 2296,
+      "wall_seconds": 5.984572538000066,
+      "method": "romberg",
+      "order": 8,
+      "step_seconds": 43200.0
+    },
+    "gl24_day": {
+      "segments": 17896,
+      "evaluations": 672264,
+      "batches": 147,
+      "elapsed_seconds": 0.8020798009529244,
+      "query_intervals": 778,
+      "rate_calls": 294,
+      "wall_seconds": 0.9156843649980146,
+      "method": "gauss_legendre",
+      "order": 24,
+      "step_seconds": 86400.0
+    }
+  },
+  "versions": {
+    "python": "3.14.4",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "jplephem": "2.24",
+      "spiceypy": "8.3.0",
+      "pyerfa": "2.0.1.5",
+      "mpmath": "1.4.1",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1"
+    }
+  },
+  "reference_time_data_used_in_integrand": false,
+  "reference_overlay_performed": false,
+  "not_used_in_primary_acceptance": true,
+  "model_limitation": "J2/C22 are the static undistorted component; time-variable tide/rotation corrections omitted. C21/S21 header role unresolved, retained only as separate literal-static sensitivities. Not established as JPL time-ephemeris terms.",
+  "wall_elapsed_seconds": 8.763036263990216
+}

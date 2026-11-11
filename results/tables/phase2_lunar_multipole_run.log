@@ -1,0 +1,35 @@
+gl24_halfday {"segments": 35793, "evaluations": 1316556, "batches": 287, "elapsed_seconds": 1.551018438040046, "query_intervals": 778, "rate_calls": 574, "wall_seconds": 1.7515273699973477, "method": "gauss_legendre", "order": 24, "step_seconds": 43200.0}
+romberg8_halfday {"segments": 35793, "evaluations": 4717659, "batches": 287, "elapsed_seconds": 5.750819919994683, "query_intervals": 778, "rate_calls": 2296, "wall_seconds": 5.984572538000066, "method": "romberg", "order": 8, "step_seconds": 43200.0}
+gl24_day {"segments": 17896, "evaluations": 672264, "batches": 147, "elapsed_seconds": 0.8020798009529244, "query_intervals": 778, "rate_calls": 294, "wall_seconds": 0.9156843649980146, "method": "gauss_legendre", "order": 24, "step_seconds": 86400.0}
+/home/ccs/OpenResearch/high-precision-relativistic-time-scales-for-cislunar-navigation/scripts/compare_phase2_lunar_multipole.py:146: UserWarning: Glyph 8315 (\N{SUPERSCRIPT MINUS}) missing from font(s) Noto Sans CJK JP.
+  fig.savefig(directory/'phase2_lunar_multipole_diagnostic.png', dpi=160)
+{
+  "result": "results/tables/phase2_lunar_multipole_diagnostic.json",
+  "modern_primary_ps": [
+    0.7149346044737465,
+    0.7453766422948502
+  ],
+  "wall_seconds": 8.763036263990216,
+  "quadrature": {
+    "romberg8_halfday": {
+      "max_abs_each_channel_seconds": [
+        5.048709793414476e-29,
+        1.2311422533902146e-33,
+        1.7395529640756605e-32,
+        1.0602290566170399e-27,
+        0.0
+      ],
+      "max_abs_primary_sum_seconds": 1.0602290566170399e-27
+    },
+    "gl24_day": {
+      "max_abs_each_channel_seconds": [
+        5.048709793414476e-29,
+        8.343658902136597e-35,
+        7.496832771804221e-34,
+        1.0097419586828951e-28,
+        0.0
+      ],
+      "max_abs_primary_sum_seconds": 1.0097419586828951e-28
+    }
+  }
+}

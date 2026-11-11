@@ -1,0 +1,64 @@
+fast_GL12_day: 188928/401792 intervals, this run 30.0s
+fast_GL12_day: 372736/401792 intervals, this run 60.2s
+fast_GL12_day: 401792/401792 intervals, this run 65.2s
+SB441_GL4_day: 61952/401792 intervals, this run 30.0s
+SB441_GL4_day: 122368/401792 intervals, this run 60.1s
+SB441_GL4_day: 182784/401792 intervals, this run 90.2s
+SB441_GL4_day: 238080/401792 intervals, this run 120.3s
+SB441_GL4_day: 289792/401792 intervals, this run 150.5s
+SB441_GL4_day: 333824/401792 intervals, this run 180.5s
+SB441_GL4_day: 382464/401792 intervals, this run 210.8s
+SB441_GL4_day: 401792/401792 intervals, this run 221.9s
+fast_Romberg6_day: 82944/401792 intervals, this run 30.3s
+fast_Romberg6_day: 163328/401792 intervals, this run 60.3s
+fast_Romberg6_day: 218112/401792 intervals, this run 90.5s
+fast_Romberg6_day: 273408/401792 intervals, this run 120.6s
+fast_Romberg6_day: 355328/401792 intervals, this run 150.7s
+fast_Romberg6_day: 401792/401792 intervals, this run 169.4s
+SB441_Romberg5_4day: 14848/100448 intervals, this run 30.4s
+SB441_Romberg5_4day: 28672/100448 intervals, this run 60.9s
+SB441_Romberg5_4day: 42496/100448 intervals, this run 91.5s
+SB441_Romberg5_4day: 56064/100448 intervals, this run 121.6s
+SB441_Romberg5_4day: 69632/100448 intervals, this run 151.7s
+SB441_Romberg5_4day: 83200/100448 intervals, this run 181.7s
+SB441_Romberg5_4day: 97280/100448 intervals, this run 212.2s
+SB441_Romberg5_4day: 100448/100448 intervals, this run 219.3s
+{
+  "primary_raw_time_residual_seconds": {
+    "count": 401793,
+    "min": -3.8837358199220184e-10,
+    "max": 3.188597239435313e-10,
+    "max_abs": 3.8837358199220184e-10,
+    "mean": -5.960903498779634e-11,
+    "rms": 2.1588374232348207e-10,
+    "peak_to_peak": 7.072333059357332e-10
+  },
+  "primary_raw_rate_residual_dimensionless": {
+    "count": 401793,
+    "min": -4.2511456395238274e-20,
+    "max": 1.1058080008384188e-21,
+    "max_abs": 4.2511456395238274e-20,
+    "mean": -2.0372691729671088e-20,
+    "rms": 2.5418797939567126e-20,
+    "peak_to_peak": 4.3617264396076693e-20
+  },
+  "independent_full_span_cumulative_time_difference_seconds": {
+    "count": 100449,
+    "min": -4.597017211338539e-17,
+    "max": 2.902951316829938e-17,
+    "max_abs": 4.597017211338539e-17,
+    "mean": -5.2502978832129254e-18,
+    "rms": 1.9939384118657107e-17,
+    "peak_to_peak": 7.499968528168477e-17
+  },
+  "modern_previous_SB441_plus_lunar_reproduction_seconds": {
+    "count": 732,
+    "min": 9.324138683375338e-18,
+    "max": 1.235990476633475e-17,
+    "max_abs": 1.235990476633475e-17,
+    "mean": 1.0994819901720082e-17,
+    "rms": 1.1015392313969591e-17,
+    "peak_to_peak": 3.0357660829594124e-18
+  },
+  "wall_seconds_total": 765.1309756389965
+}

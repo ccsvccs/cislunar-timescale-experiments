@@ -1,0 +1,126 @@
+{
+  "fast": [
+    {
+      "start_jd": 2287312.5,
+      "results": {
+        "gauss_legendre24_day": {
+          "max_interval_difference_seconds": 0.0,
+          "max_window_cumulative_difference_seconds": 0.0,
+          "wall_seconds": 0.03244370300672017
+        },
+        "gauss_legendre12_day": {
+          "max_interval_difference_seconds": 1.8634725115542623e-19,
+          "max_window_cumulative_difference_seconds": 3.083199973662507e-19,
+          "wall_seconds": 0.01929450800525956
+        },
+        "romberg6_day": {
+          "max_interval_difference_seconds": 1.0842021885406617e-19,
+          "max_window_cumulative_difference_seconds": 1.3891340540677228e-19,
+          "wall_seconds": 0.04550947500683833
+        }
+      }
+    },
+    {
+      "start_jd": 2460310.5,
+      "results": {
+        "gauss_legendre24_day": {
+          "max_interval_difference_seconds": 0.0,
+          "max_window_cumulative_difference_seconds": 0.0,
+          "wall_seconds": 0.026847058994462714
+        },
+        "gauss_legendre12_day": {
+          "max_interval_difference_seconds": 1.456896690851514e-19,
+          "max_window_cumulative_difference_seconds": 1.0062751562393017e-18,
+          "wall_seconds": 0.018525637002312578
+        },
+        "romberg6_day": {
+          "max_interval_difference_seconds": 1.1858461437163488e-19,
+          "max_window_cumulative_difference_seconds": 3.1848439288381935e-19,
+          "wall_seconds": 0.04607515799580142
+        }
+      }
+    },
+    {
+      "start_jd": 2688816.5,
+      "results": {
+        "gauss_legendre24_day": {
+          "max_interval_difference_seconds": 0.0,
+          "max_window_cumulative_difference_seconds": 0.0,
+          "wall_seconds": 0.027680529994540848
+        },
+        "gauss_legendre12_day": {
+          "max_interval_difference_seconds": 1.6601846012028883e-19,
+          "max_window_cumulative_difference_seconds": 6.200281265716909e-19,
+          "wall_seconds": 0.0184113069990417
+        },
+        "romberg6_day": {
+          "max_interval_difference_seconds": 1.6263032828109925e-19,
+          "max_window_cumulative_difference_seconds": 7.928228503703589e-19,
+          "wall_seconds": 0.045989578997250646
+        }
+      }
+    }
+  ],
+  "small": [
+    {
+      "start_jd": 2287312.5,
+      "results": {
+        "gauss_legendre16_day": {
+          "max_interval_difference_seconds": 0.0,
+          "max_window_cumulative_difference_seconds": 0.0,
+          "wall_seconds": 0.13661906200286467
+        },
+        "gauss_legendre4_day": {
+          "max_interval_difference_seconds": 4.038967894541702e-28,
+          "max_window_cumulative_difference_seconds": 2.0194839472708508e-27,
+          "wall_seconds": 0.06817016800050624
+        },
+        "romberg5_day": {
+          "max_interval_difference_seconds": 3.0292259209062765e-28,
+          "max_window_cumulative_difference_seconds": 8.077935789083404e-28,
+          "wall_seconds": 0.1736780329956673
+        }
+      }
+    },
+    {
+      "start_jd": 2460310.5,
+      "results": {
+        "gauss_legendre16_day": {
+          "max_interval_difference_seconds": 0.0,
+          "max_window_cumulative_difference_seconds": 0.0,
+          "wall_seconds": 0.12410676800936926
+        },
+        "gauss_legendre4_day": {
+          "max_interval_difference_seconds": 3.0292259209062765e-28,
+          "max_window_cumulative_difference_seconds": 8.077935789083404e-28,
+          "wall_seconds": 0.0676740780036198
+        },
+        "romberg5_day": {
+          "max_interval_difference_seconds": 2.5243549340885635e-28,
+          "max_window_cumulative_difference_seconds": 1.110716170998968e-27,
+          "wall_seconds": 0.17338561000360642
+        }
+      }
+    },
+    {
+      "start_jd": 2688816.5,
+      "results": {
+        "gauss_legendre16_day": {
+          "max_interval_difference_seconds": 0.0,
+          "max_window_cumulative_difference_seconds": 0.0,
+          "wall_seconds": 0.12251017200469505
+        },
+        "gauss_legendre4_day": {
+          "max_interval_difference_seconds": 3.5340969077239894e-28,
+          "max_window_cumulative_difference_seconds": 1.312664565726053e-27,
+          "wall_seconds": 0.0668800029961858
+        },
+        "romberg5_day": {
+          "max_interval_difference_seconds": 2.019483947270851e-28,
+          "max_window_cumulative_difference_seconds": 6.058451841812553e-28,
+          "wall_seconds": 0.17383738099306356
+        }
+      }
+    }
+  ]
+}

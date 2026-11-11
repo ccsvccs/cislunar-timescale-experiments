@@ -1,0 +1,451 @@
+{
+  "command": "/home/ccs/OpenResearch/high-precision-relativistic-time-scales-for-cislunar-navigation/.venv/bin/python scripts/compare_phase2_solar_spin.py",
+  "versions": {
+    "python": "3.14.4",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "jplephem": "2.24",
+      "spiceypy": "8.3.0",
+      "pyerfa": "2.0.1.5",
+      "mpmath": "1.4.1",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1"
+    }
+  },
+  "model_signature": {
+    "model": "Turyshev_v2_A5_A8_A9_A33_A34_solar_direct_spin_diagnostic_v1",
+    "source_equations": [
+      "Turyshev2507.22145v2 A5,A8,A9,A33,A34,A39"
+    ],
+    "paper_sha256": "dbbd9b74ee55f8bd1383d39d4b9aec505dca4a8fbb31531319ae5e4b110ece01",
+    "axis_source_sha256": "96c3945deb12e0f0843c2bf0703d3542d950cf85ff903b1fe11a501634f68ee0",
+    "axis_source": "Park2021 Sec3.4 p7 following Eq39",
+    "G_source": "https://physics.nist.gov/cuu/pdf/wall_2022.pdf",
+    "G_SI": 6.6743e-11,
+    "G_standard_uncertainty_SI": 1.5e-15,
+    "S_SI_kg_m2_per_s": 1.8838e+41,
+    "S_source": "Turyshev v2 p40 A39 quotes its Ref45; underlying Ref45 not independently checked",
+    "S_uncertainty": "not supplied by the cited passage; no absolute physical precision claim",
+    "axis_radec_degrees": [
+      286.13,
+      63.87
+    ],
+    "axis_ICRF": [
+      0.12235349347232782,
+      -0.42307208364764326,
+      0.8977971010607901
+    ],
+    "GS_TDB_vector_m5_per_s3": [
+      1.5383560955834332e+30,
+      -5.319304747908426e+30,
+      1.1288044205508255e+31
+    ],
+    "spin_scaling": "(GS)_TDB=(1-L_B)^2 G_SI S_SI; published S interpreted as unscaled physical parameter",
+    "scale": "TDB-compatible SI J2000/ICRF geometric",
+    "channels": [
+      "vector",
+      "scalar",
+      "combined",
+      "relative",
+      "unscaled_GS"
+    ],
+    "bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+    "gm_sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+    "sources": {
+      "solar_spin.py": "e6b91d992fe32b1ee6995c03e4a0dc403b585a2ca3ff8569b9a094a5b2224dd0",
+      "constants.py": "71f1197afdc125c9f8fc3fddaa8e64051f60cea5f5c134e0a1785f2539f3dea5",
+      "timebase.py": "a1ef2210f5ab3295ab467c3cba4ef0f3c9d00329c5d73dc4ed68ec42e0b16bda",
+      "ephemeris.py": "be1e3ae0d57a2a62d0300cf7bafa087505435af903784c78f8c99b02ba481479",
+      "extended_ephemeris.py": "9f06b63039ab25c69d821eed57701533182412b97f555a31265a051fe8b45719",
+      "integration.py": "08656a9c2ba7adb02bf6ebfe2517fd291e0a743c938de49b3a56cc8d034f0ce6"
+    },
+    "limitations": [
+      "not established as a term in DE440 time ephemeris",
+      "fixed solar pole and angular momentum",
+      "other external-body spins omitted",
+      "main Park/Phase1 models unchanged"
+    ],
+    "script_sha256": "397032022f97303add9ef190a8c5a6079cc65a92616f95a4da2905dff3be500a",
+    "tests_sha256": "63910a44584827a1567f410deee1e2888395788de3e722d2ccb064e1dfa9f990",
+    "header_sha256": "0f4636b663e6f00af9efa2b605ef23635489f56b23dd1a5e3821d3acc6ac3359",
+    "axis_integral_verification_source_sha256": "e90131e29e7fac8a0a6fae8cabfcbcd2fa40c1122b4a04f16b404c3285d91357",
+    "sixth_channel": "Independent ecliptic-minus-equator J2 integral solely to validate archived overlay input"
+  },
+  "sign": "additive correction to Delta=TDB-TT, seconds; rates dDelta/dTDB",
+  "source_parameters_chosen_before_reference_comparison": true,
+  "primary_models_unchanged": true,
+  "no_fitting_or_reanchoring": true,
+  "DE440_time_model_spin_inclusion": "unknown; Park Eq3-7 do not include direct spin",
+  "anchor_jd_parts": [
+    2443144.500372499,
+    1.4374344437219612e-11
+  ],
+  "anchor_seconds": -725803167.8160655,
+  "anchor_correction_seconds": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "modern_epoch_count": 732,
+  "modern_start_jd": 2460310.5,
+  "modern_end_jd": 2461041.5,
+  "historical_jd": [
+    2444239.5,
+    2447892.5,
+    2451544.5,
+    2455197.5,
+    2458849.5
+  ],
+  "daily_rate_sample_count": 17898,
+  "methods": {
+    "GL24_halfday": {
+      "method": "gauss_legendre",
+      "order": 24,
+      "step_seconds": 43200.0,
+      "elapsed_wall_seconds": 13.480916134009021,
+      "statistics": {
+        "segments": 35793,
+        "evaluations": 1315080,
+        "batches": 143,
+        "elapsed_seconds": 13.256317464998574,
+        "query_intervals": 737,
+        "rate_calls": 286
+      },
+      "fingerprint": "133900d4f0b5ac4a29670e06a9039e53f29cdf79b3e7e0e68070f19cd7edeae2",
+      "sum_segment_error_indicators_seconds": [
+        1.1266166488552876e-27,
+        3.090184168478322e-31,
+        1.1355159860740959e-27,
+        1.139682157791488e-27,
+        1.1470037731764912e-27,
+        1.4446650062295878e-27
+      ]
+    },
+    "Romberg6_halfday": {
+      "method": "romberg",
+      "order": 6,
+      "step_seconds": 43200.0,
+      "elapsed_wall_seconds": 13.867692630999954,
+      "statistics": {
+        "segments": 35793,
+        "evaluations": 1205490,
+        "batches": 143,
+        "elapsed_seconds": 13.632199784042314,
+        "query_intervals": 737,
+        "rate_calls": 858
+      },
+      "fingerprint": "a3a9594922fc047779a5ade28cd8743bcae133562c6c5a6ea461a815f340b06b",
+      "sum_segment_error_indicators_seconds": [
+        8.943957164420622e-28,
+        4.489709499048409e-31,
+        8.953571406845375e-28,
+        8.976497677242858e-28,
+        9.058095478334979e-28,
+        1.0275047544465477e-27
+      ]
+    },
+    "GL16_day": {
+      "method": "gauss_legendre",
+      "order": 16,
+      "step_seconds": 86400.0,
+      "elapsed_wall_seconds": 4.605159771992476,
+      "statistics": {
+        "segments": 17896,
+        "evaluations": 447192,
+        "batches": 73,
+        "elapsed_seconds": 4.482136579026701,
+        "query_intervals": 737,
+        "rate_calls": 146
+      },
+      "fingerprint": "5249e0c42e1aed69c5b8c20f172a46db6637520be98e69daf6ad2558a9fa6378",
+      "sum_segment_error_indicators_seconds": [
+        1.146165608452282e-27,
+        3.2636008412486624e-31,
+        1.1644080171556564e-27,
+        1.1660843466040746e-27,
+        1.1753041585703746e-27,
+        1.768967252251629e-27
+      ]
+    }
+  },
+  "channels": {
+    "vector": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -6.3570534679701884e-12,
+        "max": -6.0973821004302345e-12,
+        "max_abs": 6.3570534679701884e-12,
+        "mean": -6.2272787023842546e-12,
+        "rms": 6.227727659878767e-12,
+        "peak_to_peak": 2.5967136753995394e-13
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -4.3222550838523736e-21,
+        "max": -3.9113977890382995e-21,
+        "max_abs": 4.3222550838523736e-21,
+        "mean": -4.1117144964309656e-21,
+        "rms": 4.114261878187518e-21,
+        "peak_to_peak": 4.108572948140741e-22
+      },
+      "anchor_to_first_seconds": -6.0973821004302345e-12,
+      "anchor_to_last_seconds": -6.3570534679701884e-12,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -4.3264648708174e-21,
+        "max": -3.906524890229788e-21,
+        "max_abs": 4.3264648708174e-21,
+        "mean": -4.111148092416853e-21,
+        "rms": 4.113732047526117e-21,
+        "peak_to_peak": 4.19939980587612e-22
+      }
+    },
+    "scalar": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -2.47058401158044e-17,
+        "max": -2.8112114608546822e-18,
+        "max_abs": 2.47058401158044e-17,
+        "mean": -1.3278857493175043e-17,
+        "rms": 1.5192935307472563e-17,
+        "peak_to_peak": 2.189462865494972e-17
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -1.989106696794105e-24,
+        "max": 1.9770205967406707e-24,
+        "max_abs": 1.989106696794105e-24,
+        "mean": 1.2985609886908467e-25,
+        "rms": 1.324713217863433e-24,
+        "peak_to_peak": 3.966127293534775e-24
+      },
+      "anchor_to_first_seconds": -2.3677548760754548e-17,
+      "anchor_to_last_seconds": -1.5350091873493804e-17,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -2.2433128574661213e-24,
+        "max": 2.2141517109572786e-24,
+        "max_abs": 2.2433128574661213e-24,
+        "mean": -1.002269320710041e-26,
+        "rms": 1.2859718558357139e-24,
+        "peak_to_peak": 4.4574645684234e-24
+      }
+    },
+    "combined": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -6.357068818062063e-12,
+        "max": -6.097405777978995e-12,
+        "max_abs": 6.357068818062063e-12,
+        "mean": -6.2272919812417495e-12,
+        "rms": 6.227740912719974e-12,
+        "peak_to_peak": 2.596630400830676e-13
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -4.323605154484688e-21,
+        "max": -3.909872201820129e-21,
+        "max_abs": 4.323605154484688e-21,
+        "mean": -4.111584640332097e-21,
+        "rms": 4.114164478865069e-21,
+        "peak_to_peak": 4.1373295266455883e-22
+      },
+      "anchor_to_first_seconds": -6.097405777978995e-12,
+      "anchor_to_last_seconds": -6.357068818062063e-12,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -4.324556986993824e-21,
+        "max": -3.908531823526567e-21,
+        "max_abs": 4.324556986993824e-21,
+        "mean": -4.11115811511006e-21,
+        "rms": 4.113740538116952e-21,
+        "peak_to_peak": 4.16025163467257e-22
+      }
+    },
+    "relative": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -6.357068818062063e-12,
+        "max": -6.097405777978995e-12,
+        "max_abs": 6.357068818062063e-12,
+        "mean": -6.2272919812417495e-12,
+        "rms": 6.227740912719974e-12,
+        "peak_to_peak": 2.596630400830676e-13
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -4.3236051544846884e-21,
+        "max": -3.909872201820128e-21,
+        "max_abs": 4.3236051544846884e-21,
+        "mean": -4.111584640332097e-21,
+        "rms": 4.114164478865069e-21,
+        "peak_to_peak": 4.1373295266456033e-22
+      },
+      "anchor_to_first_seconds": -6.097405777978995e-12,
+      "anchor_to_last_seconds": -6.357068818062063e-12,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -4.324556986993824e-21,
+        "max": -3.908531823526566e-21,
+        "max_abs": 4.324556986993824e-21,
+        "mean": -4.11115811511006e-21,
+        "rms": 4.113740538116952e-21,
+        "peak_to_peak": 4.1602516346725773e-22
+      }
+    },
+    "unscaled_GS": {
+      "modern_time_seconds": {
+        "count": 732,
+        "min": -6.3570690151972844e-12,
+        "max": -6.097405967061963e-12,
+        "max_abs": 6.3570690151972844e-12,
+        "mean": -6.2272921743525396e-12,
+        "rms": 6.2277411058446875e-12,
+        "peak_to_peak": 2.596630481353211e-13
+      },
+      "modern_rate_dimensionless": {
+        "count": 732,
+        "min": -4.323605288561397e-21,
+        "max": -3.9098723230668145e-21,
+        "max_abs": 4.323605288561397e-21,
+        "mean": -4.111584767833965e-21,
+        "rms": 4.114164606446939e-21,
+        "peak_to_peak": 4.1373296549458276e-22
+      },
+      "anchor_to_first_seconds": -6.097405967061963e-12,
+      "anchor_to_last_seconds": -6.3570690151972844e-12,
+      "daily_anchor_to_end_rate_dimensionless": {
+        "count": 17898,
+        "min": -4.324557121100049e-21,
+        "max": -3.9085319447316856e-21,
+        "max_abs": 4.324557121100049e-21,
+        "mean": -4.111158242598702e-21,
+        "rms": 4.1137406656856754e-21,
+        "peak_to_peak": 4.1602517636836353e-22
+      }
+    }
+  },
+  "quadrature_max_abs_difference_each_channel_seconds": {
+    "Romberg6_halfday": [
+      8.077935669463161e-28,
+      6.162975822039155e-33,
+      8.077935669463161e-28,
+      8.077935669463161e-28,
+      8.077935669463161e-28,
+      1.0097419586828951e-28
+    ],
+    "GL16_day": [
+      8.077935669463161e-28,
+      3.0814879110195774e-33,
+      8.077935669463161e-28,
+      8.077935669463161e-28,
+      8.077935669463161e-28,
+      1.0097419586828951e-28
+    ]
+  },
+  "closure": {
+    "instantaneous_combined_minus_relative_max_abs": 2.256949153578792e-36,
+    "integrated_combined_minus_vector_plus_scalar_max_seconds": 1.3828115370942133e-27,
+    "integrated_combined_minus_relative_max_seconds": 8.077935669463161e-28
+  },
+  "GS_scale_sensitivity_max_seconds": 1.9713522162258902e-19,
+  "G_standard_uncertainty_only_max_seconds": 1.428704617277182e-16,
+  "uncertainty_limit": "G-only sensitivity is not a total uncertainty; source S, fixed-axis and omitted-physics uncertainties not supplied",
+  "overlay": {
+    "classification": "Previously measured mixed SB441 diagnostic plus independently integrated solar spin; no model acceptance",
+    "verified_input_sha256": {
+      "phase2_sb441_diagnostic.json": "23b9f4ac8378f140c19f3a352703c10d6aab6f4f13dc4dd018bdde608c019b99",
+      "phase2_sb441_time_series.csv": "7dfb0a1ae58071b9b4029cfbc316a2d508adaca8c92df340a337c2c173b7594d",
+      "phase2_solar_axis_diagnostic.json": "cd064b16953caa1fece2f6e1d82333a8b12a167d4031f5b1a44747287cdc3b73",
+      "phase2_solar_axis_diagnostic.csv": "e93c3e9ab6ea2fb68e4b22462d824e2ee407eda23a891f8a6ce5deac6f47cb68",
+      "phase2_jpl_comparison.json": "c09ed940bf0b8f1b968675ecedcfaa013a84acdfe8eaef20db0ca24d6d9c151e",
+      "phase2_time_series.csv": "c1ce2bc002afa0ac4cc0c8f27d5723107d90d20af1d5001d8c0ac90ba4b573fe"
+    },
+    "fresh_axis_integral_closure_max_seconds": 1.1107161545511846e-26,
+    "current_Park_signature_matches_archived_complete_signature": true,
+    "reference_rechecked_at_all_epochs": true,
+    "residuals": {
+      "solar_equator_J2": {
+        "before_time_seconds": {
+          "count": 732,
+          "min": -2.818949568672742e-12,
+          "max": -2.7853967369357788e-12,
+          "max_abs": 2.818949568672742e-12,
+          "mean": -2.8012609753829255e-12,
+          "rms": 2.801277755567863e-12,
+          "peak_to_peak": 3.355283173696322e-14
+        },
+        "after_time_seconds": {
+          "count": 732,
+          "min": -9.176018386734805e-12,
+          "max": -8.882802514914774e-12,
+          "max_abs": 9.176018386734805e-12,
+          "mean": -9.028552956624675e-12,
+          "rms": 9.028948010437228e-12,
+          "peak_to_peak": 2.9321587182003084e-13
+        },
+        "before_rate_dimensionless": {
+          "count": 732,
+          "min": -7.9512736381659785e-22,
+          "max": -2.1820766065207447e-22,
+          "max_abs": 7.9512736381659785e-22,
+          "mean": -5.303039666595143e-22,
+          "rms": 5.339091960561789e-22,
+          "peak_to_peak": 5.769197031645234e-22
+        },
+        "after_rate_dimensionless": {
+          "count": 732,
+          "min": -5.1048825496082865e-21,
+          "max": -4.284520645869589e-21,
+          "max_abs": 5.1048825496082865e-21,
+          "mean": -4.641888606991611e-21,
+          "rms": 4.644273589342954e-21,
+          "peak_to_peak": 8.203619037386975e-22
+        }
+      },
+      "literal_ecliptic_J2": {
+        "before_time_seconds": {
+          "count": 732,
+          "min": -1.9535196899102025e-12,
+          "max": -1.9481630807314285e-12,
+          "max_abs": 1.9535196899102025e-12,
+          "mean": -1.950451141523376e-12,
+          "rms": 1.95045157237679e-12,
+          "peak_to_peak": 5.356609178774069e-15
+        },
+        "after_time_seconds": {
+          "count": 732,
+          "min": -8.308582589430277e-12,
+          "max": -8.050785522429245e-12,
+          "max_abs": 8.308582589430277e-12,
+          "mean": -8.177743122765124e-12,
+          "rms": 8.178079159777048e-12,
+          "peak_to_peak": 2.577970670010325e-13
+        },
+        "before_rate_dimensionless": {
+          "count": 732,
+          "min": -7.768888487842295e-22,
+          "max": 6.778091028377964e-22,
+          "max_abs": 7.768888487842295e-22,
+          "mean": 2.999446004305183e-23,
+          "rms": 4.1085766387557326e-22,
+          "peak_to_peak": 1.4546979516220259e-21
+        },
+        "after_rate_dimensionless": {
+          "count": 732,
+          "min": -5.086644034575918e-21,
+          "max": -3.396126950907393e-21,
+          "max_abs": 5.086644034575918e-21,
+          "mean": -4.081590180289045e-21,
+          "rms": 4.103816365631241e-21,
+          "peak_to_peak": 1.6905170836685254e-21
+        }
+      }
+    }
+  },
+  "elapsed_wall_seconds": 33.06136702199001
+}

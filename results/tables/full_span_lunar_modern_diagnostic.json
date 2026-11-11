@@ -1,0 +1,3341 @@
+{
+  "mode": "modern",
+  "quantity": "Moon-center TCL-TDB, seconds; no TL/proper-time mapping",
+  "command": ".venv/bin/python scripts/compare_full_span_lunar.py --modern-only",
+  "sample_count": 18631,
+  "daily_grid_sample_count": 17898,
+  "common_coverage_jd": [
+    2287184.5,
+    2688976.5
+  ],
+  "actual_sample_tdb_seconds": [
+    -725846400.0,
+    820497600.0
+  ],
+  "anchor_tdb_seconds": -725803167.8160655,
+  "model_anchor_seconds": 6.55e-05,
+  "reference_anchor_seconds": 6.549999999999212e-05,
+  "model_signature": {
+    "model": "moon_center_Park_major_PN_plus_ring_Earth_staticJ2_v1",
+    "source_sha256": {
+      "lunar_model.py": "92498b2ac8b4effb6c11baedf3f97cedda29ac74999b74cf5e10677317c8ccce",
+      "constants.py": "71f1197afdc125c9f8fc3fddaa8e64051f60cea5f5c134e0a1785f2539f3dea5",
+      "timebase.py": "a1ef2210f5ab3295ab467c3cba4ef0f3c9d00329c5d73dc4ed68ec42e0b16bda",
+      "integration.py": "08656a9c2ba7adb02bf6ebfe2517fd291e0a743c938de49b3a56cc8d034f0ce6",
+      "extended_ephemeris.py": "9f06b63039ab25c69d821eed57701533182412b97f555a31265a051fe8b45719",
+      "ephemeris.py": "be1e3ae0d57a2a62d0300cf7bafa087505435af903784c78f8c99b02ba481479",
+      "pn_rate.py": "9896da55114c7151b3eab380ac23d8162c82e8cbd4933da60621f322e04648c6",
+      "potential.py": "d0219bcd2caa40d817c2a1bf0f46da96098f7a7078d25d5dbf2ae28ab02a43a5",
+      "jpl_model.py": "e90131e29e7fac8a0a6fae8cabfcbcd2fa40c1122b4a04f16b404c3285d91357",
+      "small_body.py": "2e1dc0dc9bb9cec422b028373e358194bd73b585adb79b3e049e081e33175fe6"
+    },
+    "earth_moon_bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+    "gm_kernel_sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+    "header_sha256": "0f4636b663e6f00af9efa2b605ef23635489f56b23dd1a5e3821d3acc6ac3359",
+    "C_LIGHT": 299792458.0,
+    "L_B": 1.550519768e-08,
+    "TDB0": -6.55e-05,
+    "anchor_jd_parts": [
+      2443144.500372499,
+      1.4374344437219612e-11
+    ],
+    "centering_rate": 1.4825e-08,
+    "formula": "Q=-TDB0+[(LB-Fstar)*(s-s0)-integral(F-Fstar)ds]/(1-LB)",
+    "channels": [
+      "F2_minus_fixed_center",
+      "major_pointmass_F4",
+      "solar_J2_c2",
+      "kuiper_ring_c2",
+      "major_vector_c4",
+      "major_PN_velocity_c4",
+      "major_PN_body_potential_c4",
+      "major_PN_radial_c4",
+      "major_PN_acceleration_c4",
+      "earth_static_J2_Park_pole_c2",
+      "earth_J2_zero_offset_minus_primary_DIAGNOSTIC"
+    ],
+    "observer": "Moon center; no self potential; external Earth; observer Moon GM in PN inner sum",
+    "earth_J2": {
+      "source": "Park2021 Sec2.5 Eq20-26 and header J2E/RE",
+      "J2": 0.00108262539,
+      "radius_m": 6378136.6,
+      "pole": "Vondrak2011 corrected2012 + 18.6-year nutation + Park25 frame rotations",
+      "frame_offset_arcsec": [
+        0.005343991604414805,
+        -0.01712882484031753
+      ],
+      "offset_units_evidence": "Folkner2014 Table10 explicitly arcsec and exact match to header430 ROTEX/Y; same-field convention interpreted for DE440",
+      "zero_offset_diagnostic_channel_excluded_from_primary": 10,
+      "static_only": true
+    },
+    "excluded": [
+      "Earth J2 time dependence; original DE440 pole integration code unavailable",
+      "higher Earth harmonics and tides",
+      "small-body/ring PN and vector terms",
+      "solar and other direct spin terms"
+    ],
+    "reference_used_in_integrand": false
+  },
+  "SB441_signature": {
+    "model": "SB441373_direct_scalar_Moon_observer_diagnostic_v1",
+    "bsp_sha256": "2143113282bfc2b2a0b0b4626125d4f84362339b5a8ae7eea40f4120ca8da10b",
+    "mapping": {
+      "source": "JPL Farnocchia IOM 392R-21-005 Table 1; DE440 GROUP1040/1041",
+      "orbit_provenance": "SB441 separate fit/integration relative to DE441 planets; not original DE440 states",
+      "header_sha256": "0f4636b663e6f00af9efa2b605ef23635489f56b23dd1a5e3821d3acc6ac3359",
+      "iom_text_sha256": "b295751968f32009cf7429bb74a7cc92763dd071a1cbd85bcc83a35204a6cfe4",
+      "units": "TDB-compatible AU^3/day^2 converted to SI with exact AU149597870700m",
+      "entries": [
+        {
+          "iom_label": "Ceres                            1",
+          "target": 2000001,
+          "iom_gm_au3_day2": 1.396451812308107e-13,
+          "header_name": "MA0001",
+          "group": "asteroids",
+          "gm_si": 62628888644.40994
+        },
+        {
+          "iom_label": "Vesta                            4",
+          "target": 2000004,
+          "iom_gm_au3_day2": 3.8548000225257904e-14,
+          "header_name": "MA0004",
+          "group": "asteroids",
+          "gm_si": 17288232879.171516
+        },
+        {
+          "iom_label": "Pallas                           2",
+          "target": 2000002,
+          "iom_gm_au3_day2": 3.04711463300432e-14,
+          "header_name": "MA0002",
+          "group": "asteroids",
+          "gm_si": 13665878145.967424
+        },
+        {
+          "iom_label": "Hygiea                           10",
+          "target": 2000010,
+          "iom_gm_au3_day2": 1.254253076164081e-14,
+          "header_name": "MA0010",
+          "group": "asteroids",
+          "gm_si": 5625147645.38523
+        },
+        {
+          "iom_label": "Davida                           511",
+          "target": 2000511,
+          "iom_gm_au3_day2": 8.683625349228654e-15,
+          "header_name": "MA0511",
+          "group": "asteroids",
+          "gm_si": 3894483148.1705656
+        },
+        {
+          "iom_label": "Interamnia                       704",
+          "target": 2000704,
+          "iom_gm_au3_day2": 6.311034342087889e-15,
+          "header_name": "MA0704",
+          "group": "asteroids",
+          "gm_si": 2830409639.3299856
+        },
+        {
+          "iom_label": "Europa                           52",
+          "target": 2000052,
+          "iom_gm_au3_day2": 5.982431526486984e-15,
+          "header_name": "MA0052",
+          "group": "asteroids",
+          "gm_si": 2683035924.2821803
+        },
+        {
+          "iom_label": "Sylvia                           87",
+          "target": 2000087,
+          "iom_gm_au3_day2": 4.834560654610552e-15,
+          "header_name": "MA0087",
+          "group": "asteroids",
+          "gm_si": 2168232073.6996913
+        },
+        {
+          "iom_label": "Eunomia                          15",
+          "target": 2000015,
+          "iom_gm_au3_day2": 4.5107799051436795e-15,
+          "header_name": "MA0015",
+          "group": "asteroids",
+          "gm_si": 2023020987.1098285
+        },
+        {
+          "iom_label": "Juno                             3",
+          "target": 2000003,
+          "iom_gm_au3_day2": 4.282343967799501e-15,
+          "header_name": "MA0003",
+          "group": "asteroids",
+          "gm_si": 1920570700.2025895
+        },
+        {
+          "iom_label": "Psyche                           16",
+          "target": 2000016,
+          "iom_gm_au3_day2": 3.5445002842488978e-15,
+          "header_name": "MA0016",
+          "group": "asteroids",
+          "gm_si": 1589658244.1709428
+        },
+        {
+          "iom_label": "Camilla                          107",
+          "target": 2000107,
+          "iom_gm_au3_day2": 3.219139207587859e-15,
+          "header_name": "MA0107",
+          "group": "asteroids",
+          "gm_si": 1443738403.1866007
+        },
+        {
+          "iom_label": "Thisbe                           88",
+          "target": 2000088,
+          "iom_gm_au3_day2": 2.6529436610356353e-15,
+          "header_name": "MA0088",
+          "group": "asteroids",
+          "gm_si": 1189807708.812191
+        },
+        {
+          "iom_label": "Iris                             7",
+          "target": 2000007,
+          "iom_gm_au3_day2": 2.5416014973471498e-15,
+          "header_name": "MA0007",
+          "group": "asteroids",
+          "gm_si": 1139872323.218411
+        },
+        {
+          "iom_label": "Euphrosyne                       31",
+          "target": 2000031,
+          "iom_gm_au3_day2": 2.4067012218937576e-15,
+          "header_name": "MA0031",
+          "group": "asteroids",
+          "gm_si": 1079371457.7033563
+        },
+        {
+          "iom_label": "Cybele                           65",
+          "target": 2000065,
+          "iom_gm_au3_day2": 2.0917175955133682e-15,
+          "header_name": "MA0065",
+          "group": "asteroids",
+          "gm_si": 938105756.3915136
+        },
+        {
+          "iom_label": "Dido                             209",
+          "target": 2000209,
+          "iom_gm_au3_day2": 1.951100813450661e-15,
+          "header_name": "MA0209",
+          "group": "asteroids",
+          "gm_si": 875041118.5162935
+        },
+        {
+          "iom_label": "Aurora                           94",
+          "target": 2000094,
+          "iom_gm_au3_day2": 1.9476499609659456e-15,
+          "header_name": "MA0094",
+          "group": "asteroids",
+          "gm_si": 873493459.9856614
+        },
+        {
+          "iom_label": "Doris                            48",
+          "target": 2000048,
+          "iom_gm_au3_day2": 1.908516195648564e-15,
+          "header_name": "MA0048",
+          "group": "asteroids",
+          "gm_si": 855942519.7477179
+        },
+        {
+          "iom_label": "Bertha                           154",
+          "target": 2000154,
+          "iom_gm_au3_day2": 1.9062882233624486e-15,
+          "header_name": "MA0154",
+          "group": "asteroids",
+          "gm_si": 854943305.6897739
+        },
+        {
+          "iom_label": "Amphitrite                       29",
+          "target": 2000029,
+          "iom_gm_au3_day2": 1.778875957037877e-15,
+          "header_name": "MA0029",
+          "group": "asteroids",
+          "gm_si": 797800706.3587997
+        },
+        {
+          "iom_label": "Ursula                           375",
+          "target": 2000375,
+          "iom_gm_au3_day2": 1.771687529490865e-15,
+          "header_name": "MA0375",
+          "group": "asteroids",
+          "gm_si": 794576798.2768867
+        },
+        {
+          "iom_label": "Herculina                        532",
+          "target": 2000532,
+          "iom_gm_au3_day2": 1.765129565112637e-15,
+          "header_name": "MA0532",
+          "group": "asteroids",
+          "gm_si": 791635644.0089194
+        },
+        {
+          "iom_label": "Stereoskopia                     566",
+          "target": 2000566,
+          "iom_gm_au3_day2": 1.7007818925283807e-15,
+          "header_name": "MA0566",
+          "group": "asteroids",
+          "gm_si": 762776622.9865946
+        },
+        {
+          "iom_label": "Siegena                          386",
+          "target": 2000386,
+          "iom_gm_au3_day2": 1.6744520343182799e-15,
+          "header_name": "MA0386",
+          "group": "asteroids",
+          "gm_si": 750968053.9881558
+        },
+        {
+          "iom_label": "Alauda       702",
+          "target": 2000702,
+          "iom_gm_au3_day2": 1.6730262398441171e-15,
+          "header_name": "MA0702",
+          "group": "asteroids",
+          "gm_si": 750328605.3328917
+        },
+        {
+          "iom_label": "Laetitia     39",
+          "target": 2000039,
+          "iom_gm_au3_day2": 1.6238080168284406e-15,
+          "header_name": "MA0039",
+          "group": "asteroids",
+          "gm_si": 728254928.4515556
+        },
+        {
+          "iom_label": "Metis        9",
+          "target": 2000009,
+          "iom_gm_au3_day2": 1.4490138025867273e-15,
+          "header_name": "MA0009",
+          "group": "asteroids",
+          "gm_si": 649862195.6487136
+        },
+        {
+          "iom_label": "Hebe         6",
+          "target": 2000006,
+          "iom_gm_au3_day2": 1.4423591761343029e-15,
+          "header_name": "MA0006",
+          "group": "asteroids",
+          "gm_si": 646877689.807655
+        },
+        {
+          "iom_label": "Bamberga     324",
+          "target": 2000324,
+          "iom_gm_au3_day2": 1.3808681586222395e-15,
+          "header_name": "MA0324",
+          "group": "asteroids",
+          "gm_si": 619299838.1807576
+        },
+        {
+          "iom_label": "Elektra      130",
+          "target": 2000130,
+          "iom_gm_au3_day2": 1.3272835717079433e-15,
+          "header_name": "MA0130",
+          "group": "asteroids",
+          "gm_si": 595267908.8486217
+        },
+        {
+          "iom_label": "Themis       24",
+          "target": 2000024,
+          "iom_gm_au3_day2": 1.3109170444249925e-15,
+          "header_name": "MA0024",
+          "group": "asteroids",
+          "gm_si": 587927752.8499308
+        },
+        {
+          "iom_label": "Patientia    451",
+          "target": 2000451,
+          "iom_gm_au3_day2": 1.2973797046097596e-15,
+          "header_name": "MA0451",
+          "group": "asteroids",
+          "gm_si": 581856447.4145614
+        },
+        {
+          "iom_label": "Fortuna      19",
+          "target": 2000019,
+          "iom_gm_au3_day2": 1.2396175182794244e-15,
+          "header_name": "MA0019",
+          "group": "asteroids",
+          "gm_si": 555950923.8321834
+        },
+        {
+          "iom_label": "Palma        372",
+          "target": 2000372,
+          "iom_gm_au3_day2": 1.2340564359220072e-15,
+          "header_name": "MA0372",
+          "group": "asteroids",
+          "gm_si": 553456857.0506779
+        },
+        {
+          "iom_label": "Daphne       41",
+          "target": 2000041,
+          "iom_gm_au3_day2": 1.2055616051144469e-15,
+          "header_name": "MA0041",
+          "group": "asteroids",
+          "gm_si": 540677328.4635916
+        },
+        {
+          "iom_label": "Irene        14",
+          "target": 2000014,
+          "iom_gm_au3_day2": 1.1863795139948057e-15,
+          "header_name": "MA0014",
+          "group": "asteroids",
+          "gm_si": 532074431.9074026
+        },
+        {
+          "iom_label": "Diotima      423",
+          "target": 2000423,
+          "iom_gm_au3_day2": 1.1511452195400677e-15,
+          "header_name": "MA0423",
+          "group": "asteroids",
+          "gm_si": 516272349.1973458
+        },
+        {
+          "iom_label": "Egeria       13",
+          "target": 2000013,
+          "iom_gm_au3_day2": 1.1389436761809467e-15,
+          "header_name": "MA0013",
+          "group": "asteroids",
+          "gm_si": 510800129.57907426
+        },
+        {
+          "iom_label": "Hesperia     69",
+          "target": 2000069,
+          "iom_gm_au3_day2": 1.1215489958719225e-15,
+          "header_name": "MA0069",
+          "group": "asteroids",
+          "gm_si": 502998861.4903575
+        },
+        {
+          "iom_label": "Parthenope   11",
+          "target": 2000011,
+          "iom_gm_au3_day2": 1.0258530487431674e-15,
+          "header_name": "MA0011",
+          "group": "asteroids",
+          "gm_si": 460080582.7239592
+        },
+        {
+          "iom_label": "Papagena     471",
+          "target": 2000471,
+          "iom_gm_au3_day2": 1.0154946317000345e-15,
+          "header_name": "MA0471",
+          "group": "asteroids",
+          "gm_si": 455434979.18928033
+        },
+        {
+          "iom_label": "Lachesis     120",
+          "target": 2000120,
+          "iom_gm_au3_day2": 1.0049283867977807e-15,
+          "header_name": "MA0120",
+          "group": "asteroids",
+          "gm_si": 450696167.7992973
+        },
+        {
+          "iom_label": "Aglaja       47",
+          "target": 2000047,
+          "iom_gm_au3_day2": 9.548452182565237e-16,
+          "header_name": "MA0047",
+          "group": "asteroids",
+          "gm_si": 428234575.083504
+        },
+        {
+          "iom_label": "Aegle        96",
+          "target": 2000096,
+          "iom_gm_au3_day2": 9.42942121305823e-16,
+          "header_name": "MA0096",
+          "group": "asteroids",
+          "gm_si": 422896204.4581912
+        },
+        {
+          "iom_label": "Hedwig       476",
+          "target": 2000476,
+          "iom_gm_au3_day2": 9.329084948707906e-16,
+          "header_name": "MA0476",
+          "group": "asteroids",
+          "gm_si": 418396264.9174159
+        },
+        {
+          "iom_label": "Aspasia      409",
+          "target": 2000409,
+          "iom_gm_au3_day2": 9.307130180298934e-16,
+          "header_name": "MA0409",
+          "group": "asteroids",
+          "gm_si": 417411624.60703766
+        },
+        {
+          "iom_label": "Juewa        139",
+          "target": 2000139,
+          "iom_gm_au3_day2": 9.259555216971151e-16,
+          "header_name": "MA0139",
+          "group": "asteroids",
+          "gm_si": 415277954.7916841
+        },
+        {
+          "iom_label": "Winchester   747",
+          "target": 2000747,
+          "iom_gm_au3_day2": 8.916216061479975e-16,
+          "header_name": "MA0747",
+          "group": "asteroids",
+          "gm_si": 399879679.2858636
+        },
+        {
+          "iom_label": "Kalliope     22",
+          "target": 2000022,
+          "iom_gm_au3_day2": 8.805494503588215e-16,
+          "header_name": "MA0022",
+          "group": "asteroids",
+          "gm_si": 394913974.0186856
+        },
+        {
+          "iom_label": "Lomia        117",
+          "target": 2000117,
+          "iom_gm_au3_day2": 8.795632662491299e-16,
+          "header_name": "MA0117",
+          "group": "asteroids",
+          "gm_si": 394471684.3940499
+        },
+        {
+          "iom_label": "Scheila      596",
+          "target": 2000596,
+          "iom_gm_au3_day2": 8.750385462374579e-16,
+          "header_name": "MA0596",
+          "group": "asteroids",
+          "gm_si": 392442411.4663305
+        },
+        {
+          "iom_label": "Nemesis      128",
+          "target": 2000128,
+          "iom_gm_au3_day2": 8.584786131141037e-16,
+          "header_name": "MA0128",
+          "group": "asteroids",
+          "gm_si": 385015515.68374556
+        },
+        {
+          "iom_label": "Io           85",
+          "target": 2000085,
+          "iom_gm_au3_day2": 8.410568113447993e-16,
+          "header_name": "MA0085",
+          "group": "asteroids",
+          "gm_si": 377202084.00369835
+        },
+        {
+          "iom_label": "Hestia       46",
+          "target": 2000046,
+          "iom_gm_au3_day2": 8.292410989683984e-16,
+          "header_name": "MA0046",
+          "group": "asteroids",
+          "gm_si": 371902904.123994
+        },
+        {
+          "iom_label": "Sibylla      168",
+          "target": 2000168,
+          "iom_gm_au3_day2": 8.286215123097553e-16,
+          "header_name": "MA0168",
+          "group": "asteroids",
+          "gm_si": 371625028.2710092
+        },
+        {
+          "iom_label": "Germania     241",
+          "target": 2000241,
+          "iom_gm_au3_day2": 8.257891885518958e-16,
+          "header_name": "MA0241",
+          "group": "asteroids",
+          "gm_si": 370354771.1259187
+        },
+        {
+          "iom_label": "Eugenia      45",
+          "target": 2000045,
+          "iom_gm_au3_day2": 8.037535169551508e-16,
+          "header_name": "MA0045",
+          "group": "asteroids",
+          "gm_si": 360472084.0867125
+        },
+        {
+          "iom_label": "Pales        49",
+          "target": 2000049,
+          "iom_gm_au3_day2": 8.030901956158537e-16,
+          "header_name": "MA0049",
+          "group": "asteroids",
+          "gm_si": 360174593.8480366
+        },
+        {
+          "iom_label": "Kreusa       488",
+          "target": 2000488,
+          "iom_gm_au3_day2": 7.952288319351003e-16,
+          "header_name": "MA0488",
+          "group": "asteroids",
+          "gm_si": 356648883.4281307
+        },
+        {
+          "iom_label": "Dembowska    349",
+          "target": 2000349,
+          "iom_gm_au3_day2": 7.777039207208923e-16,
+          "header_name": "MA0349",
+          "group": "asteroids",
+          "gm_si": 348789208.6204214
+        },
+        {
+          "iom_label": "Lucina       146",
+          "target": 2000146,
+          "iom_gm_au3_day2": 7.414551782088354e-16,
+          "header_name": "MA0146",
+          "group": "asteroids",
+          "gm_si": 332532160.30498254
+        },
+        {
+          "iom_label": "Eukrate      247",
+          "target": 2000247,
+          "iom_gm_au3_day2": 7.216647312452579e-16,
+          "header_name": "MA0247",
+          "group": "asteroids",
+          "gm_si": 323656424.75735646
+        },
+        {
+          "iom_label": "Freia        76",
+          "target": 2000076,
+          "iom_gm_au3_day2": 7.196534867203428e-16,
+          "header_name": "MA0076",
+          "group": "asteroids",
+          "gm_si": 322754410.0349193
+        },
+        {
+          "iom_label": "Philomela    196",
+          "target": 2000196,
+          "iom_gm_au3_day2": 7.188369171784315e-16,
+          "header_name": "MA0196",
+          "group": "asteroids",
+          "gm_si": 322388190.1449093
+        },
+        {
+          "iom_label": "Lamberta     187",
+          "target": 2000187,
+          "iom_gm_au3_day2": 6.998876221714286e-16,
+          "header_name": "MA0187",
+          "group": "asteroids",
+          "gm_si": 313889699.3525768
+        },
+        {
+          "iom_label": "Eleonora     354",
+          "target": 2000354,
+          "iom_gm_au3_day2": 6.979942758868987e-16,
+          "header_name": "MA0354",
+          "group": "asteroids",
+          "gm_si": 313040560.32340294
+        },
+        {
+          "iom_label": "Berbericia   776",
+          "target": 2000776,
+          "iom_gm_au3_day2": 6.914477361926693e-16,
+          "header_name": "MA0776",
+          "group": "asteroids",
+          "gm_si": 310104529.8646187
+        },
+        {
+          "iom_label": "Elpis        59",
+          "target": 2000059,
+          "iom_gm_au3_day2": 6.124244003827881e-16,
+          "header_name": "MA0059",
+          "group": "asteroids",
+          "gm_si": 274663681.45777875
+        },
+        {
+          "iom_label": "Minerva      93",
+          "target": 2000093,
+          "iom_gm_au3_day2": 5.890932368757391e-16,
+          "header_name": "MA0093",
+          "group": "asteroids",
+          "gm_si": 264199984.62020323
+        },
+        {
+          "iom_label": "Flora        8",
+          "target": 2000008,
+          "iom_gm_au3_day2": 5.740266647501823e-16,
+          "header_name": "MA0008",
+          "group": "asteroids",
+          "gm_si": 257442840.1230734
+        },
+        {
+          "iom_label": "Massalia     20",
+          "target": 2000020,
+          "iom_gm_au3_day2": 5.71341843864351e-16,
+          "header_name": "MA0020",
+          "group": "asteroids",
+          "gm_si": 256238735.92981094
+        },
+        {
+          "iom_label": "Julia        89",
+          "target": 2000089,
+          "iom_gm_au3_day2": 5.699803244510909e-16,
+          "header_name": "MA0089",
+          "group": "asteroids",
+          "gm_si": 255628113.730257
+        },
+        {
+          "iom_label": "Armenia      780",
+          "target": 2000780,
+          "iom_gm_au3_day2": 5.683773262812121e-16,
+          "header_name": "MA0780",
+          "group": "asteroids",
+          "gm_si": 254909191.72382843
+        },
+        {
+          "iom_label": "Nemausa       51",
+          "target": 2000051,
+          "iom_gm_au3_day2": 5.596605208562996e-16,
+          "header_name": "MA0051",
+          "group": "asteroids",
+          "gm_si": 250999827.7810117
+        },
+        {
+          "iom_label": "Philosophia   227",
+          "target": 2000227,
+          "iom_gm_au3_day2": 5.294972789322552e-16,
+          "header_name": "MA0227",
+          "group": "asteroids",
+          "gm_si": 237472040.4061433
+        },
+        {
+          "iom_label": "Pompeja       203",
+          "target": 2000203,
+          "iom_gm_au3_day2": 5.180479043790148e-16,
+          "header_name": "MA0203",
+          "group": "asteroids",
+          "gm_si": 232337157.85865426
+        },
+        {
+          "iom_label": "Eucharis      181",
+          "target": 2000181,
+          "iom_gm_au3_day2": 5.123339897726351e-16,
+          "header_name": "MA0181",
+          "group": "asteroids",
+          "gm_si": 229774547.97514424
+        },
+        {
+          "iom_label": "Pretoria      790",
+          "target": 2000790,
+          "iom_gm_au3_day2": 5.043148194735074e-16,
+          "header_name": "MA0790",
+          "group": "asteroids",
+          "gm_si": 226178063.51890996
+        },
+        {
+          "iom_label": "Atalante      36",
+          "target": 2000036,
+          "iom_gm_au3_day2": 5.013597383486977e-16,
+          "header_name": "MA0036",
+          "group": "asteroids",
+          "gm_si": 224852751.4310191
+        },
+        {
+          "iom_label": "Gudrun        328",
+          "target": 2000328,
+          "iom_gm_au3_day2": 4.998246830863383e-16,
+          "header_name": "MA0328",
+          "group": "asteroids",
+          "gm_si": 224164300.8576304
+        },
+        {
+          "iom_label": "Melpomene     18",
+          "target": 2000018,
+          "iom_gm_au3_day2": 4.818114984817475e-16,
+          "header_name": "MA0018",
+          "group": "asteroids",
+          "gm_si": 216085642.34045985
+        },
+        {
+          "iom_label": "Bettina       250",
+          "target": 2000250,
+          "iom_gm_au3_day2": 4.69449662479354e-16,
+          "header_name": "MA0250",
+          "group": "asteroids",
+          "gm_si": 210541533.7388553
+        },
+        {
+          "iom_label": "Arethusa      95",
+          "target": 2000095,
+          "iom_gm_au3_day2": 4.60264620685128e-16,
+          "header_name": "MA0095",
+          "group": "asteroids",
+          "gm_si": 206422172.4071239
+        },
+        {
+          "iom_label": "Aletheia      259",
+          "target": 2000259,
+          "iom_gm_au3_day2": 4.525108943500125e-16,
+          "header_name": "MA0259",
+          "group": "asteroids",
+          "gm_si": 202944735.81431693
+        },
+        {
+          "iom_label": "Myrrha        381",
+          "target": 2000381,
+          "iom_gm_au3_day2": 4.49332166347459e-16,
+          "header_name": "MA0381",
+          "group": "asteroids",
+          "gm_si": 201519121.26501325
+        },
+        {
+          "iom_label": "Medea         212",
+          "target": 2000212,
+          "iom_gm_au3_day2": 4.460510689200354e-16,
+          "header_name": "MA0212",
+          "group": "asteroids",
+          "gm_si": 200047595.47656572
+        },
+        {
+          "iom_label": "Klymene       104",
+          "target": 2000104,
+          "iom_gm_au3_day2": 4.4137261924065115e-16,
+          "header_name": "MA0104",
+          "group": "asteroids",
+          "gm_si": 197949376.96722564
+        },
+        {
+          "iom_label": "Melete        56",
+          "target": 2000056,
+          "iom_gm_au3_day2": 4.3334389285268117e-16,
+          "header_name": "MA0056",
+          "group": "asteroids",
+          "gm_si": 194348606.74030668
+        },
+        {
+          "iom_label": "Gyptis        444",
+          "target": 2000444,
+          "iom_gm_au3_day2": 4.24710309935973e-16,
+          "header_name": "MA0444",
+          "group": "asteroids",
+          "gm_si": 190476566.91532275
+        },
+        {
+          "iom_label": "Kleopatra     216",
+          "target": 2000216,
+          "iom_gm_au3_day2": 4.142728844408081e-16,
+          "header_name": "MA0216",
+          "group": "asteroids",
+          "gm_si": 185795529.2074009
+        },
+        {
+          "iom_label": "Pulcova       762",
+          "target": 2000762,
+          "iom_gm_au3_day2": 4.114622959542111e-16,
+          "header_name": "MA0762",
+          "group": "asteroids",
+          "gm_si": 184535020.0240485
+        },
+        {
+          "iom_label": "Vibilia       144",
+          "target": 2000144,
+          "iom_gm_au3_day2": 4.073838070777593e-16,
+          "header_name": "MA0144",
+          "group": "asteroids",
+          "gm_si": 182705875.44899458
+        },
+        {
+          "iom_label": "Erminia       705",
+          "target": 2000705,
+          "iom_gm_au3_day2": 3.9116752395114746e-16,
+          "header_name": "MA0705",
+          "group": "asteroids",
+          "gm_si": 175433101.82937238
+        },
+        {
+          "iom_label": "Adorea        268",
+          "target": 2000268,
+          "iom_gm_au3_day2": 3.8623042613708653e-16,
+          "header_name": "MA0268",
+          "group": "asteroids",
+          "gm_si": 173218883.28994197
+        },
+        {
+          "iom_label": "Emma          283",
+          "target": 2000283,
+          "iom_gm_au3_day2": 3.8354815246046577e-16,
+          "header_name": "MA0283",
+          "group": "asteroids",
+          "gm_si": 172015921.48398277
+        },
+        {
+          "iom_label": "Harmonia      40",
+          "target": 2000040,
+          "iom_gm_au3_day2": 3.7393826630015266e-16,
+          "header_name": "MA0040",
+          "group": "asteroids",
+          "gm_si": 167706023.4630483
+        },
+        {
+          "iom_label": "Argentina     469",
+          "target": 2000469,
+          "iom_gm_au3_day2": 3.6478450110028057e-16,
+          "header_name": "MA0469",
+          "group": "asteroids",
+          "gm_si": 163600689.24150932
+        },
+        {
+          "iom_label": "Ino           173",
+          "target": 2000173,
+          "iom_gm_au3_day2": 3.494445297018901e-16,
+          "header_name": "MA0173",
+          "group": "asteroids",
+          "gm_si": 156720929.0374654
+        },
+        {
+          "iom_label": "Aquitania     387",
+          "target": 2000387,
+          "iom_gm_au3_day2": 3.438304449717668e-16,
+          "header_name": "MA0387",
+          "group": "asteroids",
+          "gm_si": 154203091.44146535
+        },
+        {
+          "iom_label": "Bellona       28",
+          "target": 2000028,
+          "iom_gm_au3_day2": 3.4043931236013436e-16,
+          "header_name": "MA0028",
+          "group": "asteroids",
+          "gm_si": 152682216.42923474
+        },
+        {
+          "iom_label": "Lampetia      393",
+          "target": 2000393,
+          "iom_gm_au3_day2": 3.3572279402433382e-16,
+          "header_name": "MA0393",
+          "group": "asteroids",
+          "gm_si": 150566924.66593403
+        },
+        {
+          "iom_label": "Siwa          140",
+          "target": 2000140,
+          "iom_gm_au3_day2": 3.345175275226785e-16,
+          "header_name": "MA0140",
+          "group": "asteroids",
+          "gm_si": 150026379.68719792
+        },
+        {
+          "iom_label": "Victoria      12",
+          "target": 2000012,
+          "iom_gm_au3_day2": 3.2843482824404967e-16,
+          "header_name": "MA0012",
+          "group": "asteroids",
+          "gm_si": 147298375.09426445
+        },
+        {
+          "iom_label": "Hippo         426",
+          "target": 2000426,
+          "iom_gm_au3_day2": 3.2507694999797983e-16,
+          "header_name": "MA0426",
+          "group": "asteroids",
+          "gm_si": 145792414.19463983
+        },
+        {
+          "iom_label": "Astraea       5",
+          "target": 2000005,
+          "iom_gm_au3_day2": 3.2161933241855116e-16,
+          "header_name": "MA0005",
+          "group": "asteroids",
+          "gm_si": 144241721.61471418
+        },
+        {
+          "iom_label": "Ianthe        98",
+          "target": 2000098,
+          "iom_gm_au3_day2": 3.1864312654754617e-16,
+          "header_name": "MA0098",
+          "group": "asteroids",
+          "gm_si": 142906935.37694255
+        },
+        {
+          "iom_label": "Chloris       410",
+          "target": 2000410,
+          "iom_gm_au3_day2": 3.152731937031252e-16,
+          "header_name": "MA0410",
+          "group": "asteroids",
+          "gm_si": 141395568.16045737
+        },
+        {
+          "iom_label": "Circe         34",
+          "target": 2000034,
+          "iom_gm_au3_day2": 3.139214460205205e-16,
+          "header_name": "MA0034",
+          "group": "asteroids",
+          "gm_si": 140789328.44389126
+        },
+        {
+          "iom_label": "Adeona        145",
+          "target": 2000145,
+          "iom_gm_au3_day2": 3.131949350342742e-16,
+          "header_name": "MA0145",
+          "group": "asteroids",
+          "gm_si": 140463498.54231122
+        },
+        {
+          "iom_label": "Ophelia       171",
+          "target": 2000171,
+          "iom_gm_au3_day2": 3.026253130619937e-16,
+          "header_name": "MA0171",
+          "group": "asteroids",
+          "gm_si": 135723172.58418635
+        },
+        {
+          "iom_label": "Hermione      121",
+          "target": 2000121,
+          "iom_gm_au3_day2": 3.002775558113526e-16,
+          "header_name": "MA0121",
+          "group": "asteroids",
+          "gm_si": 134670236.6638879
+        },
+        {
+          "iom_label": "Comacina      489",
+          "target": 2000489,
+          "iom_gm_au3_day2": 2.8775529812775966e-16,
+          "header_name": "MA0489",
+          "group": "asteroids",
+          "gm_si": 129054181.20726529
+        },
+        {
+          "iom_label": "Ninina        357",
+          "target": 2000357,
+          "iom_gm_au3_day2": 2.8721263188047396e-16,
+          "header_name": "MA0357",
+          "group": "asteroids",
+          "gm_si": 128810803.07081415
+        },
+        {
+          "iom_label": "Ausonia       63",
+          "target": 2000063,
+          "iom_gm_au3_day2": 2.859883377373698e-16,
+          "header_name": "MA0063",
+          "group": "asteroids",
+          "gm_si": 128261724.46401468
+        },
+        {
+          "iom_label": "Thia          405",
+          "target": 2000405,
+          "iom_gm_au3_day2": 2.834344202759018e-16,
+          "header_name": "MA0405",
+          "group": "asteroids",
+          "gm_si": 127116328.60508472
+        },
+        {
+          "iom_label": "Xanthippe     156",
+          "target": 2000156,
+          "iom_gm_au3_day2": 2.7907996428036474e-16,
+          "header_name": "MA0156",
+          "group": "asteroids",
+          "gm_si": 125163416.68039238
+        },
+        {
+          "iom_label": "Ornamenta     350",
+          "target": 2000350,
+          "iom_gm_au3_day2": 2.7857999144799436e-16,
+          "header_name": "MA0350",
+          "group": "asteroids",
+          "gm_si": 124939185.93667628
+        },
+        {
+          "iom_label": "Thalia        23",
+          "target": 2000023,
+          "iom_gm_au3_day2": 2.7673067211701877e-16,
+          "header_name": "MA0023",
+          "group": "asteroids",
+          "gm_si": 124109792.37345555
+        },
+        {
+          "iom_label": "Gallia        148",
+          "target": 2000148,
+          "iom_gm_au3_day2": 2.7635117872432285e-16,
+          "header_name": "MA0148",
+          "group": "asteroids",
+          "gm_si": 123939594.95437557
+        },
+        {
+          "iom_label": "Merapi        536",
+          "target": 2000536,
+          "iom_gm_au3_day2": 2.7333272315776016e-16,
+          "header_name": "MA0536",
+          "group": "asteroids",
+          "gm_si": 122585860.32572484
+        },
+        {
+          "iom_label": "Nuwa          150",
+          "target": 2000150,
+          "iom_gm_au3_day2": 2.690665426465701e-16,
+          "header_name": "MA0150",
+          "group": "asteroids",
+          "gm_si": 120672538.7071961
+        },
+        {
+          "iom_label": "Charybdis     388",
+          "target": 2000388,
+          "iom_gm_au3_day2": 2.6866209145075665e-16,
+          "header_name": "MA0388",
+          "group": "asteroids",
+          "gm_si": 120491148.06642038
+        },
+        {
+          "iom_label": "Eva           164",
+          "target": 2000164,
+          "iom_gm_au3_day2": 2.685636326205827e-16,
+          "header_name": "MA0164",
+          "group": "asteroids",
+          "gm_si": 120446990.67368636
+        },
+        {
+          "iom_label": "Athamantis    230",
+          "target": 2000230,
+          "iom_gm_au3_day2": 2.6546896309806863e-16,
+          "header_name": "MA0230",
+          "group": "asteroids",
+          "gm_si": 119059075.16375953
+        },
+        {
+          "iom_label": "Loreley       165",
+          "target": 2000165,
+          "iom_gm_au3_day2": 2.645429961552526e-16,
+          "header_name": "MA0165",
+          "group": "asteroids",
+          "gm_si": 118643792.08675756
+        },
+        {
+          "iom_label": "Antiope       90",
+          "target": 2000090,
+          "iom_gm_au3_day2": 2.642881600589284e-16,
+          "header_name": "MA0090",
+          "group": "asteroids",
+          "gm_si": 118529501.7019509
+        },
+        {
+          "iom_label": "Meliboea      137",
+          "target": 2000137,
+          "iom_gm_au3_day2": 2.6291667570900683e-16,
+          "header_name": "MA0137",
+          "group": "asteroids",
+          "gm_si": 117914410.36924806
+        },
+        {
+          "iom_label": "Princetonia   508",
+          "target": 2000508,
+          "iom_gm_au3_day2": 2.600374703356517e-16,
+          "header_name": "MA0508",
+          "group": "asteroids",
+          "gm_si": 116623127.48270002
+        },
+        {
+          "iom_label": "Wratislavia   690",
+          "target": 2000690,
+          "iom_gm_au3_day2": 2.5859089556681753e-16,
+          "header_name": "MA0690",
+          "group": "asteroids",
+          "gm_si": 115974359.15919171
+        },
+        {
+          "iom_label": "Euterpe       27",
+          "target": 2000027,
+          "iom_gm_au3_day2": 2.561386580415216e-16,
+          "header_name": "MA0027",
+          "group": "asteroids",
+          "gm_si": 114874565.31347671
+        },
+        {
+          "iom_label": "Alexandra     54",
+          "target": 2000054,
+          "iom_gm_au3_day2": 2.561364385673563e-16,
+          "header_name": "MA0054",
+          "group": "asteroids",
+          "gm_si": 114873569.91070576
+        },
+        {
+          "iom_label": "Hispania      804",
+          "target": 2000804,
+          "iom_gm_au3_day2": 2.552783047004986e-16,
+          "header_name": "MA0804",
+          "group": "asteroids",
+          "gm_si": 114488709.00884192
+        },
+        {
+          "iom_label": "Elfriede      618",
+          "target": 2000618,
+          "iom_gm_au3_day2": 2.519320488920722e-16,
+          "header_name": "MA0618",
+          "group": "asteroids",
+          "gm_si": 112987960.60811293
+        },
+        {
+          "iom_label": "Liguria       356",
+          "target": 2000356,
+          "iom_gm_au3_day2": 2.5189815204630036e-16,
+          "header_name": "MA0356",
+          "group": "asteroids",
+          "gm_si": 112972758.35222033
+        },
+        {
+          "iom_label": "Adria         143",
+          "target": 2000143,
+          "iom_gm_au3_day2": 2.49831855261886e-16,
+          "header_name": "MA0143",
+          "group": "asteroids",
+          "gm_si": 112046053.47005548
+        },
+        {
+          "iom_label": "Kassandra     114",
+          "target": 2000114,
+          "iom_gm_au3_day2": 2.488406700654089e-16,
+          "header_name": "MA0114",
+          "group": "asteroids",
+          "gm_si": 111601520.92873168
+        },
+        {
+          "iom_label": "Protogeneia   147",
+          "target": 2000147,
+          "iom_gm_au3_day2": 2.485857842368132e-16,
+          "header_name": "MA0147",
+          "group": "asteroids",
+          "gm_si": 111487208.23970467
+        },
+        {
+          "iom_label": "Johanna       127",
+          "target": 2000127,
+          "iom_gm_au3_day2": 2.475490134670677e-16,
+          "header_name": "MA0127",
+          "group": "asteroids",
+          "gm_si": 111022231.21353112
+        },
+        {
+          "iom_label": "Prokne        194",
+          "target": 2000194,
+          "iom_gm_au3_day2": 2.4561528144043314e-16,
+          "header_name": "MA0194",
+          "group": "asteroids",
+          "gm_si": 110154979.7502382
+        },
+        {
+          "iom_label": "Fides         37",
+          "target": 2000037,
+          "iom_gm_au3_day2": 2.428130550827187e-16,
+          "header_name": "MA0037",
+          "group": "asteroids",
+          "gm_si": 108898220.86341593
+        },
+        {
+          "iom_label": "Chicago       334",
+          "target": 2000334,
+          "iom_gm_au3_day2": 2.413622033962929e-16,
+          "header_name": "MA0334",
+          "group": "asteroids",
+          "gm_si": 108247534.40286037
+        },
+        {
+          "iom_label": "Aurelia       419",
+          "target": 2000419,
+          "iom_gm_au3_day2": 2.377357820920586e-16,
+          "header_name": "MA0419",
+          "group": "asteroids",
+          "gm_si": 106621135.73991463
+        },
+        {
+          "iom_label": "Bertholda     420",
+          "target": 2000420,
+          "iom_gm_au3_day2": 2.3670178521081795e-16,
+          "header_name": "MA0420",
+          "group": "asteroids",
+          "gm_si": 106157402.76350169
+        },
+        {
+          "iom_label": "Marianna      602",
+          "target": 2000602,
+          "iom_gm_au3_day2": 2.280967490901478e-16,
+          "header_name": "MA0602",
+          "group": "asteroids",
+          "gm_si": 102298165.77277572
+        },
+        {
+          "iom_label": "Polyxena      595",
+          "target": 2000595,
+          "iom_gm_au3_day2": 2.2465030240169206e-16,
+          "header_name": "MA0595",
+          "group": "asteroids",
+          "gm_si": 100752483.17945065
+        },
+        {
+          "iom_label": "Padua         363",
+          "target": 2000363,
+          "iom_gm_au3_day2": 2.239212640831399e-16,
+          "header_name": "MA0363",
+          "group": "asteroids",
+          "gm_si": 100425519.80507797
+        },
+        {
+          "iom_label": "Hypatia       238",
+          "target": 2000238,
+          "iom_gm_au3_day2": 2.2188561497353161e-16,
+          "header_name": "MA0238",
+          "group": "asteroids",
+          "gm_si": 99512559.97158375
+        },
+        {
+          "iom_label": "Lumen         141",
+          "target": 2000141,
+          "iom_gm_au3_day2": 2.1889333845457843e-16,
+          "header_name": "MA0141",
+          "group": "asteroids",
+          "gm_si": 98170566.27551016
+        },
+        {
+          "iom_label": "Polyxo        308",
+          "target": 2000308,
+          "iom_gm_au3_day2": 2.1647804370959252e-16,
+          "header_name": "MA0308",
+          "group": "asteroids",
+          "gm_si": 97087340.74424654
+        },
+        {
+          "iom_label": "Ani           791",
+          "target": 2000791,
+          "iom_gm_au3_day2": 2.1076085204803308e-16,
+          "header_name": "MA0791",
+          "group": "asteroids",
+          "gm_si": 94523261.147839
+        },
+        {
+          "iom_label": "Roberta       335",
+          "target": 2000335,
+          "iom_gm_au3_day2": 2.084313266700059e-16,
+          "header_name": "MA0335",
+          "group": "asteroids",
+          "gm_si": 93478501.96453677
+        },
+        {
+          "iom_label": "Carlova       360",
+          "target": 2000360,
+          "iom_gm_au3_day2": 2.0487987640827176e-16,
+          "header_name": "MA0360",
+          "group": "asteroids",
+          "gm_si": 91885726.753764
+        },
+        {
+          "iom_label": "Diana         78",
+          "target": 2000078,
+          "iom_gm_au3_day2": 2.0368097558802117e-16,
+          "header_name": "MA0078",
+          "group": "asteroids",
+          "gm_si": 91348036.69310188
+        },
+        {
+          "iom_label": "Undina        92",
+          "target": 2000092,
+          "iom_gm_au3_day2": 2.0222499285918262e-16,
+          "header_name": "MA0092",
+          "group": "asteroids",
+          "gm_si": 90695049.03259753
+        },
+        {
+          "iom_label": "Asterope      233",
+          "target": 2000233,
+          "iom_gm_au3_day2": 1.997962433107355e-16,
+          "header_name": "MA0233",
+          "group": "asteroids",
+          "gm_si": 89605789.21228592
+        },
+        {
+          "iom_label": "Adelheid      276",
+          "target": 2000276,
+          "iom_gm_au3_day2": 1.9922195146137866e-16,
+          "header_name": "MA0276",
+          "group": "asteroids",
+          "gm_si": 89348227.44061752
+        },
+        {
+          "iom_label": "Lutetia       21",
+          "target": 2000021,
+          "iom_gm_au3_day2": 1.9760028913855683e-16,
+          "header_name": "MA0021",
+          "group": "asteroids",
+          "gm_si": 88620934.8255793
+        },
+        {
+          "iom_label": "Gerlinde      663",
+          "target": 2000663,
+          "iom_gm_au3_day2": 1.9725537729863713e-16,
+          "header_name": "MA0663",
+          "group": "asteroids",
+          "gm_si": 88466246.7437989
+        },
+        {
+          "iom_label": "Bredichina    786",
+          "target": 2000786,
+          "iom_gm_au3_day2": 1.9534428745516884e-16,
+          "header_name": "MA0786",
+          "group": "asteroids",
+          "gm_si": 87609149.97940564
+        },
+        {
+          "iom_label": "Messalina     545",
+          "target": 2000545,
+          "iom_gm_au3_day2": 1.9519850083243681e-16,
+          "header_name": "MA0545",
+          "group": "asteroids",
+          "gm_si": 87543766.74111232
+        },
+        {
+          "iom_label": "Aemilia       159",
+          "target": 2000159,
+          "iom_gm_au3_day2": 1.9236219019969684e-16,
+          "header_name": "MA0159",
+          "group": "asteroids",
+          "gm_si": 86271721.53902814
+        },
+        {
+          "iom_label": "Marion        506",
+          "target": 2000506,
+          "iom_gm_au3_day2": 1.9069839846057659e-16,
+          "header_name": "MA0506",
+          "group": "asteroids",
+          "gm_si": 85525534.47665738
+        },
+        {
+          "iom_label": "Galatea       74",
+          "target": 2000074,
+          "iom_gm_au3_day2": 1.901171693675278e-16,
+          "header_name": "MA0074",
+          "group": "asteroids",
+          "gm_si": 85264861.44931333
+        },
+        {
+          "iom_label": "Helio         895",
+          "target": 2000895,
+          "iom_gm_au3_day2": 1.8942493318435747e-16,
+          "header_name": "MA0895",
+          "group": "asteroids",
+          "gm_si": 84954403.312131
+        },
+        {
+          "iom_label": "Armida        514",
+          "target": 2000514,
+          "iom_gm_au3_day2": 1.886129575533859e-16,
+          "header_name": "MA0514",
+          "group": "asteroids",
+          "gm_si": 84590243.72620128
+        },
+        {
+          "iom_label": "Isis          42",
+          "target": 2000042,
+          "iom_gm_au3_day2": 1.8735257964754667e-16,
+          "header_name": "MA0042",
+          "group": "asteroids",
+          "gm_si": 84024982.06218287
+        },
+        {
+          "iom_label": "Beatrix       83",
+          "target": 2000083,
+          "iom_gm_au3_day2": 1.8459902693767395e-16,
+          "header_name": "MA0083",
+          "group": "asteroids",
+          "gm_si": 82790052.61797887
+        },
+        {
+          "iom_label": "Zelinda       654",
+          "target": 2000654,
+          "iom_gm_au3_day2": 1.827115384502823e-16,
+          "header_name": "MA0654",
+          "group": "asteroids",
+          "gm_si": 81943540.72796905
+        },
+        {
+          "iom_label": "Concordia     58",
+          "target": 2000058,
+          "iom_gm_au3_day2": 1.8012505811829385e-16,
+          "header_name": "MA0058",
+          "group": "asteroids",
+          "gm_si": 80783540.88217902
+        },
+        {
+          "iom_label": "Proserpina    26",
+          "target": 2000026,
+          "iom_gm_au3_day2": 1.7812616814154862e-16,
+          "header_name": "MA0026",
+          "group": "asteroids",
+          "gm_si": 79887066.99985373
+        },
+        {
+          "iom_label": "Hohensteina   788",
+          "target": 2000788,
+          "iom_gm_au3_day2": 1.771187154994267e-16,
+          "header_name": "MA0788",
+          "group": "asteroids",
+          "gm_si": 79435238.73924455
+        },
+        {
+          "iom_label": "Edith         517",
+          "target": 2000517,
+          "iom_gm_au3_day2": 1.765592961183617e-16,
+          "header_name": "MA0517",
+          "group": "asteroids",
+          "gm_si": 79184347.05924927
+        },
+        {
+          "iom_label": "Hersilia      206",
+          "target": 2000206,
+          "iom_gm_au3_day2": 1.7485910807435368e-16,
+          "header_name": "MA0206",
+          "group": "asteroids",
+          "gm_si": 78421836.76892468
+        },
+        {
+          "iom_label": "Tanete        772",
+          "target": 2000772,
+          "iom_gm_au3_day2": 1.736544758134813e-16,
+          "header_name": "MA0772",
+          "group": "asteroids",
+          "gm_si": 77881576.23820904
+        },
+        {
+          "iom_label": "Denise        667",
+          "target": 2000667,
+          "iom_gm_au3_day2": 1.7174750596131368e-16,
+          "header_name": "MA0667",
+          "group": "asteroids",
+          "gm_si": 77026327.23164108
+        },
+        {
+          "iom_label": "Penelope      201",
+          "target": 2000201,
+          "iom_gm_au3_day2": 1.6663045771433504e-16,
+          "header_name": "MA0201",
+          "group": "asteroids",
+          "gm_si": 74731403.46826105
+        },
+        {
+          "iom_label": "Aline         266",
+          "target": 2000266,
+          "iom_gm_au3_day2": 1.6594282580293835e-16,
+          "header_name": "MA0266",
+          "group": "asteroids",
+          "gm_si": 74423010.28184651
+        },
+        {
+          "iom_label": "Vaticana      416",
+          "target": 2000416,
+          "iom_gm_au3_day2": 1.6511852151088483e-16,
+          "header_name": "MA0416",
+          "group": "asteroids",
+          "gm_si": 74053321.46579778
+        },
+        {
+          "iom_label": "Tokio         498",
+          "target": 2000498,
+          "iom_gm_au3_day2": 1.6166164033700236e-16,
+          "header_name": "MA0498",
+          "group": "asteroids",
+          "gm_si": 72502959.15334389
+        },
+        {
+          "iom_label": "Arsinoe       404",
+          "target": 2000404,
+          "iom_gm_au3_day2": 1.6144760474032773e-16,
+          "header_name": "MA0404",
+          "group": "asteroids",
+          "gm_si": 72406967.21554892
+        },
+        {
+          "iom_label": "Peraga        554",
+          "target": 2000554,
+          "iom_gm_au3_day2": 1.5935521711557882e-16,
+          "header_name": "MA0554",
+          "group": "asteroids",
+          "gm_si": 71468560.96052213
+        },
+        {
+          "iom_label": "Tercidina     345",
+          "target": 2000345,
+          "iom_gm_au3_day2": 1.5891479446112133e-16,
+          "header_name": "MA0345",
+          "group": "asteroids",
+          "gm_si": 71271037.62932388
+        },
+        {
+          "iom_label": "Iduna         176",
+          "target": 2000176,
+          "iom_gm_au3_day2": 1.5731944639940773e-16,
+          "header_name": "MA0176",
+          "group": "asteroids",
+          "gm_si": 70555546.5882045
+        },
+        {
+          "iom_label": "Brixia        521",
+          "target": 2000521,
+          "iom_gm_au3_day2": 1.558411364789865e-16,
+          "header_name": "MA0521",
+          "group": "asteroids",
+          "gm_si": 69892545.49807051
+        },
+        {
+          "iom_label": "Faina         751",
+          "target": 2000751,
+          "iom_gm_au3_day2": 1.5375064738104504e-16,
+          "header_name": "MA0751",
+          "group": "asteroids",
+          "gm_si": 68954990.70546415
+        },
+        {
+          "iom_label": "Erato         62",
+          "target": 2000062,
+          "iom_gm_au3_day2": 1.5213428223941847e-16,
+          "header_name": "MA0062",
+          "group": "asteroids",
+          "gm_si": 68230073.80126882
+        },
+        {
+          "iom_label": "Feronia       72",
+          "target": 2000072,
+          "iom_gm_au3_day2": 1.5086969937360234e-16,
+          "header_name": "MA0072",
+          "group": "asteroids",
+          "gm_si": 67662926.27217561
+        },
+        {
+          "iom_label": "Dynamene      200",
+          "target": 2000200,
+          "iom_gm_au3_day2": 1.506374322665671e-16,
+          "header_name": "MA0200",
+          "group": "asteroids",
+          "gm_si": 67558757.75984989
+        },
+        {
+          "iom_label": "Christa       1015",
+          "target": 2001015,
+          "iom_gm_au3_day2": 1.477401852453462e-16,
+          "header_name": "MA1015",
+          "group": "asteroids",
+          "gm_si": 66259383.449414626
+        },
+        {
+          "iom_label": "Eunike        185",
+          "target": 2000185,
+          "iom_gm_au3_day2": 1.4541092712549263e-16,
+          "header_name": "MA0185",
+          "group": "asteroids",
+          "gm_si": 65214744.127623186
+        },
+        {
+          "iom_label": "Eos           221",
+          "target": 2000221,
+          "iom_gm_au3_day2": 1.4535063882245356e-16,
+          "header_name": "MA0221",
+          "group": "asteroids",
+          "gm_si": 65187705.67642627
+        },
+        {
+          "iom_label": "Hertha        135",
+          "target": 2000135,
+          "iom_gm_au3_day2": 1.4516053346827936e-16,
+          "header_name": "MA0135",
+          "group": "asteroids",
+          "gm_si": 65102446.11392405
+        },
+        {
+          "iom_label": "Semele        86",
+          "target": 2000086,
+          "iom_gm_au3_day2": 1.436757702345231e-16,
+          "header_name": "MA0086",
+          "group": "asteroids",
+          "gm_si": 64436550.80403477
+        },
+        {
+          "iom_label": "Veritas       490",
+          "target": 2000490,
+          "iom_gm_au3_day2": 1.4268068051088923e-16,
+          "header_name": "MA0490",
+          "group": "asteroids",
+          "gm_si": 63990267.13750671
+        },
+        {
+          "iom_label": "Emita         481",
+          "target": 2000481,
+          "iom_gm_au3_day2": 1.4232478918230183e-16,
+          "header_name": "MA0481",
+          "group": "asteroids",
+          "gm_si": 63830654.91035243
+        },
+        {
+          "iom_label": "Aegina        91",
+          "target": 2000091,
+          "iom_gm_au3_day2": 1.4195955177021533e-16,
+          "header_name": "MA0091",
+          "group": "asteroids",
+          "gm_si": 63666851.09693957
+        },
+        {
+          "iom_label": "Alkeste       124",
+          "target": 2000124,
+          "iom_gm_au3_day2": 1.4082516742158776e-16,
+          "header_name": "MA0124",
+          "group": "asteroids",
+          "gm_si": 63158095.76128118
+        },
+        {
+          "iom_label": "Artemis       105",
+          "target": 2000105,
+          "iom_gm_au3_day2": 1.404934369679812e-16,
+          "header_name": "MA0105",
+          "group": "asteroids",
+          "gm_si": 63009319.34482506
+        },
+        {
+          "iom_label": "Nephele       431",
+          "target": 2000431,
+          "iom_gm_au3_day2": 1.398133673348538e-16,
+          "header_name": "MA0431",
+          "group": "asteroids",
+          "gm_si": 62704317.73325364
+        },
+        {
+          "iom_label": "Freda         1093",
+          "target": 2001093,
+          "iom_gm_au3_day2": 1.3774121589661637e-16,
+          "header_name": "MA1093",
+          "group": "asteroids",
+          "gm_si": 61774987.12165719
+        },
+        {
+          "iom_label": "Antigone      129",
+          "target": 2000129,
+          "iom_gm_au3_day2": 1.3694441284769087e-16,
+          "header_name": "MA0129",
+          "group": "asteroids",
+          "gm_si": 61417632.22417455
+        },
+        {
+          "iom_label": "Erigone       163",
+          "target": 2000163,
+          "iom_gm_au3_day2": 1.350142511906315e-16,
+          "header_name": "MA0163",
+          "group": "asteroids",
+          "gm_si": 60551982.0211369
+        },
+        {
+          "iom_label": "Thetis        17",
+          "target": 2000017,
+          "iom_gm_au3_day2": 1.3398683097840782e-16,
+          "header_name": "MA0017",
+          "group": "asteroids",
+          "gm_si": 60091198.58775785
+        },
+        {
+          "iom_label": "Desiderata    344",
+          "target": 2000344,
+          "iom_gm_au3_day2": 1.3166985822586556e-16,
+          "header_name": "MA0344",
+          "group": "asteroids",
+          "gm_si": 59052069.07944163
+        },
+        {
+          "iom_label": "Niobe         71",
+          "target": 2000071,
+          "iom_gm_au3_day2": 1.3120783938467559e-16,
+          "header_name": "MA0071",
+          "group": "asteroids",
+          "gm_si": 58844860.16394973
+        },
+        {
+          "iom_label": "Rusthawelia   1171",
+          "target": 2001171,
+          "iom_gm_au3_day2": 1.3076632020262883e-16,
+          "header_name": "MA1171",
+          "group": "asteroids",
+          "gm_si": 58646845.05563695
+        },
+        {
+          "iom_label": "Lictoria      1107",
+          "target": 2001107,
+          "iom_gm_au3_day2": 1.2924733629447915e-16,
+          "header_name": "MA1107",
+          "group": "asteroids",
+          "gm_si": 57965602.2572985
+        },
+        {
+          "iom_label": "Melusina      373",
+          "target": 2000373,
+          "iom_gm_au3_day2": 1.2907423434479045e-16,
+          "header_name": "MA0373",
+          "group": "asteroids",
+          "gm_si": 57887968.48121234
+        },
+        {
+          "iom_label": "Hera          103",
+          "target": 2000103,
+          "iom_gm_au3_day2": 1.2873552745693193e-16,
+          "header_name": "MA0103",
+          "group": "asteroids",
+          "gm_si": 57736063.23266871
+        },
+        {
+          "iom_label": "Ate           111",
+          "target": 2000111,
+          "iom_gm_au3_day2": 1.2685989278560462e-16,
+          "header_name": "MA0111",
+          "group": "asteroids",
+          "gm_si": 56894867.611503705
+        },
+        {
+          "iom_label": "Ariadne       43",
+          "target": 2000043,
+          "iom_gm_au3_day2": 1.2683502962561622e-16,
+          "header_name": "MA0043",
+          "group": "asteroids",
+          "gm_si": 56883716.83591276
+        },
+        {
+          "iom_label": "Terpsichore   81",
+          "target": 2000081,
+          "iom_gm_au3_day2": 1.2659277966238143e-16,
+          "header_name": "MA0081",
+          "group": "asteroids",
+          "gm_si": 56775071.153778784
+        },
+        {
+          "iom_label": "Boliviana     712",
+          "target": 2000712,
+          "iom_gm_au3_day2": 1.2600845433723963e-16,
+          "header_name": "MA0712",
+          "group": "asteroids",
+          "gm_si": 56513009.510134034
+        },
+        {
+          "iom_label": "Elisabetha    412",
+          "target": 2000412,
+          "iom_gm_au3_day2": 1.2572594904492957e-16,
+          "header_name": "MA0412",
+          "group": "asteroids",
+          "gm_si": 56386309.882280074
+        },
+        {
+          "iom_label": "Sapientia     275",
+          "target": 2000275,
+          "iom_gm_au3_day2": 1.256041563617464e-16,
+          "header_name": "MA0275",
+          "group": "asteroids",
+          "gm_si": 56331687.58650478
+        },
+        {
+          "iom_label": "Tatjana       769",
+          "target": 2000769,
+          "iom_gm_au3_day2": 1.2538556013158105e-16,
+          "header_name": "MA0769",
+          "group": "asteroids",
+          "gm_si": 56233650.269094706
+        },
+        {
+          "iom_label": "Josephina     303",
+          "target": 2000303,
+          "iom_gm_au3_day2": 1.2250630736040161e-16,
+          "header_name": "MA0303",
+          "group": "asteroids",
+          "gm_si": 54942346.12529286
+        },
+        {
+          "iom_label": "Panopaea      70",
+          "target": 2000070,
+          "iom_gm_au3_day2": 1.221013302136009e-16,
+          "header_name": "MA0070",
+          "group": "asteroids",
+          "gm_si": 54760719.602938384
+        },
+        {
+          "iom_label": "Arachne       407",
+          "target": 2000407,
+          "iom_gm_au3_day2": 1.215964969184977e-16,
+          "header_name": "MA0407",
+          "group": "asteroids",
+          "gm_si": 54534309.01043286
+        },
+        {
+          "iom_label": "Sophrosyne    134",
+          "target": 2000134,
+          "iom_gm_au3_day2": 1.2041493785248888e-16,
+          "header_name": "MA0134",
+          "group": "asteroids",
+          "gm_si": 54004396.481266886
+        },
+        {
+          "iom_label": "Lanzia        683",
+          "target": 2000683,
+          "iom_gm_au3_day2": 1.2001846940536772e-16,
+          "header_name": "MA0683",
+          "group": "asteroids",
+          "gm_si": 53826585.990371875
+        },
+        {
+          "iom_label": "Fringilla     709",
+          "target": 2000709,
+          "iom_gm_au3_day2": 1.193204585427415e-16,
+          "header_name": "MA0709",
+          "group": "asteroids",
+          "gm_si": 53513537.991130486
+        },
+        {
+          "iom_label": "Mandeville    739",
+          "target": 2000739,
+          "iom_gm_au3_day2": 1.189570423520968e-16,
+          "header_name": "MA0739",
+          "group": "asteroids",
+          "gm_si": 53350550.96977496
+        },
+        {
+          "iom_label": "Leto          68",
+          "target": 2000068,
+          "iom_gm_au3_day2": 1.1706570191254942e-16,
+          "header_name": "MA0068",
+          "group": "asteroids",
+          "gm_si": 52502311.533705205
+        },
+        {
+          "iom_label": "Cantabia      740",
+          "target": 2000740,
+          "iom_gm_au3_day2": 1.1508271223874676e-16,
+          "header_name": "MA0740",
+          "group": "asteroids",
+          "gm_si": 51612968.71235621
+        },
+        {
+          "iom_label": "Irmintraud    773",
+          "target": 2000773,
+          "iom_gm_au3_day2": 1.1496018031508255e-16,
+          "header_name": "MA0773",
+          "group": "asteroids",
+          "gm_si": 51558014.87768097
+        },
+        {
+          "iom_label": "Bruchsalia    455",
+          "target": 2000455,
+          "iom_gm_au3_day2": 1.1481333345022554e-16,
+          "header_name": "MA0455",
+          "group": "asteroids",
+          "gm_si": 51492156.13579062
+        },
+        {
+          "iom_label": "Cava          505",
+          "target": 2000505,
+          "iom_gm_au3_day2": 1.1434524745954757e-16,
+          "header_name": "MA0505",
+          "group": "asteroids",
+          "gm_si": 51282226.189566955
+        },
+        {
+          "iom_label": "Hamburga      449",
+          "target": 2000449,
+          "iom_gm_au3_day2": 1.138171532831636e-16,
+          "header_name": "MA0449",
+          "group": "asteroids",
+          "gm_si": 51045383.42080827
+        },
+        {
+          "iom_label": "Havnia        362",
+          "target": 2000362,
+          "iom_gm_au3_day2": 1.1276722765420132e-16,
+          "header_name": "MA0362",
+          "group": "asteroids",
+          "gm_si": 50574506.62633795
+        },
+        {
+          "iom_label": "Lydia         110",
+          "target": 2000110,
+          "iom_gm_au3_day2": 1.127327762395292e-16,
+          "header_name": "MA0110",
+          "group": "asteroids",
+          "gm_si": 50559055.65413737
+        },
+        {
+          "iom_label": "Luscinia      713",
+          "target": 2000713,
+          "iom_gm_au3_day2": 1.114915570450872e-16,
+          "header_name": "MA0713",
+          "group": "asteroids",
+          "gm_si": 50002386.40120033
+        },
+        {
+          "iom_label": "Gratia        424",
+          "target": 2000424,
+          "iom_gm_au3_day2": 1.1020156825676931e-16,
+          "header_name": "MA0424",
+          "group": "asteroids",
+          "gm_si": 49423844.67520577
+        },
+        {
+          "iom_label": "Hermentaria   346",
+          "target": 2000346,
+          "iom_gm_au3_day2": 1.0985328629139597e-16,
+          "header_name": "MA0346",
+          "group": "asteroids",
+          "gm_si": 49267645.13982637
+        },
+        {
+          "iom_label": "Vundtia       635",
+          "target": 2000635,
+          "iom_gm_au3_day2": 1.0924383869373906e-16,
+          "header_name": "MA0635",
+          "group": "asteroids",
+          "gm_si": 48994316.51228733
+        },
+        {
+          "iom_label": "Ludmilla      675",
+          "target": 2000675,
+          "iom_gm_au3_day2": 1.0490232752479031e-16,
+          "header_name": "MA0675",
+          "group": "asteroids",
+          "gm_si": 47047210.15922858
+        },
+        {
+          "iom_label": "Klotho        97",
+          "target": 2000097,
+          "iom_gm_au3_day2": 1.0268048353591737e-16,
+          "header_name": "MA0097",
+          "group": "asteroids",
+          "gm_si": 46050744.55591943
+        },
+        {
+          "iom_label": "Luisa         599",
+          "target": 2000599,
+          "iom_gm_au3_day2": 1.0123777316180206e-16,
+          "header_name": "MA0599",
+          "group": "asteroids",
+          "gm_si": 45403709.35878463
+        },
+        {
+          "iom_label": "Ilmatar       385",
+          "target": 2000385,
+          "iom_gm_au3_day2": 9.976185628516443e-17,
+          "header_name": "MA0385",
+          "group": "asteroids",
+          "gm_si": 44741781.514940426
+        },
+        {
+          "iom_label": "Rachele       674",
+          "target": 2000674,
+          "iom_gm_au3_day2": 9.935357257488864e-17,
+          "header_name": "MA0674",
+          "group": "asteroids",
+          "gm_si": 44558672.04563532
+        },
+        {
+          "iom_label": "Laurentia     162",
+          "target": 2000162,
+          "iom_gm_au3_day2": 9.901268916551379e-17,
+          "header_name": "MA0162",
+          "group": "asteroids",
+          "gm_si": 44405790.65797628
+        },
+        {
+          "iom_label": "Apollonia     358",
+          "target": 2000358,
+          "iom_gm_au3_day2": 9.670798400851406e-17,
+          "header_name": "MA0358",
+          "group": "asteroids",
+          "gm_si": 43372162.99274836
+        },
+        {
+          "iom_label": "Mashona       1467",
+          "target": 2001467,
+          "iom_gm_au3_day2": 9.53947556947391e-17,
+          "header_name": "MA1467",
+          "group": "asteroids",
+          "gm_si": 42783198.6682855
+        },
+        {
+          "iom_label": "Ara           849",
+          "target": 2000849,
+          "iom_gm_au3_day2": 9.51207551986228e-17,
+          "header_name": "MA0849",
+          "group": "asteroids",
+          "gm_si": 42660313.321232826
+        },
+        {
+          "iom_label": "Campania      377",
+          "target": 2000377,
+          "iom_gm_au3_day2": 9.303415960975477e-17,
+          "header_name": "MA0377",
+          "group": "asteroids",
+          "gm_si": 41724504.71237622
+        },
+        {
+          "iom_label": "Kolga         191",
+          "target": 2000191,
+          "iom_gm_au3_day2": 9.270050959529838e-17,
+          "header_name": "MA0191",
+          "group": "asteroids",
+          "gm_si": 41574867.400029175
+        },
+        {
+          "iom_label": "Vanadis       240",
+          "target": 2000240,
+          "iom_gm_au3_day2": 9.25549528015023e-17,
+          "header_name": "MA0240",
+          "group": "asteroids",
+          "gm_si": 41509587.236762926
+        },
+        {
+          "iom_label": "Octavia       598",
+          "target": 2000598,
+          "iom_gm_au3_day2": 9.203383666159985e-17,
+          "header_name": "MA0598",
+          "group": "asteroids",
+          "gm_si": 41275874.018669054
+        },
+        {
+          "iom_label": "Virginia      50",
+          "target": 2000050,
+          "iom_gm_au3_day2": 9.065813600941014e-17,
+          "header_name": "MA0050",
+          "group": "asteroids",
+          "gm_si": 40658891.73403422
+        },
+        {
+          "iom_label": "Carina        491",
+          "target": 2000491,
+          "iom_gm_au3_day2": 9.032721399920834e-17,
+          "header_name": "MA0491",
+          "group": "asteroids",
+          "gm_si": 40510477.893010534
+        },
+        {
+          "iom_label": "Eurykleia     195",
+          "target": 2000195,
+          "iom_gm_au3_day2": 8.831697737909073e-17,
+          "header_name": "MA0195",
+          "group": "asteroids",
+          "gm_si": 39608915.20161934
+        },
+        {
+          "iom_label": "Felicitas     109",
+          "target": 2000109,
+          "iom_gm_au3_day2": 8.73429262293014e-17,
+          "header_name": "MA0109",
+          "group": "asteroids",
+          "gm_si": 39172067.03789154
+        },
+        {
+          "iom_label": "Hekate        100",
+          "target": 2000100,
+          "iom_gm_au3_day2": 8.550862140934806e-17,
+          "header_name": "MA0100",
+          "group": "asteroids",
+          "gm_si": 38349407.27049947
+        },
+        {
+          "iom_label": "Edna          445",
+          "target": 2000445,
+          "iom_gm_au3_day2": 8.531561503523623e-17,
+          "header_name": "MA0445",
+          "group": "asteroids",
+          "gm_si": 38262846.64158717
+        },
+        {
+          "iom_label": "Corduba       365",
+          "target": 2000365,
+          "iom_gm_au3_day2": 8.439600858609733e-17,
+          "header_name": "MA0365",
+          "group": "asteroids",
+          "gm_si": 37850416.156036735
+        },
+        {
+          "iom_label": "Aeria         369",
+          "target": 2000369,
+          "iom_gm_au3_day2": 8.336782410225417e-17,
+          "header_name": "MA0369",
+          "group": "asteroids",
+          "gm_si": 37389289.95764618
+        },
+        {
+          "iom_label": "Leukothea     35",
+          "target": 2000035,
+          "iom_gm_au3_day2": 8.270923167880293e-17,
+          "header_name": "MA0035",
+          "group": "asteroids",
+          "gm_si": 37093920.570841454
+        },
+        {
+          "iom_label": "Evelyn        503",
+          "target": 2000503,
+          "iom_gm_au3_day2": 8.207675177228163e-17,
+          "header_name": "MA0503",
+          "group": "asteroids",
+          "gm_si": 36810262.27854508
+        },
+        {
+          "iom_label": "Leda          38",
+          "target": 2000038,
+          "iom_gm_au3_day2": 8.166207221102614e-17,
+          "header_name": "MA0038",
+          "group": "asteroids",
+          "gm_si": 36624284.36053832
+        },
+        {
+          "iom_label": "Genoveva      680",
+          "target": 2000680,
+          "iom_gm_au3_day2": 8.150019061382226e-17,
+          "header_name": "MA0680",
+          "group": "asteroids",
+          "gm_si": 36551682.75384124
+        },
+        {
+          "iom_label": "Nausikaa      192",
+          "target": 2000192,
+          "iom_gm_au3_day2": 8.142129140295343e-17,
+          "header_name": "MA0192",
+          "group": "asteroids",
+          "gm_si": 36516297.573714845
+        },
+        {
+          "iom_label": "Nysa          44",
+          "target": 2000044,
+          "iom_gm_au3_day2": 8.119998868610499e-17,
+          "header_name": "MA0044",
+          "group": "asteroids",
+          "gm_si": 36417046.435307875
+        },
+        {
+          "iom_label": "Phaeo         322",
+          "target": 2000322,
+          "iom_gm_au3_day2": 8.072837727772762e-17,
+          "header_name": "MA0322",
+          "group": "asteroids",
+          "gm_si": 36205535.38910943
+        },
+        {
+          "iom_label": "Palatia       415",
+          "target": 2000415,
+          "iom_gm_au3_day2": 8.057307747567055e-17,
+          "header_name": "MA0415",
+          "group": "asteroids",
+          "gm_si": 36135885.62444297
+        },
+        {
+          "iom_label": "Flammario     1021",
+          "target": 2001021,
+          "iom_gm_au3_day2": 8.020428649722863e-17,
+          "header_name": "MA1021",
+          "group": "asteroids",
+          "gm_si": 35970488.08678125
+        },
+        {
+          "iom_label": "Olga          304",
+          "target": 2000304,
+          "iom_gm_au3_day2": 8.00596320733248e-17,
+          "header_name": "MA0304",
+          "group": "asteroids",
+          "gm_si": 35905612.62364858
+        },
+        {
+          "iom_label": "Industria     389",
+          "target": 2000389,
+          "iom_gm_au3_day2": 8.005933925741988e-17,
+          "header_name": "MA0389",
+          "group": "asteroids",
+          "gm_si": 35905481.299856804
+        },
+        {
+          "iom_label": "Vincentina    366",
+          "target": 2000366,
+          "iom_gm_au3_day2": 7.978946832542661e-17,
+          "header_name": "MA0366",
+          "group": "asteroids",
+          "gm_si": 35784448.00390487
+        },
+        {
+          "iom_label": "Cheruskia     568",
+          "target": 2000568,
+          "iom_gm_au3_day2": 7.974665095828324e-17,
+          "header_name": "MA0568",
+          "group": "asteroids",
+          "gm_si": 35765245.020348735
+        },
+        {
+          "iom_label": "Pomona        32",
+          "target": 2000032,
+          "iom_gm_au3_day2": 7.874507166651942e-17,
+          "header_name": "MA0032",
+          "group": "asteroids",
+          "gm_si": 35316050.874302655
+        },
+        {
+          "iom_label": "Kalypso       53",
+          "target": 2000053,
+          "iom_gm_au3_day2": 7.709568502565123e-17,
+          "header_name": "MA0053",
+          "group": "asteroids",
+          "gm_si": 34576324.29475263
+        },
+        {
+          "iom_label": "Isabella      210",
+          "target": 2000210,
+          "iom_gm_au3_day2": 7.66348632340929e-17,
+          "header_name": "MA0210",
+          "group": "asteroids",
+          "gm_si": 34369652.23908949
+        },
+        {
+          "iom_label": "Marghanna     735",
+          "target": 2000735,
+          "iom_gm_au3_day2": 7.565550192634045e-17,
+          "header_name": "MA0735",
+          "group": "asteroids",
+          "gm_si": 33930422.54462196
+        },
+        {
+          "iom_label": "Isolda        211",
+          "target": 2000211,
+          "iom_gm_au3_day2": 7.560179850744221e-17,
+          "header_name": "MA0211",
+          "group": "asteroids",
+          "gm_si": 33906337.32082578
+        },
+        {
+          "iom_label": "Tisiphone     466",
+          "target": 2000466,
+          "iom_gm_au3_day2": 7.528350655020485e-17,
+          "header_name": "MA0466",
+          "group": "asteroids",
+          "gm_si": 33763587.879917525
+        },
+        {
+          "iom_label": "Klio          84",
+          "target": 2000084,
+          "iom_gm_au3_day2": 7.495697601430942e-17,
+          "header_name": "MA0084",
+          "group": "asteroids",
+          "gm_si": 33617143.55300736
+        },
+        {
+          "iom_label": "Mnemosyne     57",
+          "target": 2000057,
+          "iom_gm_au3_day2": 7.472641289359161e-17,
+          "header_name": "MA0057",
+          "group": "asteroids",
+          "gm_si": 33513739.25444387
+        },
+        {
+          "iom_label": "Andromache    175",
+          "target": 2000175,
+          "iom_gm_au3_day2": 7.312424159554999e-17,
+          "header_name": "MA0175",
+          "group": "asteroids",
+          "gm_si": 32795188.088339042
+        },
+        {
+          "iom_label": "Devosa        337",
+          "target": 2000337,
+          "iom_gm_au3_day2": 7.310312768200536e-17,
+          "header_name": "MA0337",
+          "group": "asteroids",
+          "gm_si": 32785718.79674889
+        },
+        {
+          "iom_label": "Lilaea        213",
+          "target": 2000213,
+          "iom_gm_au3_day2": 7.281410210178525e-17,
+          "header_name": "MA0213",
+          "group": "asteroids",
+          "gm_si": 32656094.911990043
+        },
+        {
+          "iom_label": "Miriam        102",
+          "target": 2000102,
+          "iom_gm_au3_day2": 7.271262098124241e-17,
+          "header_name": "MA0102",
+          "group": "asteroids",
+          "gm_si": 32610582.064772762
+        },
+        {
+          "iom_label": "Chaldaea      313",
+          "target": 2000313,
+          "iom_gm_au3_day2": 7.187570798689379e-17,
+          "header_name": "MA0313",
+          "group": "asteroids",
+          "gm_si": 32235238.424081817
+        },
+        {
+          "iom_label": "Notburga      626",
+          "target": 2000626,
+          "iom_gm_au3_day2": 7.02207690642838e-17,
+          "header_name": "MA0626",
+          "group": "asteroids",
+          "gm_si": 31493021.724701907
+        },
+        {
+          "iom_label": "Thyra         115",
+          "target": 2000115,
+          "iom_gm_au3_day2": 6.973540602439245e-17,
+          "header_name": "MA0115",
+          "group": "asteroids",
+          "gm_si": 31275343.26627215
+        },
+        {
+          "iom_label": "Tamara        326",
+          "target": 2000326,
+          "iom_gm_au3_day2": 6.832658092241454e-17,
+          "header_name": "MA0326",
+          "group": "asteroids",
+          "gm_si": 30643505.134418614
+        },
+        {
+          "iom_label": "Massinga      760",
+          "target": 2000760,
+          "iom_gm_au3_day2": 6.805013604111056e-17,
+          "header_name": "MA0760",
+          "group": "asteroids",
+          "gm_si": 30519523.51518259
+        },
+        {
+          "iom_label": "Leonora       696",
+          "target": 2000696,
+          "iom_gm_au3_day2": 6.773715668991604e-17,
+          "header_name": "MA0696",
+          "group": "asteroids",
+          "gm_si": 30379156.70294319
+        },
+        {
+          "iom_label": "Mathesis      454",
+          "target": 2000454,
+          "iom_gm_au3_day2": 6.679819241829383e-17,
+          "header_name": "MA0454",
+          "group": "asteroids",
+          "gm_si": 29958044.507805508
+        },
+        {
+          "iom_label": "Una           160",
+          "target": 2000160,
+          "iom_gm_au3_day2": 6.514251331550227e-17,
+          "header_name": "MA0160",
+          "group": "asteroids",
+          "gm_si": 29215495.848083254
+        },
+        {
+          "iom_label": "Anacostia     980",
+          "target": 2000980,
+          "iom_gm_au3_day2": 6.347027638446878e-17,
+          "header_name": "MA0980",
+          "group": "asteroids",
+          "gm_si": 28465521.23658797
+        },
+        {
+          "iom_label": "Honoria       236",
+          "target": 2000236,
+          "iom_gm_au3_day2": 6.25172630260285e-17,
+          "header_name": "MA0236",
+          "group": "asteroids",
+          "gm_si": 28038108.224722277
+        },
+        {
+          "iom_label": "Henrietta     225",
+          "target": 2000225,
+          "iom_gm_au3_day2": 6.148848913653127e-17,
+          "header_name": "MA0225",
+          "group": "asteroids",
+          "gm_si": 27576717.68623241
+        },
+        {
+          "iom_label": "Montague      535",
+          "target": 2000535,
+          "iom_gm_au3_day2": 6.050663786253968e-17,
+          "header_name": "MA0535",
+          "group": "asteroids",
+          "gm_si": 27136371.277124636
+        },
+        {
+          "iom_label": "Dione         106",
+          "target": 2000106,
+          "iom_gm_au3_day2": 5.933985070091769e-17,
+          "header_name": "MA0106",
+          "group": "asteroids",
+          "gm_si": 26613083.73814275
+        },
+        {
+          "iom_label": "Megaira       464",
+          "target": 2000464,
+          "iom_gm_au3_day2": 5.823302640284164e-17,
+          "header_name": "MA0464",
+          "group": "asteroids",
+          "gm_si": 26116688.695348118
+        },
+        {
+          "iom_label": "Eurydike      75",
+          "target": 2000075,
+          "iom_gm_au3_day2": 5.802745629798349e-17,
+          "header_name": "MA0075",
+          "group": "asteroids",
+          "gm_si": 26024493.410897158
+        },
+        {
+          "iom_label": "Tauris        814",
+          "target": 2000814,
+          "iom_gm_au3_day2": 5.745072085427062e-17,
+          "header_name": "MA0814",
+          "group": "asteroids",
+          "gm_si": 25765835.721722215
+        },
+        {
+          "iom_label": "Urania        30",
+          "target": 2000030,
+          "iom_gm_au3_day2": 5.705726375789753e-17,
+          "header_name": "MA0030",
+          "group": "asteroids",
+          "gm_si": 25589375.77904525
+        },
+        {
+          "iom_label": "Amherstia     516",
+          "target": 2000516,
+          "iom_gm_au3_day2": 5.663027638551713e-17,
+          "header_name": "MA0516",
+          "group": "asteroids",
+          "gm_si": 25397877.98183031
+        },
+        {
+          "iom_label": "Sappho        80",
+          "target": 2000080,
+          "iom_gm_au3_day2": 5.647115427506023e-17,
+          "header_name": "MA0080",
+          "group": "asteroids",
+          "gm_si": 25326513.965909153
+        },
+        {
+          "iom_label": "Misa          569",
+          "target": 2000569,
+          "iom_gm_au3_day2": 5.56926103195199e-17,
+          "header_name": "MA0569",
+          "group": "asteroids",
+          "gm_si": 24977348.01355364
+        },
+        {
+          "iom_label": "Rosa          223",
+          "target": 2000223,
+          "iom_gm_au3_day2": 5.521083382556173e-17,
+          "header_name": "MA0223",
+          "group": "asteroids",
+          "gm_si": 24761278.070246905
+        },
+        {
+          "iom_label": "Sulamitis     752",
+          "target": 2000752,
+          "iom_gm_au3_day2": 5.5029875850101036e-17,
+          "header_name": "MA0752",
+          "group": "asteroids",
+          "gm_si": 24680120.97771742
+        },
+        {
+          "iom_label": "Pickeringia   784",
+          "target": 2000784,
+          "iom_gm_au3_day2": 5.318933742144326e-17,
+          "header_name": "MA0784",
+          "group": "asteroids",
+          "gm_si": 23854665.5249894
+        },
+        {
+          "iom_label": "Frigga        77",
+          "target": 2000077,
+          "iom_gm_au3_day2": 5.2724601168331567e-17,
+          "header_name": "MA0077",
+          "group": "asteroids",
+          "gm_si": 23646237.888685606
+        },
+        {
+          "iom_label": "Martha        205",
+          "target": 2000205,
+          "iom_gm_au3_day2": 5.23643121338054e-17,
+          "header_name": "MA0205",
+          "group": "asteroids",
+          "gm_si": 23484653.352618832
+        },
+        {
+          "iom_label": "Alekto        465",
+          "target": 2000465,
+          "iom_gm_au3_day2": 5.186719528510211e-17,
+          "header_name": "MA0465",
+          "group": "asteroids",
+          "gm_si": 23261703.477182463
+        },
+        {
+          "iom_label": "Lehigh        691",
+          "target": 2000691,
+          "iom_gm_au3_day2": 5.120974853484182e-17,
+          "header_name": "MA0691",
+          "group": "asteroids",
+          "gm_si": 22966847.908599507
+        },
+        {
+          "iom_label": "Nephthys      287",
+          "target": 2000287,
+          "iom_gm_au3_day2": 5.1065425768005637e-17,
+          "header_name": "MA0287",
+          "group": "asteroids",
+          "gm_si": 22902121.18897073
+        },
+        {
+          "iom_label": "Ekard         694",
+          "target": 2000694,
+          "iom_gm_au3_day2": 5.1009798048889617e-17,
+          "header_name": "MA0694",
+          "group": "asteroids",
+          "gm_si": 22877172.943744127
+        },
+        {
+          "iom_label": "Svea          329",
+          "target": 2000329,
+          "iom_gm_au3_day2": 5.022579920320677e-17,
+          "header_name": "MA0329",
+          "group": "asteroids",
+          "gm_si": 22525560.550313514
+        },
+        {
+          "iom_label": "Dike          99",
+          "target": 2000099,
+          "iom_gm_au3_day2": 5.014607211190043e-17,
+          "header_name": "MA0099",
+          "group": "asteroids",
+          "gm_si": 22489804.07752041
+        },
+        {
+          "iom_label": "Eurynome      79",
+          "target": 2000079,
+          "iom_gm_au3_day2": 4.824226918174613e-17,
+          "header_name": "MA0079",
+          "group": "asteroids",
+          "gm_si": 21635975.390682574
+        },
+        {
+          "iom_label": "Baucis        172",
+          "target": 2000172,
+          "iom_gm_au3_day2": 4.658827122108877e-17,
+          "header_name": "MA0172",
+          "group": "asteroids",
+          "gm_si": 20894180.699429482
+        },
+        {
+          "iom_label": "Tekmessa      604",
+          "target": 2000604,
+          "iom_gm_au3_day2": 4.6458511951546986e-17,
+          "header_name": "MA0604",
+          "group": "asteroids",
+          "gm_si": 20835985.502351537
+        },
+        {
+          "iom_label": "Oceana        224",
+          "target": 2000224,
+          "iom_gm_au3_day2": 4.638450322774714e-17,
+          "header_name": "MA0224",
+          "group": "asteroids",
+          "gm_si": 20802793.636504665
+        },
+        {
+          "iom_label": "Genua         485",
+          "target": 2000485,
+          "iom_gm_au3_day2": 4.5881147721288083e-17,
+          "header_name": "MA0485",
+          "group": "asteroids",
+          "gm_si": 20577045.811304238
+        },
+        {
+          "iom_label": "Palisana      914",
+          "target": 2000914,
+          "iom_gm_au3_day2": 4.449283120191586e-17,
+          "header_name": "MA0914",
+          "group": "asteroids",
+          "gm_si": 19954405.488676522
+        },
+        {
+          "iom_label": "Titania       593",
+          "target": 2000593,
+          "iom_gm_au3_day2": 4.3152660225791144e-17,
+          "header_name": "MA0593",
+          "group": "asteroids",
+          "gm_si": 19353357.761226073
+        },
+        {
+          "iom_label": "Ulla          909",
+          "target": 2000909,
+          "iom_gm_au3_day2": 3.964693261446294e-17,
+          "header_name": "MA0909",
+          "group": "asteroids",
+          "gm_si": 17781088.51246044
+        },
+        {
+          "iom_label": "Semiramis     584",
+          "target": 2000584,
+          "iom_gm_au3_day2": 3.8849243156686706e-17,
+          "header_name": "MA0584",
+          "group": "asteroids",
+          "gm_si": 17423336.073145583
+        },
+        {
+          "iom_label": "Alkmene       82",
+          "target": 2000082,
+          "iom_gm_au3_day2": 3.828565766724855e-17,
+          "header_name": "MA0082",
+          "group": "asteroids",
+          "gm_si": 17170575.952470258
+        },
+        {
+          "iom_label": "Eichsfeldia   442",
+          "target": 2000442,
+          "iom_gm_au3_day2": 3.7681035098461244e-17,
+          "header_name": "MA0442",
+          "group": "asteroids",
+          "gm_si": 16899411.28213416
+        },
+        {
+          "iom_label": "Ampella       198",
+          "target": 2000198,
+          "iom_gm_au3_day2": 3.4690964938059876e-17,
+          "header_name": "MA0198",
+          "group": "asteroids",
+          "gm_si": 15558407.10666439
+        },
+        {
+          "iom_label": "Praxedis      547",
+          "target": 2000547,
+          "iom_gm_au3_day2": 3.289014852337975e-17,
+          "header_name": "MA0547",
+          "group": "asteroids",
+          "gm_si": 14750766.41537827
+        },
+        {
+          "iom_label": "Phocaea       25",
+          "target": 2000025,
+          "iom_gm_au3_day2": 3.256080020069492e-17,
+          "header_name": "MA0025",
+          "group": "asteroids",
+          "gm_si": 14603058.350947756
+        },
+        {
+          "iom_label": "Irma          177",
+          "target": 2000177,
+          "iom_gm_au3_day2": 3.194885761351898e-17,
+          "header_name": "MA0177",
+          "group": "asteroids",
+          "gm_si": 14328610.755898496
+        },
+        {
+          "iom_label": "Amalthea      113",
+          "target": 2000113,
+          "iom_gm_au3_day2": 3.081992520561064e-17,
+          "header_name": "MA0113",
+          "group": "asteroids",
+          "gm_si": 13822300.538540581
+        },
+        {
+          "iom_label": "Iphigenia     112",
+          "target": 2000112,
+          "iom_gm_au3_day2": 3.051962645845043e-17,
+          "header_name": "MA0112",
+          "group": "asteroids",
+          "gm_si": 13687620.797856463
+        },
+        {
+          "iom_label": "Budrosa       338",
+          "target": 2000338,
+          "iom_gm_au3_day2": 2.864982709174516e-17,
+          "header_name": "MA0338",
+          "group": "asteroids",
+          "gm_si": 12849042.228280047
+        },
+        {
+          "iom_label": "Pariana       347",
+          "target": 2000347,
+          "iom_gm_au3_day2": 2.4842140182945907e-17,
+          "header_name": "MA0347",
+          "group": "asteroids",
+          "gm_si": 11141348.50550266
+        },
+        {
+          "iom_label": "Ganymed       1036",
+          "target": 2001036,
+          "iom_gm_au3_day2": 2.112761621018509e-17,
+          "header_name": "MA1036",
+          "group": "asteroids",
+          "gm_si": 9475437.041844502
+        },
+        {
+          "iom_label": "Theobalda     778",
+          "target": 2000778,
+          "iom_gm_au3_day2": 2.0592519759347046e-17,
+          "header_name": "MA0778",
+          "group": "asteroids",
+          "gm_si": 9235453.852033148
+        },
+        {
+          "iom_label": "Aethra        132",
+          "target": 2000132,
+          "iom_gm_au3_day2": 1.7504352843147015e-17,
+          "header_name": "MA0132",
+          "group": "asteroids",
+          "gm_si": 7850454.669065495
+        },
+        {
+          "iom_label": "Irmgard       591",
+          "target": 2000591,
+          "iom_gm_au3_day2": 1.5650082930549903e-17,
+          "header_name": "MA0591",
+          "group": "asteroids",
+          "gm_si": 7018840.840008415
+        },
+        {
+          "iom_label": "Echo          60",
+          "target": 2000060,
+          "iom_gm_au3_day2": 1.48260785652372e-17,
+          "header_name": "MA0060",
+          "group": "asteroids",
+          "gm_si": 6649286.5368607845
+        },
+        {
+          "iom_label": "Lacadiera     336",
+          "target": 2000336,
+          "iom_gm_au3_day2": 1.4252117646877083e-17,
+          "header_name": "MA0336",
+          "group": "asteroids",
+          "gm_si": 6391873.183063739
+        },
+        {
+          "iom_label": "Pythia        432",
+          "target": 2000432,
+          "iom_gm_au3_day2": 1.3601888558172924e-17,
+          "header_name": "MA0432",
+          "group": "asteroids",
+          "gm_si": 6100254.633602299
+        },
+        {
+          "iom_label": "Peitho        118",
+          "target": 2000118,
+          "iom_gm_au3_day2": 1.3157171164548998e-17,
+          "header_name": "MA0118",
+          "group": "asteroids",
+          "gm_si": 5900805.172632572
+        },
+        {
+          "iom_label": "Chimaera      623",
+          "target": 2000623,
+          "iom_gm_au3_day2": 1.0120911587092832e-17,
+          "header_name": "MA0623",
+          "group": "asteroids",
+          "gm_si": 4539085.696915569
+        },
+        {
+          "iom_label": "Bilkis        585",
+          "target": 2000585,
+          "iom_gm_au3_day2": 9.502726030864262e-18,
+          "header_name": "MA0585",
+          "group": "asteroids",
+          "gm_si": 4261838.218546587
+        },
+        {
+          "iom_label": "Eros          433",
+          "target": 2000433,
+          "iom_gm_au3_day2": 9.950600155464848e-19,
+          "header_name": "MA0433",
+          "group": "asteroids",
+          "gm_si": 446270.34287106304
+        },
+        {
+          "iom_label": "Orcus         90482",
+          "target": 2090482,
+          "iom_gm_au3_day2": 9.409624643156109e-14,
+          "header_name": "MA8007",
+          "group": "kbos",
+          "gm_si": 42200835629.82952
+        },
+        {
+          "iom_label": "2002 MS4      307261",
+          "target": 2307261,
+          "iom_gm_au3_day2": 7.653501749067198e-14,
+          "header_name": "MA8011",
+          "group": "kbos",
+          "gm_si": 34324872835.380657
+        },
+        {
+          "iom_label": "2006 QH181",
+          "target": 3361580,
+          "iom_gm_au3_day2": 6.991602589737882e-14,
+          "header_name": "MA8013",
+          "group": "kbos",
+          "gm_si": 31356348724.624012
+        },
+        {
+          "iom_label": "Salacia       120347",
+          "target": 2120347,
+          "iom_gm_au3_day2": 6.511702079363127e-14,
+          "header_name": "MA8021",
+          "group": "kbos",
+          "gm_si": 29204062812.58964
+        },
+        {
+          "iom_label": "2003 UZ413    455502",
+          "target": 2455502,
+          "iom_gm_au3_day2": 6.483858075581723e-14,
+          "header_name": "MA8026",
+          "group": "kbos",
+          "gm_si": 29079186393.878296
+        },
+        {
+          "iom_label": "2003 AZ84     208996",
+          "target": 2208996,
+          "iom_gm_au3_day2": 6.082123528394769e-14,
+          "header_name": "MA8018",
+          "group": "kbos",
+          "gm_si": 27277463770.96884
+        },
+        {
+          "iom_label": "2002 AW197    55565",
+          "target": 2055565,
+          "iom_gm_au3_day2": 6.02473242459976e-14,
+          "header_name": "MA8015",
+          "group": "kbos",
+          "gm_si": 27020072787.83019
+        },
+        {
+          "iom_label": "Haumea        136108",
+          "target": 2136108,
+          "iom_gm_au3_day2": 5.961630054504284e-13,
+          "header_name": "MA8002",
+          "group": "kbos",
+          "gm_si": 267370675831.33878
+        },
+        {
+          "iom_label": "Varuna        20000",
+          "target": 2020000,
+          "iom_gm_au3_day2": 5.495075223411865e-14,
+          "header_name": "MA8008",
+          "group": "kbos",
+          "gm_si": 24644635155.07157
+        },
+        {
+          "iom_label": "Ixion         28978",
+          "target": 2028978,
+          "iom_gm_au3_day2": 4.517665622509759e-14,
+          "header_name": "MA8010",
+          "group": "kbos",
+          "gm_si": 20261091339.57118
+        },
+        {
+          "iom_label": "Varda         174567",
+          "target": 2174567,
+          "iom_gm_au3_day2": 3.965776886964191e-14,
+          "header_name": "MA8012",
+          "group": "kbos",
+          "gm_si": 17785948419.640514
+        },
+        {
+          "iom_label": "2004 GV9      90568",
+          "target": 2090568,
+          "iom_gm_au3_day2": 3.719350237382443e-14,
+          "header_name": "MA8017",
+          "group": "kbos",
+          "gm_si": 16680759750.784021
+        },
+        {
+          "iom_label": "2004 XA192    230965",
+          "target": 2230965,
+          "iom_gm_au3_day2": 3.645022602009109e-15,
+          "header_name": "MA8024",
+          "group": "kbos",
+          "gm_si": 1634741081.9014955
+        },
+        {
+          "iom_label": "2005 RN43     145452",
+          "target": 2145452,
+          "iom_gm_au3_day2": 3.6285479917789626e-14,
+          "header_name": "MA8016",
+          "group": "kbos",
+          "gm_si": 16273524522.297094
+        },
+        {
+          "iom_label": "Makemake      136472",
+          "target": 2136472,
+          "iom_gm_au3_day2": 3.431855500629209e-13,
+          "header_name": "MA8004",
+          "group": "kbos",
+          "gm_si": 153913865196.22385
+        },
+        {
+          "iom_label": "2010 KZ39",
+          "target": 3525142,
+          "iom_gm_au3_day2": 2.9579875156960054e-14,
+          "header_name": "MA8023",
+          "group": "kbos",
+          "gm_si": 13266155630.954632
+        },
+        {
+          "iom_label": "2004 XR190",
+          "target": 3308265,
+          "iom_gm_au3_day2": 2.904099518188484e-14,
+          "header_name": "MA8014",
+          "group": "kbos",
+          "gm_si": 13024475584.036966
+        },
+        {
+          "iom_label": "2001 UR163    42301",
+          "target": 2042301,
+          "iom_gm_au3_day2": 2.7251938920337723e-14,
+          "header_name": "MA8025",
+          "group": "kbos",
+          "gm_si": 12222109155.095722
+        },
+        {
+          "iom_label": "2007 JJ43     278361",
+          "target": 2278361,
+          "iom_gm_au3_day2": 2.67691589753377e-14,
+          "header_name": "MA8022",
+          "group": "kbos",
+          "gm_si": 12005589178.189495
+        },
+        {
+          "iom_label": "Gonggong      225088",
+          "target": 2225088,
+          "iom_gm_au3_day2": 2.585678827709039e-13,
+          "header_name": "MA8019",
+          "group": "kbos",
+          "gm_si": 115964038245.7168
+        },
+        {
+          "iom_label": "2010 FX86",
+          "target": 3515022,
+          "iom_gm_au3_day2": 2.571034257081021e-14,
+          "header_name": "MA8030",
+          "group": "kbos",
+          "gm_si": 11530724996.629066
+        },
+        {
+          "iom_label": "Chaos         19521",
+          "target": 2019521,
+          "iom_gm_au3_day2": 2.538379645629731e-14,
+          "header_name": "MA8020",
+          "group": "kbos",
+          "gm_si": 11384273682.929308
+        },
+        {
+          "iom_label": "Eris          136199",
+          "target": 2136199,
+          "iom_gm_au3_day2": 2.485448030287316e-12,
+          "header_name": "MA8001",
+          "group": "kbos",
+          "gm_si": 1114688287475.1716
+        },
+        {
+          "iom_label": "2002 TC302    84522",
+          "target": 2084522,
+          "iom_gm_au3_day2": 2.281996343120454e-13,
+          "header_name": "MA8006",
+          "group": "kbos",
+          "gm_si": 102344308339.59103
+        },
+        {
+          "iom_label": "2008 ST291    528381",
+          "target": 2528381,
+          "iom_gm_au3_day2": 2.1338903510045792e-14,
+          "header_name": "MA8029",
+          "group": "kbos",
+          "gm_si": 9570196407.39026
+        },
+        {
+          "iom_label": "2010 RE64   523639",
+          "target": 2523639,
+          "iom_gm_au3_day2": 1.912886696869436e-14,
+          "header_name": "MA8028",
+          "group": "kbos",
+          "gm_si": 8579026277.290297
+        },
+        {
+          "iom_label": "2002 UX25   55637",
+          "target": 2055637,
+          "iom_gm_au3_day2": 1.8603512445448687e-14,
+          "header_name": "MA8009",
+          "group": "kbos",
+          "gm_si": 8343412204.214562
+        },
+        {
+          "iom_label": "2010 RF43",
+          "target": 3545742,
+          "iom_gm_au3_day2": 1.7561425934907343e-14,
+          "header_name": "MA8027",
+          "group": "kbos",
+          "gm_si": 7876051143.479759
+        },
+        {
+          "iom_label": "Quaoar      50000",
+          "target": 2050000,
+          "iom_gm_au3_day2": 1.5294877459751145e-13,
+          "header_name": "MA8005",
+          "group": "kbos",
+          "gm_si": 68595362103.71597
+        },
+        {
+          "iom_label": "Sedna       90377",
+          "target": 2090377,
+          "iom_gm_au3_day2": 1.4934867884244863e-13,
+          "header_name": "MA8003",
+          "group": "kbos",
+          "gm_si": 66980770077.2258
+        }
+      ]
+    },
+    "sources": {
+      "small_body.py": "2e1dc0dc9bb9cec422b028373e358194bd73b585adb79b3e049e081e33175fe6",
+      "ephemeris.py": "be1e3ae0d57a2a62d0300cf7bafa087505435af903784c78f8c99b02ba481479",
+      "constants.py": "71f1197afdc125c9f8fc3fddaa8e64051f60cea5f5c134e0a1785f2539f3dea5",
+      "timebase.py": "a1ef2210f5ab3295ab467c3cba4ef0f3c9d00329c5d73dc4ed68ec42e0b16bda"
+    },
+    "c_light_si": 299792458.0,
+    "earth_bsp_sha256": "a4ce9bf9b3282becc9f4b2ac3cebe03a2ae7599981aabd7265fd8482fff7c4b5",
+    "missing": "small-body vector, PN scalar, mixed c^-4 terms; DE440 original small-body trajectories",
+    "channels": [
+      "asteroids_c2",
+      "kbos_c2"
+    ],
+    "frame": "ICRF heliocentric geometric; subtract DE440 Earth-Sun vector; SI TDB-compatible",
+    "observer": "Moon center",
+    "lunar_source_sha256": "92498b2ac8b4effb6c11baedf3f97cedda29ac74999b74cf5e10677317c8ccce"
+  },
+  "reference_signature": {
+    "classification": "independent published reference; never integrand input",
+    "release_url": "https://github.com/xlucn/LTE440/releases/tag/20250620",
+    "bsp_sha256": "f48c36b0c1b872f51616790db753538b4895bc2ceae73386a72eb0150e44f1e8",
+    "tpc_sha256": "aa897dd4aeba15dfeb6f80883ad6b3e2d7c4f098690b02cdeb021167f5734c92",
+    "source_sha256": "44bcc8021077fc4b6b5e974f20133e24619faa6c887c9b836d0c3c35f4e27acd",
+    "rate": 6.798355238724282e-10,
+    "segment": {
+      "center": 1000000000,
+      "target": 1000000005,
+      "frame": 1,
+      "type": 2,
+      "start_jd": 2287184.5,
+      "end_jd": 2688976.5
+    },
+    "unit": "SPK X seconds; derivative /day converted /second; TPC linear term restored"
+  },
+  "script_sha256": "baa3070c0f2c81d4d5afde944d8bc890d2807f9505cc06be76d4f7bfcf2091c3",
+  "test_sha256": {
+    "tests/test_lunar_model.py": "4320d6a1ce8da226b02f1d831c59c80591ca9832b931b7b775452d0977b1c521",
+    "tests/test_lte_reference.py": "1f36cf4999cf3c1bbcbdc4fd5277fa07c902f15fb73a74fbc559b4c3c3034d91"
+  },
+  "time_residual_raw": {
+    "count": 18631,
+    "max_abs_seconds": 3.0475784114185334e-12,
+    "rms_seconds": 2.5000740568525526e-12,
+    "mean_seconds": 2.3761785692485955e-12,
+    "min_seconds": 4.351697940967972e-18,
+    "max_seconds": 3.0475784114185334e-12,
+    "max_epoch_tdb_seconds": 504316800.0
+  },
+  "rate_residual_raw": {
+    "count": 18631,
+    "max_abs_seconds": 1.654606794350407e-20,
+    "rms_seconds": 5.2690707434751566e-21,
+    "mean_seconds": 1.7805340383536645e-21,
+    "min_seconds": -1.4381568925000077e-20,
+    "max_seconds": 1.654606794350407e-20,
+    "max_epoch_tdb_seconds": 815616000.0
+  },
+  "modern_time_residual_raw": {
+    "count": 732,
+    "max_abs_seconds": 2.8302858104053974e-12,
+    "rms_seconds": 2.8043065526517494e-12,
+    "mean_seconds": 2.8042880588815417e-12,
+    "min_seconds": 2.79255644216464e-12,
+    "max_seconds": 2.8302858104053974e-12,
+    "max_epoch_tdb_seconds": 820497600.0
+  },
+  "modern_rate_residual_raw": {
+    "count": 732,
+    "max_abs_seconds": 1.642666959196087e-20,
+    "rms_seconds": 8.597109028246847e-21,
+    "mean_seconds": 5.6838765508526145e-22,
+    "min_seconds": -1.4141169559476854e-20,
+    "max_seconds": 1.642666959196087e-20,
+    "max_epoch_tdb_seconds": 817992000.0
+  },
+  "independent_quadrature_difference": {
+    "count": 18631,
+    "max_abs_seconds": 7.399679827213568e-17,
+    "rms_seconds": 2.922880180564109e-17,
+    "mean_seconds": 4.468457226366404e-18,
+    "min_seconds": -6.011901046432122e-17,
+    "max_seconds": 7.399679827213568e-17,
+    "max_epoch_tdb_seconds": 710640000.0
+  },
+  "independent_major_integral_sum_max_seconds": 7.396334281625208e-17,
+  "independent_SB441_integral_sum_max_seconds": 7.956766634421213e-26,
+  "Earth_J2_zero_offset_minus_primary_max_seconds": 6.872383086784357e-17,
+  "modern_convergence": {
+    "major": {
+      "scope": "modern 732 intervals, computational convergence anchor 2024-01-01 only; not physical origin",
+      "configs": [
+        [
+          "gauss_legendre",
+          8,
+          1
+        ],
+        [
+          "romberg",
+          5,
+          1
+        ],
+        [
+          "gauss_legendre",
+          12,
+          2
+        ]
+      ],
+      "wall_seconds": [
+        0.1479377149953507,
+        0.21237529399513733,
+        0.42408389000047464
+      ],
+      "max_primary_minus_highorder_seconds": 6.173810792396573e-18,
+      "max_independent_minus_highorder_seconds": 2.081795599000466e-18
+    },
+    "SB441": {
+      "scope": "modern 732 intervals, computational convergence anchor 2024-01-01 only; not physical origin",
+      "configs": [
+        [
+          "gauss_legendre",
+          4,
+          1
+        ],
+        [
+          "romberg",
+          4,
+          1
+        ],
+        [
+          "gauss_legendre",
+          12,
+          2
+        ]
+      ],
+      "wall_seconds": [
+        0.4803651130059734,
+        0.7239623200002825,
+        2.546405262008193
+      ],
+      "max_primary_minus_highorder_seconds": 3.9960538014875574e-26,
+      "max_independent_minus_highorder_seconds": 3.884982186032439e-26
+    }
+  },
+  "methods": {
+    "major_primary": {
+      "method": "gauss_legendre",
+      "order": 8,
+      "subdivisions_per_output_interval": 1,
+      "interval_count": 18630,
+      "evaluations": 223560,
+      "sum_local_order_difference_indicators_seconds": [
+        5.190880713694587e-14,
+        1.8228386903962138e-21,
+        1.1272625120381953e-26,
+        2.9463260612408196e-24,
+        4.714215572433033e-23,
+        5.477540892379859e-24,
+        2.6831383974319335e-24,
+        1.2162734063980406e-22,
+        1.0118707725626006e-21,
+        4.3064151612574864e-21,
+        1.6645001215374662e-25
+      ],
+      "integration_wall_seconds": 4.144116033989121,
+      "loaded_cache": false,
+      "call_wall_seconds": 4.220215820998419,
+      "anchor_index": 1,
+      "cumulative_directions": "independent forward and backward from original anchor",
+      "cache_identity_sha256": "03623132421c93a6da87f624151782b2dbf9fb259158ce2b67701ccf3fde66e6",
+      "longdouble_mantissa_bits": 63
+    },
+    "SB441_primary": {
+      "method": "gauss_legendre",
+      "order": 4,
+      "subdivisions_per_output_interval": 1,
+      "interval_count": 18630,
+      "evaluations": 111780,
+      "sum_local_order_difference_indicators_seconds": [
+        1.3161736325921437e-18,
+        4.984794238146003e-21
+      ],
+      "integration_wall_seconds": 14.304596741989371,
+      "loaded_cache": false,
+      "call_wall_seconds": 14.329245461995015,
+      "anchor_index": 1,
+      "cumulative_directions": "independent forward and backward from original anchor",
+      "cache_identity_sha256": "5f576d5bb699196e0244bdd61207919d91b139896682dd9cdaa0e1b01999d26f",
+      "longdouble_mantissa_bits": 63
+    },
+    "major_independent": {
+      "method": "romberg",
+      "order": 5,
+      "subdivisions_per_output_interval": 1,
+      "interval_count": 18630,
+      "evaluations": 316710,
+      "sum_local_order_difference_indicators_seconds": [
+        1.6096167281134746e-14,
+        5.65926440511951e-22,
+        7.612902165835374e-27,
+        3.1629157113783006e-24,
+        5.687073392859233e-24,
+        2.6665865179185862e-24,
+        1.3332522381922216e-24,
+        4.354344255497723e-23,
+        1.3946352007483988e-21,
+        1.5429585089517975e-21,
+        1.0319741960381816e-25
+      ],
+      "integration_wall_seconds": 6.932816137996269,
+      "loaded_cache": false,
+      "call_wall_seconds": 7.010141388003831,
+      "anchor_index": 1,
+      "cumulative_directions": "independent forward and backward from original anchor",
+      "cache_identity_sha256": "99c5d229052f1321e91479caef7bd9153e0e7e99bb8bebf9f3d8e23dc14eddf7",
+      "longdouble_mantissa_bits": 63
+    },
+    "SB441_independent": {
+      "method": "romberg",
+      "order": 4,
+      "subdivisions_per_output_interval": 1,
+      "interval_count": 18630,
+      "evaluations": 167670,
+      "sum_local_order_difference_indicators_seconds": [
+        2.8824674554188167e-22,
+        1.19193727335274e-24
+      ],
+      "integration_wall_seconds": 23.46433303100639,
+      "loaded_cache": false,
+      "call_wall_seconds": 23.48767541500274,
+      "anchor_index": 1,
+      "cumulative_directions": "independent forward and backward from original anchor",
+      "cache_identity_sha256": "b664029f3c55530c16a1fc04f1386a47eb1b1360857970bbd6083d551a7b0069",
+      "longdouble_mantissa_bits": 63
+    }
+  },
+  "linear_or_zero_fit_applied": false,
+  "reference_used_in_integrand": false,
+  "acceptance": {
+    "threshold_seconds": 1e-12,
+    "passed_raw_sampled_time": false,
+    "scope": "daily samples plus exact anchor and endpoints, not continuous-domain guarantee"
+  },
+  "limitations": [
+    "Earth J2 time dependence; original DE440 pole integration code unavailable",
+    "higher Earth harmonics and tides",
+    "small-body/ring PN and vector terms",
+    "solar and other direct spin terms",
+    "SB441 orbits are separately fitted with DE441; original DE440 small-body states not obtained",
+    "LTE440 release predates paper v1; production source/input manifest unavailable"
+  ],
+  "versions": {
+    "python": "3.14.4",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "jplephem": "2.24",
+      "spiceypy": "8.3.0",
+      "pyerfa": "2.0.1.5",
+      "mpmath": "1.4.1",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1"
+    }
+  },
+  "wall_elapsed_seconds_before_plot": 56.82612127799075,
+  "daily_table_sha256": "4ab890a98e4c34cdc519ac6a61b8b017123f2b260e3a39e36655d298abda28c7"
+}
